@@ -1,0 +1,28 @@
+.nav
+    position: fixed
+    left: 0
+    top: 50px
+    &__container
+        &_top
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
+        &_bottom
+    &__item
+        &_icon
+            margin: 0 0 50px
+            &:last-child
+                margin-bottom: 0
+        &_text
+            font: 16px/20px Arial, sans-serif
+            color: rgba($color-black, 0.35)
+            padding: 10px 0
+            transform: rotate(-90deg)
+            transition: color 600ms ease
+        &_moikrug
+            @extend .icon-moikrug
+        &_github
+            @extend .icon-github
+        &_email
+            @extend .icon-letter

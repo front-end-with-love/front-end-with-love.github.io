@@ -1,0 +1,11 @@
+default:
+  description: 'Default build'
+  tasks:
+  - pug
+  - sass
+#  - autoprefixer
+  - browserify
+  - concat
+  - copy
+  - connect
+  - watch

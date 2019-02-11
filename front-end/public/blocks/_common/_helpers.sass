@@ -1,0 +1,221 @@
+// GRID : begin
+// main parent container (glass, container)
+@mixin glass
+    width: 100%
+    max-width: 980px
+    margin-left: auto
+    margin-right: auto
+    padding-left: 20px
+    padding-right: 20px
+    position: relative
+// GRID : end
+
+// ICONS
+@mixin icon
+    display: block
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: contain
+
+// FORM ELEMENTS : begin
+// placeholder
+@mixin placeholder
+    &::-webkit-input-placeholder
+        @content
+    &::-moz-placeholder
+        @content
+    &:-moz-placeholder
+        @content
+    &:-ms-input-placeholder
+        @content
+    &:focus::-webkit-input-placeholder
+        color: transparent
+    &:focus::-moz-placeholder
+        color: transparent
+    &:focus:-moz-placeholder
+        color: transparent
+    &:focus:-ms-input-placeholder
+        color: transparent
+// text input default
+@mixin default-text-input
+    user-select: none
+    width: 100%
+    outline: none
+    border: none
+    border-bottom: 3px $color-black solid
+    padding: 0 0 3.5px
+    margin: 0
+    border-radius: 0
+    display: block
+    font-weight: normal
+    font-size: 23px
+    line-height: normal
+    font-family: "Arial", sans-serif
+    color: $color-black
+    text-align: left
+    background: transparent
+    transition: all 0.3s ease
+    @include placeholder
+        color: $color-black
+        transition: all 0.3s ease
+    &:focus
+        outline: none
+        color: $color-black
+        border-color: rgba($color-black, 0.5)
+        transition: all 0.3s ease
+//&_error
+//    color: $color-red
+//    transition: all 0.3s ease
+// textarea default
+@mixin default-textarea
+    user-select: none
+    width: 100%
+    outline: none
+    border: none
+    border-bottom-width: 3px
+    border-bottom-style: solid
+    border-bottom-color: $color-black
+    display: block
+    font-weight: normal
+    font-size: 23px
+    line-height: normal
+    font-family: "Arial", sans-serif
+    text-align: left
+    text-transform: uppercase
+    padding: 10px 16px 9px 16px
+    margin: 0
+    border-radius: 0
+    resize: vertical
+    -webkit-appearance: none
+    background: transparent
+    transition: all 0.3s ease
+    @include placeholder
+        color: $color-black
+        transition: all 0.3s ease
+    &:focus
+        outline: none
+        color: $color-black
+        border-color: rgba($color-black, 0.5)
+        transition: all 0.3s ease
+//&_error
+//    color: $color-red
+//    transition: all 0.3s ease
+// button default
+@mixin default-btn
+    user-select: none
+    display: inline-block
+    font-family: "Arial", sans-serif
+    font-weight: bold
+    font-size: 25px
+    text-transform: uppercase
+    color: $color-black
+    width: 100%
+    height: auto
+    background: $color-white
+    border: 3px solid $color-black
+    line-height: 1
+    padding: 22px 0
+    cursor: pointer
+    user-select: none
+    outline: none
+    text-decoration: none
+    border-radius: 0
+    text-align: center
+    transition: all 0.2s ease
+    &:hover
+        background: $color-black
+        color: $color-white
+        transition: all 0.2s ease
+// FORM ELEMENTS : end
+
+// TYPO : begin
+// font-face
+@function str-replace($string, $search, $replace: "")
+    $index: str-index($string, $search)
+    @if $index
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+    @return $string
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)
+    $src: null
+    $extmods: (eot: "?", svg: "#" + str-replace($name, " ", "_"))
+    $formats: (otf: "opentype", ttf: "truetype")
+    @each $ext in $exts
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma)
+    @font-face
+        font-family: quote($name)
+        font-style: $style
+        font-weight: $weight
+        src: $src
+// cover
+// @include font-face(FuturaPTBook, "../fonts/futura-pt/FuturaPT_300", 300, normal, eot woff2 woff svg ttf)
+// $font-rubl: "FuturaPTBook"
+
+// fluid typography : begin
+@function strip-unit($value)
+    @return $value / ($value * 0 + 1)
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size)
+    $u1: unit($min-vw)
+    $u2: unit($max-vw)
+    $u3: unit($min-font-size)
+    $u4: unit($max-font-size)
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4
+        &
+            font-size: $min-font-size
+            @media screen and (min-width: $min-vw)
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))
+            @media screen and (min-width: $max-vw)
+                font-size: $max-font-size
+// cover
+// with variables
+// @include fluid-type($min_width, $max_width, $min_font, $max_font);
+// or numbers
+// @include fluid-type(768px, 960px, 20px, 30px);
+// TYPO : end
+
+// POSITION CHILD AT CENTER : begin
+@mixin pos-all-center-children
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate3d(-50%, -50%, 0)
+
+@mixin pos-horizontal-center-children
+    position: relative
+    left: 50%
+    transform: translate3d(-50%, 0, 0)
+
+@mixin pos-vertical-center-children
+    position: relative
+    top: 50%
+    transform: translate3d(0, -50%, 0)
+// POSITION CHILD AT CENTER : end
+
+// OTHER
+@mixin selectionText
+    ::-moz-selection
+        background: $color-black
+        color: $color-white
+        -webkit-text-fill-color: $color-white
+        -webkit-opacity: 1
+    ::selection
+        background: $color-black
+        color: $color-white
+        -webkit-text-fill-color: $color-white
+        -webkit-opacity: 1
+        -webkit-text-fill-color: $color-white
+        -webkit-opacity: 1
+@mixin scrollbars($size, $foreground-color, $background-color: mix($color-black, white, 50%))
+    ::-webkit-scrollbar
+        width:  $size
+        height: $size
+    ::-webkit-scrollbar-thumb
+        background: $foreground-color
+        border-radius: 4px
+        background: $background-color
+    body
+        scrollbar-face-color: $foreground-color
+        scrollbar-track-color: $background-color
