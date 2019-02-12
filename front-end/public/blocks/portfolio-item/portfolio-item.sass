@@ -1,21 +1,230 @@
 .portfolio-item
-    background: $color-white
+    padding: 0
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    @include breakpoint($tablet)
+        background: $color-white
+    &_nemoloko
+        padding: 100px 0
+        @include breakpoint($tablet)
+            padding: 50px 0
+        @include breakpoint($mobile)
+            padding: 50px 0 0
+    &_spacemarathon
+        padding: 100px 0 0 0
+        @include breakpoint($tablet)
+            padding: 50px 0
+        @include breakpoint($mobile)
+            padding: 50px 0 0
+    &_varejkino
+        padding: 100px 0 0 0
+        @include breakpoint($tablet)
+            padding: 50px 0
+        @include breakpoint($mobile)
+            padding: 50px 0 0
     &__container
         &_top
+            @include glass
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+            margin: 0 0 100px
+            @include breakpoint($mobile)
+                flex-direction: column
+                margin: 0 0 50px
+        &_middle
+            width: 100%
         &_bottom
+            padding: 200px 0 0
+            @include glass
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+            @include breakpoint($tablet)
+                padding: 50px 20px 0
+            @include breakpoint($mobile)
+                flex-direction: column
+                margin: 0 20px
     &__col
         &_left
+            width: 60%
+            margin-right: 10%
+            @include breakpoint($mobile)
+                width: 100%
+                margin-right: 0
+                margin-bottom: 30px
+            .portfolio-item__container_bottom &
+                width: 40%
+                margin-right: 10%
+                @include breakpoint($mobile)
+                    width: 100%
+                    margin-right: 0
         &_right
+            width: 30%
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start
+            @include breakpoint($mobile)
+                width: 100%
+                margin-right: 0
+            .portfolio-item__container_bottom &
+                width: 60%
+                @include breakpoint($mobile)
+                    width: 100%
     &__title
         position: relative
         color: $color-black
         font: 60px/60px $font-title
+        @include fluid-type(320px, 1024px, 30px, 60px)
         letter-spacing: -0.01em
-    &__text
+        margin: 0 0 16px
+        @include breakpoint($mobile)
+            margin-bottom: 0
+    &__descr
+        position: static
+        font: 200 26px/1.538 $font-text-ibm
+        @include fluid-type(320px, 1024px, 20px, 26px)
+        color: $color-gray
     &__subtitle
-    &__date
-    &__date-text
+        &_small
+            font: 600 11px/1.55 $font-text-open-sans
+            letter-spacing: 3px
+            text-transform: uppercase
+            color: $color-black
+        &_big
+            font: 300 42px/1.285 $font-text-ibm
+            @include fluid-type(320px, 1024px, 24px, 42px)
+            color: $color-black
+            margin: 0 0 10px
+            letter-spacing: -1px
+    &__text
+        font: 300 15px/1.866 $font-text-open-sans
+        @include fluid-type(320px, 760px, 13px, 15px)
+        color: $color-gray-2
+        margin: 0 0 10px
+        &:last-child
+            margin-bottom: 0
+    &__text-selected
+        color: $color-black
+    &__time
+        margin: 0 0 25px
+        @include breakpoint($mobile)
+            margin-bottom: 15px
+    &__price
+        margin: 0 0 25px
+        @include breakpoint($mobile)
+            margin-bottom: 15px
     &__technologies
-    &__technologies-text
+        margin: 0 0 25px
+        @include breakpoint($mobile)
+            margin-bottom: 15px
     &__links
     &__links-item
+        font: 300 15px/1.866 $font-text-open-sans
+        color: $color-gray-2
+    &__cover
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 200px 0
+        @include breakpoint($tablet)
+            padding: 100px 0
+        @include breakpoint($mobile)
+            padding: 50px 0
+        &_nemoloko
+            background: linear-gradient(to left, rgba(#c84f0e, 0.95) 0%, #fee140 100%)
+        &_spacemarathon
+            background: linear-gradient(to left, #1d2b64, #f8cdda)
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            padding-left: 20vw
+            padding-right: 20vw
+            margin: 0 0 100px
+            @include breakpoint($tablet)
+                padding: 70px 20px
+                margin-bottom: 0
+            @include breakpoint($mobile)
+                flex-direction: column
+                justify-content: flex-start
+                align-items: center
+                margin: 0 0 0
+                padding: 25px 20px 50px
+        &_varejkino
+            background: linear-gradient(to top, #dfe9f3 0%, white 100%)
+            flex-direction: column
+            padding: 100px 0 70px
+            @include breakpoint($tablet)
+                padding: 0 0 50px
+    &__cover-col
+        &_left
+        &_right
+    &__cover-title
+        @extend .portfolio-item__subtitle_big
+        color: $color-white
+        margin-top: 56px
+        .portfolio-item__cover_spacemarathon &
+            @include breakpoint($mobile)
+                margin-top: 0
+        .portfolio-item__cover_varejkino &
+            color: $color-black
+            max-width: 600px
+            @include breakpoint($mobile)
+                margin-top: 45px
+    &__cover-text-wrapper
+        @include glass
+    &__cover-text
+        @extend .portfolio-item__text
+        color: $color-white
+        .portfolio-item__cover_varejkino &
+            color: $color-black
+            max-width: 600px
+    &__img
+        position: relative
+        display: block
+        width: 100%
+        max-width: 50vw
+        height: auto
+        .portfolio-item__cover_nemoloko &
+            box-shadow: 0 3vw 150px 0 rgba($color-black, 0.2)
+            border-radius: 2.1vw
+        .portfolio-item__cover_spacemarathon &
+            min-width: 350px
+            @include breakpoint($tablet)
+                min-width: auto
+                max-width: 100%
+            @include breakpoint($mobile)
+                max-width: 60%
+                margin-left: auto
+                margin-right: auto
+        .portfolio-item__cover_varejkino &
+            min-width: 940px
+            @include breakpoint($tablet)
+                min-width: auto
+                max-width: 100%
+    &__tasks
+    &__list
+        list-style: none
+    &__list-item
+        font: 300 15px/1.866 $font-text-open-sans
+        @include fluid-type(320px, 760px, 13px, 15px)
+        color: $color-gray-2
+        margin: 0 0 10px
+        padding: 0 0 0 19px
+        position: relative
+        &:last-child
+            margin-bottom: 0
+        &:before
+            content: ''
+            width: 13px
+            height: 1px
+            background: rgba($color-gray-2, 0.65)
+            position: absolute
+            left: 0
+            top: 14px
+            transform: translate3d(0, -50%, 0)

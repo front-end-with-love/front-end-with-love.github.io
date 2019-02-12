@@ -1,16 +1,181 @@
-article.portfolio-item
+article.portfolio-item.portfolio-item_nemoloko
     section.portfolio-item__container.portfolio-item__container_top
         .portfolio-item__col.portfolio-item__col_left
-            h2.portfolio-item__title
-            p.portfolio-item__text
+            h2.portfolio-item__title(
+                data-850="opacity: 0; top: 5px;"
+                data-950="opacity: 1; top: 0;"
+            ) Немолоко
+            p.portfolio-item__descr(
+                data-900="opacity: 0;"
+                data-1000="opacity: 1;"
+            )
+                | Верстка промо-страницы
+                br
+                | инновационного продукта.
         .portfolio-item__col.portfolio-item__col_right
-            .portfolio-item__date
-                .portfolio-item__subtitle
-                .portfolio-item__date-text
-            .portfolio-item__technologies
-                .portfolio-item__subtitle
-                .portfolio-item__technologies-text
-            .portfolio-item__links
-                .portfolio-item__subtitle
-                a.portfolio-item__links-item(href="" target="_blank")
+            .portfolio-item__time(
+                data-850="opacity: 0; top: 3px;"
+                data-950="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Срок
+                .portfolio-item__text Около 80-100 часов
+            .portfolio-item__price(
+                data-900="opacity: 0; top: 3px;"
+                data-1000="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Стоимость
+                .portfolio-item__text 40000-60000 ₽
+            .portfolio-item__technologies(
+                data-950="opacity: 0; top: 3px;"
+                data-1050="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Технологии
+                .portfolio-item__text Pug, SASS, Vue.js, jQuery, Grunt
+            .portfolio-item__links(
+                data-1000="opacity: 0; top: 3px;"
+                data-1100="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Ссылка
+                a.portfolio-item__links-item(href="https://deaddale.github.io/portfolio/websites-templates/nmlk/" target="_blank") Демо
+    section.portfolio-item__container.portfolio-item__container_middle
+        .portfolio-item__cover.portfolio-item__cover_nemoloko(
+            data-1200="opacity: 0"
+            data-1400="opacity: 1"
+        )
+            img.portfolio-item__img(
+                src="img/projects/nemoloko/1.png"
+                alt=""
+            )
     section.portfolio-item__container.portfolio-item__container_bottom
+        .portfolio-item__col.portfolio-item__col_left
+            .portfolio-item__subtitle.portfolio-item__subtitle_big Задачи:
+            ul.portfolio-item__list
+                li.portfolio-item__list-item Сверстать десктопную и&nbsp;мобильную версии;
+                li.portfolio-item__list-item Создать анимацию при скролле страницы основываясь на&nbsp;видео-референс и&nbsp;пожелания дизайнера;
+                li.portfolio-item__list-item Внести большой объем правок по&nbsp;мере готовности проекта.
+        .portfolio-item__col.portfolio-item__col_right
+            .portfolio-item__subtitle.portfolio-item__subtitle_big Процесс
+            .portfolio-item__text Фактически на&nbsp;саму разработку ушло примерно 5&nbsp;дней, но&nbsp;доработка анимаций с&nbsp;последующими согласованиями заняла 2&nbsp;недели. Я&nbsp;на&nbsp;равных с&nbsp;арт-директором придумывал и&nbsp;реализовывал те&nbsp;или иные идеи, а&nbsp;также дизайн и&nbsp;реализация адаптива фактически были на&nbsp;мне. При старте проекта не&nbsp;было четкого понимания того, как должна выглядеть страница на&nbsp;мобильных устройствах. Финальный результат при этом сильно отличается от&nbsp;первоначального дизайн-макета.
+            .portfolio-item__text
+                | В&nbsp;процессе работы над проектом использовал&nbsp;
+                span.portfolio-item__text-selected Vue.js.
+                | &nbsp;Библиотека потребовалась для логичного, структурированного описания работы анимаций.&nbsp;
+                span.portfolio-item__text-selected jQuery
+                | &nbsp;используется так как знакома мне и&nbsp;под неё написан отличный плагин&nbsp;
+                span.portfolio-item__text-selected Skrollr
+                | . Он&nbsp;помогает при создании анимаций подобных тем, что вы&nbsp;можете увидеть на&nbsp;промо-странице. В&nbsp;качестве сборщика верстки использовал&nbsp;
+                span.portfolio-item__text-selected Grunt
+                | , для разметки&nbsp;
+                span.portfolio-item__text-selected Pug
+                | , для стилей&nbsp;
+                span.portfolio-item__text-selected SASS
+                | . Методология&nbsp;
+                span.portfolio-item__text-selected БЭМ
+                | &nbsp;реализована в&nbsp;полной мере. Это значит, что каждый блок описан отдельными файлами&nbsp;
+                span.portfolio-item__text-selected .pug
+                | &nbsp;и&nbsp;
+                span.portfolio-item__text-selected .sass
+                | , а&nbsp;также вынесен в&nbsp;свой собственный каталог.
+article.portfolio-item.article.portfolio-item_spacemarathon
+    section.portfolio-item__container.portfolio-item__container_top
+        .portfolio-item__col.portfolio-item__col_left
+            h2.portfolio-item__title(
+            data-2950="opacity: 0; top: 5px;"
+            data-3050="opacity: 1; top: 0;"
+            ) Spacemarathon
+            p.portfolio-item__descr(
+            data-3000="opacity: 0;"
+            data-3100="opacity: 1;"
+            )
+                | Верстка кейса для портфолио дизайн-студии
+        .portfolio-item__col.portfolio-item__col_right
+            .portfolio-item__time(
+            data-2950="opacity: 0; top: 3px;"
+            data-3050="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Срок
+                .portfolio-item__text Около 30-40 часов
+            .portfolio-item__price(
+            data-3000="opacity: 0; top: 3px;"
+            data-3100="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Стоимость
+                .portfolio-item__text 15000-20000 ₽
+            .portfolio-item__technologies(
+            data-3050="opacity: 0; top: 3px;"
+            data-3150="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Технологии
+                .portfolio-item__text Pug, SASS, jQuery, Grunt
+            .portfolio-item__links(
+            data-3100="opacity: 0; top: 3px;"
+            data-3200="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Ссылка
+                a.portfolio-item__links-item(href="https://deaddale.github.io/portfolio/websites-templates/spacemarathon/" target="_blank") Демо
+    section.portfolio-item__container.portfolio-item__container_middle
+        .portfolio-item__cover.portfolio-item__cover_spacemarathon(
+        data-3350="opacity: 0"
+        data-3550="opacity: 1"
+        )
+            .portfolio-item__cover-col.portfolio-item__cover-col_left
+                img.portfolio-item__img(
+                src="img/projects/spacemarathon/1.png"
+                alt=""
+                )
+            .portfolio-item__cover-col.portfolio-item__cover-col_right
+                .portfolio-item__cover-title Процесс
+                .portfolio-item__cover-text Исходники были представлены одним дизайн-макетом под десктоп и&nbsp;сайтами-референсами (в&nbsp;качестве пожеланий к&nbsp;реализации анимации).
+                .portfolio-item__cover-text Сверстанный проект послужил основой для 7&nbsp;других кейсов, поэтому пришлось хорошенько подумать, как максимально унифицировать блоки и&nbsp;их&nbsp;элементы. Адаптив (от&nbsp;дизайна до&nbsp;верстки) и&nbsp;большую часть анимаций придумывал и&nbsp;реализовывал самостоятельно.
+                .portfolio-item__cover-text В&nbsp;процессе работы над проектом использовал Grunt, jQuery, Pug, SASS, БЭМ.
+article.portfolio-item.article.portfolio-item_varejkino
+    section.portfolio-item__container.portfolio-item__container_top
+        .portfolio-item__col.portfolio-item__col_left
+            h2.portfolio-item__title(
+            data-4500="opacity: 0; top: 5px;"
+            data-4600="opacity: 1; top: 0;"
+            ) Варежкино
+            p.portfolio-item__descr(
+            data-4550="opacity: 0;"
+            data-4650="opacity: 1;"
+            )
+                | Верстка одностраничного сайта-презентации
+        .portfolio-item__col.portfolio-item__col_right
+            .portfolio-item__time(
+            data-4500="opacity: 0; top: 3px;"
+            data-4600="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Срок
+                .portfolio-item__text Около 30-40 часов
+            .portfolio-item__price(
+            data-4550="opacity: 0; top: 3px;"
+            data-4650="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Стоимость
+                .portfolio-item__text 15000-20000 ₽
+            .portfolio-item__technologies(
+            data-4600="opacity: 0; top: 3px;"
+            data-4700="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Технологии
+                .portfolio-item__text Pug, SASS, jQuery, Grunt
+            .portfolio-item__links(
+            data-4650="opacity: 0; top: 3px;"
+            data-4750="opacity: 1; top: 0;"
+            )
+                .portfolio-item__subtitle.portfolio-item__subtitle_small Ссылка
+                a.portfolio-item__links-item(href="https://deaddale.github.io/portfolio/websites-templates/spacemarathon/" target="_blank") Демо
+    section.portfolio-item__container.portfolio-item__container_middle
+        .portfolio-item__cover.portfolio-item__cover_varejkino(
+        data-5150="opacity: 0"
+        data-5350="opacity: 1"
+        )
+            img.portfolio-item__img(
+            src="img/projects/varejkino/1.png"
+            alt=""
+            )
+            .portfolio-item__cover-text-wrapper
+                .portfolio-item__cover-title Процесс
+                .portfolio-item__cover-text Простой сайт-презентация. Адаптивность и&nbsp;анимацию реализовывал практически без помощи заказчика (из&nbsp;исходников получил дизайн-макет для десктопа и&nbsp;пару сайтов-референсов в&nbsp;ТЗ).
+                .portfolio-item__cover-text В&nbsp;данном проекте есть много внутренних страниц, но&nbsp;смотреть на&nbsp;них смысла нет.
+                .portfolio-item__cover-text Стек стандартный: Grunt, jQuery, Pug, SASS, БЭМ.

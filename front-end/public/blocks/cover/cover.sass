@@ -1,17 +1,30 @@
 .cover
-    margin-top: 300px
-    padding-bottom: 150px
+    padding: 300px 0 400px
+    @include breakpoint($tablet)
+        padding: 100px 0 100px
     &__container
         @include glass
+        @include breakpoint($tablet)
+            padding-left: 80px
+            padding-right: 80px
+        @include breakpoint($mobile)
+            padding-left: 80px
+            padding-right: 20px
     &__title
         color: $color-white
-        font: 70px/1.18 $font-title
+        font: 85px/1.18 $font-title
+        @include fluid-type(320px, 1024px, 20px, 85px)
         letter-spacing: -0.01em
         display: flex
         flex-direction: column
         justify-content: flex-start
         align-items: flex-start
+        opacity: 0
+        position: relative
+        top: 3px
     &__title-item
-        margin: 0 0 50px
+        margin: 0 0 100px
+        @include breakpoint($tablet)
+            margin: 0 0 30px
         &:last-child
             margin-bottom: 0

@@ -1,2 +1,2 @@
-# front-end-with-love.github.io
-Portfolio and platform for layout testing
+# Портфолио. Front-end разработчик. Михаил
+Портфолио и платформа для тестирования

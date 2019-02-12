@@ -1,0 +1,28 @@
+.footer
+    padding: 200px 0
+    @include breakpoint($tablet)
+        padding: 100px 0
+        background: $color-white
+    @include breakpoint($mobile)
+        padding: 50px 0
+        background: $color-white
+    &__container
+        @include glass
+    &__title
+        font: 60px/1 $font-title
+        @include fluid-type(320px, 1024px, 30px, 60px)
+        color: $color-black
+        letter-spacing: -1px
+        margin: 0 0 22px
+        @include breakpoint($tablet)
+            margin-bottom: 18px
+        @include breakpoint($mobile)
+            margin-bottom: 10px
+    &__link
+        font: 200 26px/1.538461538461538 $font-text-ibm
+        @include fluid-type(320px, 1024px, 16px, 26px)
+        transition: color 600ms ease
+        color: $color-gray-2
+        text-decoration: none
+        &:hover
+            color: $color-black

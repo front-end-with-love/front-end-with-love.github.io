@@ -1,28 +1,51 @@
 .nav
-    position: fixed
-    left: 0
-    top: 50px
     &__container
         &_top
+            position: fixed
+            top: 50px
+            left: 0
             display: flex
             flex-direction: column
             align-items: center
             justify-content: flex-start
-        &_bottom
+            opacity: 0
+            z-index: 1
+            @include breakpoint($tablet)
+                position: absolute
+        &_middle
+            position: fixed
+            bottom: -100px
+            left: 25px
+            z-index: 1
+            @include breakpoint($tablet)
+                display: none
     &__item
-        &_icon
-            margin: 0 0 50px
-            &:last-child
-                margin-bottom: 0
-        &_text
-            font: 16px/20px Arial, sans-serif
-            color: rgba($color-black, 0.35)
-            padding: 10px 0
-            transform: rotate(-90deg)
-            transition: color 600ms ease
-        &_moikrug
-            @extend .icon-moikrug
-        &_github
-            @extend .icon-github
-        &_email
-            @extend .icon-letter
+        cursor: pointer
+        margin: 0 0 50px
+        &:last-child
+            margin-bottom: 0
+    &__subtitle
+        padding: 13px 0
+        transition: color 600ms ease
+        font: 600 11px/1.818 $font-text-open-sans
+        color: $color-white
+        letter-spacing: 3px
+        text-transform: uppercase
+        position: relative
+        left: 15px
+    &__line
+        overflow: hidden
+        width: 1px
+        height: 60px
+        background-color: rgba($color-white, 0.4)
+        position: relative
+        left: 15px
+        &:after
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            width: 1px
+            height: 60px
+            background-color: $color-white
+            animation: navLineAnimate 1.8s infinite
