@@ -1,5 +1,5 @@
-# Quick start for a new project #
-Perfect project/pattern for the classic layout. Not intended for SPA.
+# Портфолио #
+Портфолио и тестовая площадка для верстки
 
 ## Stack ##
 - Grunt
@@ -39,9 +39,6 @@ cd <project root>
 ```
 // Install npm (basic)
 npm i
-```
-// Install npm (recommended)
-yarn
 ```
 ```
 // Run default build
