@@ -213,6 +213,9 @@ label.error-label {
     background-size: cover;
     transition: 1s opacity;
   }
+  .video-container {
+    background-size: 90% auto;
+  }
   input[type="submit"] {
     margin: 25px 0;
   }
