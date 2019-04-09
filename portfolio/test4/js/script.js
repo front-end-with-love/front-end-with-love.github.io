@@ -1,8 +1,7 @@
 $(document).ready(function() {
+    $("#video").get(0).play();
+
   var video = document.getElementById("video");
-  window.onload = function() {
-    video.play();
-  }
   video.onended = function() {
     setTimeout(function () {
         $('form').addClass('active');
