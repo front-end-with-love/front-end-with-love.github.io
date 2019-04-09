@@ -2,27 +2,18 @@ $(document).ready(function() {
   $("video").on("ended", function() {
     TweenMax.to("form", 1, {
       delay: 1,
-      opacity: 1,
-      rotation: 0.01,
-      force3D: true,
-      perspective: 1000
+      opacity: 1
     });
     TweenMax.to("span", 1, {
       delay: 0.5,
       opacity: 1,
-      transform: "scale3d(1,1,1)",
-      rotation: 0.01,
-      force3D: true,
-      perspective: 1000
+      transform: "scale3d:1,1,1",
     });
-    TweenMax.to("h2", 1.5, { opacity: 1, transform: "scale3d(1,1,1)" });
+    TweenMax.to("h2", 1.5, { opacity: 1, transform: "scale3d:1,1,1" });
     TweenMax.to("#bottom_logo", 0.5, {
       delay: 1.6,
       visibility: "visible",
-      opacity: 1,
-      rotation: 0.01,
-      force3D: true,
-      perspective: 1000
+      opacity: 1
     });
   });
 });
