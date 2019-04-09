@@ -7,9 +7,12 @@ $(document).ready(function() {
     TweenMax.to("span", 1, {
       delay: 0.5,
       opacity: 1,
-      transform: "scale3d:1,1,1",
+      transform: "scale: 1.0",
     });
-    TweenMax.to("h2", 1.5, { opacity: 1, transform: "scale3d:1,1,1" });
+    TweenMax.to("h2", 1.5, {
+      opacity: 1,
+      transform: "scale: 1.0"
+    });
     TweenMax.to("#bottom_logo", 0.5, {
       delay: 1.6,
       visibility: "visible",
