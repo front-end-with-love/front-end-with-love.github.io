@@ -26,7 +26,7 @@ footer {
   flex-shrink: 0;
 }
 #bottom_logo {
-  display: block;
+  display: none;
   margin: 0 auto;
   visibility: hidden;
   opacity: 0;
@@ -35,6 +35,7 @@ footer {
 #bottom_logo.active {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 span {
   font-family: "Montserrat";
