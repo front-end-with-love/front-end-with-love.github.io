@@ -1,8 +1,6 @@
 $(document).ready(function() {
-    $("#video").get(0).play();
-
-  var video = document.getElementById("video");
-  video.onended = function() {
+  setTimeout(function () {
+    $('#video').hide();
     setTimeout(function () {
         $('form').addClass('active');
     }, 1500);
@@ -15,7 +13,7 @@ $(document).ready(function() {
     setTimeout(function () {
         $('#bottom_logo').addClass('active');
     }, 1600);
-  };
+  }, 2000);
 });
 
 $(document).ready(function() {
