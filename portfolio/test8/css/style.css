@@ -170,26 +170,32 @@ label.error-label {
   color: #ffa8a8;
 }
 .video-container {
+  box-shadow: inset 0 0 0 19vw rgba(0,0,0,1.0);
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000 url('../1.gif') center center no-repeat;
+  opacity: 1;
+  visibility: visible;
+  border: none;
+  outline: none;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+.video-container.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 #video {
-  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translate3d(-50%,-50%,0);
+  /* width: 100%;
   height: 100%;
   outline: none;
-  border: none;
-  -webkit-transition: 1s opacity;
-  -o-transition: 1s opacity;
-  transition: 1s opacity;
+  border: none; */
 }
 
 @media only screen and (max-width: 980px) {
