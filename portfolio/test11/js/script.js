@@ -14,9 +14,7 @@ $(document).ready(function() {
         $('#bottom_logo').addClass('active');
     }, 1600);
   }, 2100);
-});
 
-$(document).ready(function() {
   $("#tg").inputmask({
     placeholder: "",
     showMaskOnHover: false,
@@ -32,7 +30,6 @@ $(document).ready(function() {
       }
     }
   });
-});
 // $("#email").inputmask({
 //   mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
 // placeholder: "",
@@ -50,7 +47,6 @@ $(document).ready(function() {
 //   }
 // });
 
-$(document).ready(function() {
   $(form).validate({
     rules: {
       email: {
@@ -94,29 +90,29 @@ $(document).ready(function() {
     onkeyup: false,
     onfocusout: false
   });
+
+  function showServerErrors(errors) {
+    Object.keys(errors).forEach(function(key) {
+      var $element = $("[name = " + key + "]");
+      if ($element.length) {
+        $element.after(
+          '<label class="error-label server-error" for="' +
+            key +
+            '">' +
+            errors[key][0] +
+            "</label>"
+        );
+      }
+    });
+
+    // focus first
+    var $inputs = $(
+      Object.keys(errors)
+        .map(function(key) {
+          return "[name = " + key + "]";
+        })
+        .join(", ")
+    );
+    if ($inputs.length) $inputs.first().focus();
+  }
 });
-
-function showServerErrors(errors) {
-  Object.keys(errors).forEach(function(key) {
-    var $element = $("[name = " + key + "]");
-    if ($element.length) {
-      $element.after(
-        '<label class="error-label server-error" for="' +
-          key +
-          '">' +
-          errors[key][0] +
-          "</label>"
-      );
-    }
-  });
-
-  // focus first
-  var $inputs = $(
-    Object.keys(errors)
-      .map(function(key) {
-        return "[name = " + key + "]";
-      })
-      .join(", ")
-  );
-  if ($inputs.length) $inputs.first().focus();
-}
