@@ -1,19 +1,19 @@
 $(document).ready(function() {
-  // setTimeout(function () {
-  //   $('.video-container').addClass('hide');
-  //   setTimeout(function () {
-  //       $('form').addClass('active');
-  //   }, 1500);
-  //   setTimeout(function () {
-  //       $('span').addClass('active');
-  //   }, 1000);
-  //   setTimeout(function () {
-  //       $('h2').addClass('active');
-  //   }, 500);
-  //   setTimeout(function () {
-  //       $('#bottom_logo').addClass('active');
-  //   }, 1600);
-  // }, 2100);
+  setTimeout(function () {
+    $('.video-container').addClass('hide');
+    setTimeout(function () {
+        $('form').addClass('active');
+    }, 1500);
+    setTimeout(function () {
+        $('span').addClass('active');
+    }, 1000);
+    setTimeout(function () {
+        $('h2').addClass('active');
+    }, 500);
+    setTimeout(function () {
+        $('#bottom_logo').addClass('active');
+    }, 1600);
+  }, 2100);
 });
 
 $(document).ready(function() {
