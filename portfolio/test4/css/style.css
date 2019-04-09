@@ -30,6 +30,11 @@ footer {
   margin: 0 auto;
   visibility: hidden;
   opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#bottom_logo.active {
+  opacity: 1;
+  visibility: visible;
 }
 span {
   font-family: "Montserrat";
@@ -39,8 +44,12 @@ span {
   display: inherit;
   margin: 0;
   opacity: 0;
-  transform: scale3d(0.975, 0.975, 1);
   transform: scale(0.975);
+  transition: opacity 1s ease, transform 1s ease;
+}
+span.active {
+  opacity: 1;
+  transform: scale(1.0);
 }
 h2 {
   font-family: "Helvetica";
@@ -52,6 +61,11 @@ h2 {
   margin-bottom: 18px;
   opacity: 0;
   transform: scale(0.9);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+h2.active {
+  opacity: 1;
+  transform: scale(1.0);
 }
 
 form {
@@ -64,7 +78,32 @@ form {
   text-align: center;
   opacity: 0;
   margin: 0;
+  transition: opacity 1s ease;
 }
+form.active {
+  opacity: 1;
+}
+
+//
+/* TweenMax.to("form", 1, {
+  delay: 1,
+  opacity: 1
+});
+TweenMax.to("span", 1, {
+  delay: 0.5,
+  opacity: 1,
+  transform: "scale: 1.0",
+});
+TweenMax.to("h2", 1.5, {
+  opacity: 1,
+  transform: "scale: 1.0"
+});
+TweenMax.to("#bottom_logo", 0.5, {
+  delay: 1.6,
+  visibility: "visible",
+  opacity: 1
+}); */
+//
 
 .success {
   display: none;
