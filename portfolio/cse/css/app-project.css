@@ -1173,6 +1173,13 @@ select {
   text-decoration: none;
   overflow: hidden;
   transition: color 0.3s ease; }
+  .configuration__item-line > .configuration__add-link {
+    display: none;
+    visibility: hidden; }
+    @media (max-width: 768px) {
+      .configuration__item-line > .configuration__add-link {
+        visibility: visible;
+        display: flex; } }
   @media (max-width: 768px) {
     .configuration__add-link {
       font-size: 12px; } }
