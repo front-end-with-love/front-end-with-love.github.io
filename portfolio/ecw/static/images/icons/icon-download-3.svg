@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="83px" viewBox="0 0 108 83" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>icon-download-1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-download-1" transform="translate(0.000000, -2.000000)">
+            <circle id="Oval-Copy-5" fill="#CD171A" fill-rule="nonzero" cx="66.5" cy="43.5" r="41.5"></circle>
+            <circle id="Oval-Copy-6" fill="#CD171A" fill-rule="nonzero" cx="20.5" cy="22.5" r="20.5"></circle>
+            <path d="M47,63 L85,63 C84.3905398,50.2998929 79.3075796,39.0839323 72.1784417,34.8693526 L70.7912236,34.0492315 L72.0732557,33.0730149 C74.6032891,31.1465977 76.0548563,28.2278587 76.0548563,25.065685 C76.0548563,19.5156212 71.5442319,15 66.0003094,15 C60.4557681,15 55.9451437,19.5156212 55.9451437,25.065685 C55.9451437,28.2278587 57.3967109,31.1465977 59.927363,33.0730149 L61.2093951,34.0492315 L59.822177,34.8693526 C52.6930392,39.0833129 47.610079,50.2992735 47,63 L47,63 Z M87,65 L45,65 L45.0299803,63.8934206 C45.3885206,50.6292386 50.2606308,39.0606218 57.5666545,33.8477589 C55.230024,31.5681315 53.9157841,28.4730326 53.9157841,25.1551408 C53.9157841,18.4528885 59.3367179,13 66.0003059,13 C72.6638939,13 78.0842159,18.4528885 78.0842159,25.1551408 C78.0842159,28.4730326 76.769976,31.5681315 74.4333455,33.8477589 C81.7399811,39.0612373 86.6120912,50.6298541 86.9700197,63.8934206 L87,65 Z" id="Fill-1" fill="#FEFEFE" fill-rule="nonzero"></path>
+            <text id="3" fill="#FFFFFF" font-family="TisaSansOT, Tisa Sans OT" font-size="25" font-weight="normal">
+                <tspan x="11.3" y="26">3</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
