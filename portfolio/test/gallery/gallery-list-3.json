@@ -1,10 +1,6 @@
-({
-    "items": [
-        {
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg",
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg",
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg",
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg"
-        }
-    ]
-})
+{
+    "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg",
+    "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg",
+    "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg",
+    "link": "https://front-end-with-love.github.io/portfolio/test/gallery/3.jpg"
+}
