@@ -1,20 +1,18 @@
-{
-    "items": [
-        {
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
-            "title": "Заголовок 1"
-        },
-        {
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
-            "title": "Заголовок 1"
-        },
-        {
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
-            "title": "Заголовок 1"
-        },
-        {
-            "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
-            "title": "Заголовок 1"
-        }
-    ]
-}
+[
+    {
+        "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
+        "title": "Заголовок 1"
+    },
+    {
+        "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
+        "title": "Заголовок 1"
+    },
+    {
+        "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
+        "title": "Заголовок 1"
+    },
+    {
+        "link": "https://front-end-with-love.github.io/portfolio/test/gallery/2.jpg",
+        "title": "Заголовок 1"
+    }
+]
