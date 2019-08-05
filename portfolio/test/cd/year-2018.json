@@ -1,62 +1,62 @@
 [{
   "linkSecondSlider": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json",
   "items": {
-    "item": {
+    "1": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Январь",
       "sum": "10 фото"
     },
-    "item": {
+    "2": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Февраль",
       "sum": "11 фото"
     },
-    "item": {
+    "3": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Март",
       "sum": "5 фото"
     },
-    "item": {
+    "4": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Апрель",
       "sum": "6 фото"
     },
-    "item": {
+    "5": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Май",
       "sum": "4 фото"
     },
-    "item": {
+    "6": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Июнь",
       "sum": "2 фото"
     },
-    "item": {
+    "7": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Июль",
       "sum": "10 фото"
     },
-    "item": {
+    "8": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Август",
       "sum": "7 фото"
     },
-    "item": {
+    "9": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Сентябрь",
       "sum": "8 фото"
     },
-    "item": {
+    "10": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Октябрь",
       "sum": "13 фото"
     },
-    "item": {
+    "11": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Ноябрь",
       "sum": "14 фото"
     },
-    "item": {
+    "12": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Декабрь",
       "sum": "12 фото"
