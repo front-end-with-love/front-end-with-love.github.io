@@ -1,0 +1,39 @@
+[
+    {
+        "linkSecondSlider": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json",
+        "imgsSlider": {
+          "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
+          "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
+          "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
+          "https://front-end-with-love.github.io/portfolio/test/cd/img.png"
+        },
+        "month": {
+          "Январь",
+          "Февраль",
+          "Март",
+          "Апрель",
+          "Май",
+          "Июнь",
+          "Июль",
+          "Август",
+          "Сентябрь",
+          "Октябрь",
+          "Ноябрь",
+          "Декабрь"
+        },
+        "sum": {
+          "10 фото",
+          "11 фото",
+          "5 фото",
+          "6 фото",
+          "4 фото",
+          "2 фото",
+          "10 фото",
+          "7 фото",
+          "8 фото",
+          "13 фото",
+          "14 фото",
+          "12 фото"
+        }
+    }
+]
