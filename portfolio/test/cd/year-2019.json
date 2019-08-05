@@ -1,6 +1,6 @@
 [{
   "linkSecondSlider": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json",
-  "items": {
+  "items": [
     "item": {
       "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
       "month": "Январь",
@@ -61,5 +61,5 @@
       "month": "Декабрь",
       "sum": "12 фото"
     }
-  }
+  ]
 }]
