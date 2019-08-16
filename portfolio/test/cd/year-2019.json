@@ -3,36 +3,31 @@
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Январь",
     "sum": "10 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-1.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-1.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Февраль",
     "sum": "11 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Март",
     "sum": "5 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-3.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-3.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Апрель",
     "sum": "6 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-4.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-4.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Май",
     "sum": "4 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-5.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-5.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
@@ -44,21 +39,18 @@
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Июль",
     "sum": "10 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-2.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Август",
     "sum": "7 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-3.json",
-    "status": "enable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-3.json"
   },
   {
     "img": "https://front-end-with-love.github.io/portfolio/test/cd/img.png",
     "month": "Сентябрь",
     "sum": "8 фото",
-    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-4.json",
-    "status": "disable"
+    "link": "https://front-end-with-love.github.io/portfolio/test/cd/gallery-list-4.json"
   }
 ]
