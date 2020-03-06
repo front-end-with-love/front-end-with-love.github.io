@@ -415,13 +415,14 @@ p {
     p a:hover {
       border-bottom: 1px transparent solid; }
 
-blockquote.quote {
+blockquote {
+  margin: 0 0 40px;
   color: #313D53;
   font: normal 18px/1.4 "Alegreya", serif;
   border-radius: 1px;
   position: relative;
   padding: 0 0 0 31px; }
-  blockquote.quote::before {
+  blockquote::before {
     content: '';
     width: 10px;
     height: 100%;
@@ -430,19 +431,31 @@ blockquote.quote {
     left: 0;
     top: 0;
     bottom: 0; }
-  blockquote.quote--original {
-    background: #FBFBFB;
-    padding: 30px 50px 30px 80px;
-    font-style: italic; }
-    blockquote.quote--original:before {
-      content: '“';
-      width: auto;
-      height: auto;
-      background: none;
-      font: normal 100px/1.4 "Alegreya", serif;
-      color: #313D53;
-      opacity: 0.2;
-      left: 25px; }
+  blockquote:last-child {
+    margin-bottom: 0; }
+
+.quote {
+  margin: 0 0 40px;
+  color: #313D53;
+  font: normal 18px/1.4 "Alegreya", serif;
+  border-radius: 1px;
+  position: relative;
+  background: #FBFBFB;
+  padding: 30px 50px 30px 80px;
+  font-style: italic; }
+  .quote::before {
+    content: '“';
+    width: auto;
+    height: auto;
+    background: none;
+    font: normal 100px/1.4 "Alegreya", serif;
+    color: #313D53;
+    opacity: 0.2;
+    left: 25px;
+    position: absolute;
+    top: 0; }
+  .quote:last-child {
+    margin-bottom: 0; }
 
 sub {
   font: normal 14px/1.4 "Alegreya", serif;
