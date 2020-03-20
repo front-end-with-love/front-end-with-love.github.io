@@ -319,10 +319,6 @@ template {
   background-image: url("../img/icons/icon-lotus.svg");
   width: 60px;
   height: 42.04px; }
-  @media (max-width: 760px) {
-    .icon-lotus, .about-us__item-spec--lotus:before {
-      width: calc(60px / 2);
-      height: calc(42.04px / 2); } }
 
 .icon-palms, .about-us__item-spec--palms:before {
   display: block;
@@ -332,10 +328,6 @@ template {
   background-image: url("../img/icons/icon-palms.svg");
   width: 64px;
   height: 64px; }
-  @media (max-width: 760px) {
-    .icon-palms, .about-us__item-spec--palms:before {
-      width: calc(64px / 2);
-      height: calc(64px / 2); } }
 
 .icon-plant, .about-us__item-spec--plant:before {
   display: block;
@@ -345,10 +337,6 @@ template {
   background-image: url("../img/icons/icon-plant.svg");
   width: 64px;
   height: 63.94px; }
-  @media (max-width: 760px) {
-    .icon-plant, .about-us__item-spec--plant:before {
-      width: calc(64px / 2);
-      height: calc(63.94px / 2); } }
 
 .icon-mountains, .about-us__item-spec--mountains:before {
   display: block;
@@ -358,10 +346,6 @@ template {
   background-image: url("../img/icons/icon-mountains.svg");
   width: 64px;
   height: 63.5px; }
-  @media (max-width: 760px) {
-    .icon-mountains, .about-us__item-spec--mountains:before {
-      width: calc(64px / 2);
-      height: calc(63.5px / 2); } }
 
 .icon-stones, .about-us__item-spec--stones:before {
   display: block;
@@ -371,10 +355,6 @@ template {
   background-image: url("../img/icons/icon-stones.svg");
   width: 47px;
   height: 71.77px; }
-  @media (max-width: 760px) {
-    .icon-stones, .about-us__item-spec--stones:before {
-      width: calc(47px / 2);
-      height: calc(71.77px / 2); } }
 
 .icon-warrior, .about-us__item-spec--warrior:before {
   display: block;
@@ -384,10 +364,6 @@ template {
   background-image: url("../img/icons/icon-warrior.svg");
   width: 71px;
   height: 71px; }
-  @media (max-width: 760px) {
-    .icon-warrior, .about-us__item-spec--warrior:before {
-      width: calc(71px / 2);
-      height: calc(71px / 2); } }
 
 .icon-burger, .header__btn {
   display: block;
@@ -1956,7 +1932,8 @@ select {
   @media (max-width: 1024px) {
     .service__rec-format-row {
       height: auto;
-      margin: 0 0 5px; } }
+      padding: 0 0 5px;
+      margin: 0 0 8px; } }
   .service__rec-format-row:hover {
     background: linear-gradient(165.89deg, #DC90BF 9.43%, #C2A8CF 92.14%); }
     @media (max-width: 1024px) {
@@ -2739,7 +2716,7 @@ select {
     padding: 0 0 50px; }
     @media (max-width: 760px) {
       .about-us__item-spec {
-        margin: 0 0 20px;
+        margin: 0 0 25px;
         padding: 0 0 30px; } }
     .about-us__item-spec:last-child {
       margin-bottom: 0; }
@@ -2752,32 +2729,32 @@ select {
       padding: 53.89px 50px 0 0; }
       @media (max-width: 760px) {
         .about-us__item-spec--lotus {
-          padding: 26.945px 25px 0 0; } }
+          padding: 53.89px 25px 0 0; } }
     .about-us__item-spec--palms {
       padding: 78px 50px 0 0; }
       @media (max-width: 760px) {
         .about-us__item-spec--palms {
-          padding: 39px 25px 0 0; } }
+          padding: 78px 25px 0 0; } }
     .about-us__item-spec--plant {
       padding: 74px 50px 0 0; }
       @media (max-width: 760px) {
         .about-us__item-spec--plant {
-          padding: 37px 25px 0 0; } }
+          padding: 74px 25px 0 0; } }
     .about-us__item-spec--mountains {
       padding: 79px 50px 0 0; }
       @media (max-width: 760px) {
         .about-us__item-spec--mountains {
-          padding: 39px 25px 0 0; } }
+          padding: 79px 25px 0 0; } }
     .about-us__item-spec--stones {
       padding: 87px 50px 0 0; }
       @media (max-width: 760px) {
         .about-us__item-spec--stones {
-          padding: 43.5px 25px 0 0; } }
+          padding: 87px 25px 0 0; } }
     .about-us__item-spec--warrior {
       padding: 78px 50px 0 0; }
       @media (max-width: 760px) {
         .about-us__item-spec--warrior {
-          padding: 39px 25px 0 0; } }
+          padding: 78px 25px 0 0; } }
   .about-us__item-spec-text {
     font: normal 16px/1.3 "Alegreya", serif;
     color: #313D53;
@@ -3165,8 +3142,8 @@ select {
   @media (max-width: 1024px) {
     .events__row {
       height: auto;
-      padding: 0 0 10px;
-      margin: 0 0 5px; } }
+      padding: 0 0 15px;
+      margin: 0 0 8px; } }
   .events__row:hover {
     background: linear-gradient(165.89deg, #DC90BF 9.43%, #C2A8CF 92.14%); }
     @media (max-width: 1024px) {
@@ -3453,6 +3430,7 @@ select {
     border-radius: 3px;
     text-align: center;
     transition: all 0.2s ease;
+    font-size: 12px !important;
     width: 100%;
     max-width: 160px; }
     .reviews__btn:hover {
