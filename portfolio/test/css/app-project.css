@@ -3668,6 +3668,8 @@ select {
       outline: none;
       color: #000000;
       transition: all 0.3s ease; }
+    .modal__input-text--error {
+      border: 1px rgba(255, 0, 0, 0.4) solid !important; }
   .modal__textarea {
     user-select: none;
     width: 100%;
@@ -3723,6 +3725,8 @@ select {
       outline: none;
       color: #000000;
       transition: color 0.3s ease; }
+    .modal__textarea--error {
+      border: 1px rgba(255, 0, 0, 0.4) solid !important; }
   .modal__btn {
     user-select: none;
     display: inline-block;
