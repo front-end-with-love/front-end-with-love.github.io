@@ -870,4 +870,12 @@ select {
     .footer__link:hover {
       color: #000000; }
 
+.audio {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: translate3d(-100%, 100%, 0);
+  opacity: 0; }
+
 /*# sourceMappingURL=app-project.css.map */
