@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%; }
@@ -198,7 +199,7 @@ template {
   width: 24px;
   height: 24px; }
 
-.icon-arrow-black-small-bottom, .modal-auth-reg__select-wrapper:before, .modal-receive-consultation__select-wrapper:before, .cover-sign-up__select-wrapper:before {
+.icon-arrow-black-small-bottom, .modal-auth-reg__select-wrapper:before, .modal-receive-consultation__select-wrapper:before, .cover-sign-up__select-wrapper:before, .settings__select-wrapper:before {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -207,7 +208,25 @@ template {
   width: 10px;
   height: 7px; }
 
-.icon-arrow-blue-big-left, .header__btn-back:before, .content-header__btn--back:before, .calendar__nav-item--prev {
+.icon-arrow-black-small-bottom-2, .content-header__tooltip-title:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-arrow-black-small-bottom-2.svg");
+  width: 12px;
+  height: 8.399999999999997px; }
+
+.icon-arrow-black-small-top-2, .content-header__tooltip-item--active .content-header__tooltip-title:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-arrow-black-small-top-2.svg");
+  width: 12px;
+  height: 8.399999999999997px; }
+
+.icon-arrow-blue-big-left, .header__btn-back:before, .content-header__btn--back:before, .calendar__nav-item--prev, .lesson__btn--prev:before {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -216,7 +235,7 @@ template {
   width: 15px;
   height: 15px; }
 
-.icon-arrow-blue-big-right, .calendar__nav-item--next {
+.icon-arrow-blue-big-right, .calendar__nav-item--next, .lesson__btn--next:after {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -225,7 +244,7 @@ template {
   width: 15px;
   height: 15px; }
 
-.icon-arrow-blue-big-bottom, .faq__item-question:after {
+.icon-arrow-blue-big-bottom, .faq__item-question:after, .more-about__program-item-question:after, .more-about__faq-item-question:after {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -234,7 +253,7 @@ template {
   width: 15px;
   height: 15px; }
 
-.icon-arrow-blue-big-top, .faq__item-question--active:after {
+.icon-arrow-blue-big-top, .faq__item--active .faq__item-question:after, .more-about--intensives .more-about__program-item--active .more-about__program-item-question:after, .more-about__faq-item--active .more-about__faq-item-question:after {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -243,7 +262,7 @@ template {
   width: 15px;
   height: 15px; }
 
-.icon-ok, .modal-go-to-testing__title:after, .welcome__title:after, .thanks__title:after {
+.icon-ok, .modal-go-to-testing__title:after, .modal-classes-successfully-paid__title:after, .welcome__title:after, .thanks__title:after {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -297,7 +316,7 @@ template {
   width: 31.25px;
   height: 30px; }
 
-.icon-close, .modal-receive-consultation__close, .modal-go-to-testing__close, .modal-all-questions__close {
+.icon-close, .modal-receive-consultation__close, .modal-go-to-testing__close, .modal-all-questions__close, .modal-classes-successfully-paid__close, .settings__bank-card-close {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -305,6 +324,15 @@ template {
   background-image: url("../img/icons/icon-close.svg");
   width: 24px;
   height: 24px; }
+
+.icon-close-2, .notifications__icon--close {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-close-2.svg");
+  width: 13px;
+  height: 13px; }
 
 .icon-bell, .header__reminder:before {
   display: block;
@@ -423,7 +451,7 @@ template {
   width: 14px;
   height: 14px; }
 
-.icon-bell-2-default, .sidebar__item--notifications:after {
+.icon-bell-2-default, .sidebar__item--notifications:after, .notifications__icon--bell:after {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -450,7 +478,7 @@ template {
   width: 20px;
   height: 16px; }
 
-.icon-plus, .content-header__btn--add:before {
+.icon-plus, .content-header__btn--add:before, .settings__bank-card-btn:before {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -459,12 +487,30 @@ template {
   width: 15px;
   height: 15px; }
 
-.icon-history, .item__history:before {
+.icon-history, .item__history:before, .lesson__history:before {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../img/icons/icon-history.svg");
+  width: 18px;
+  height: 18px; }
+
+.icon-history-white, .banner-content__date-and-location:before {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-history-white.svg");
+  width: 18px;
+  height: 18px; }
+
+.icon-history-orange, .banner-recommend__date-and-location:before {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-history-orange.svg");
   width: 18px;
   height: 18px; }
 
@@ -531,7 +577,7 @@ template {
   width: 48px;
   height: 40.81px; }
 
-.icon-info, .archive--empty .archive__title:before {
+.icon-info, .archive--empty .archive__title:before, .my-lessons--no-classes .my-lessons__title:before {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -539,6 +585,141 @@ template {
   background-image: url("../img/icons/icon-info.svg");
   width: 48px;
   height: 48px; }
+
+.icon-ellipsis, .archive__btn:before, .online-classes__btn:before, .notifications__btn:before {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-ellipsis.svg");
+  width: 18px;
+  height: 4px; }
+
+.icon-certificate, .sidebar__certificate:before {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-certificate.svg");
+  width: 43px;
+  height: 43px; }
+
+.icon-download, .lesson__btn-download:before {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-download.svg");
+  width: 13.6px;
+  height: 17px; }
+
+.icon-play-btn, .lesson__video-poster:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-play-btn.svg");
+  width: 100px;
+  height: 100px; }
+
+.icon-visa, .settings__bank-card--visa:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-visa.svg");
+  width: 38px;
+  height: 12px; }
+
+.icon-mastercard, .settings__bank-card--mastercard:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-mastercard.svg");
+  width: 38px;
+  height: 22px; }
+
+.icon-fire, .pay-for-classes__offers-item--selected:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-fire.svg");
+  width: 10.5px;
+  height: 14px; }
+
+.icon-hand-and-money, .pay-for-classes__how-it-works-item--payment:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-hand-and-money.svg");
+  width: 50px;
+  height: 50px; }
+
+.icon-speaker, .pay-for-classes__how-it-works-item--group:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-speaker.svg");
+  width: 50px;
+  height: 50px; }
+
+.icon-message-alert, .pay-for-classes__how-it-works-item--add-money:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-message-alert.svg");
+  width: 50px;
+  height: 50px; }
+
+.icon-arrow-blue-big-right-2, .pay-for-classes__how-it-works-item .pay-for-classes__how-it-works-text:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-arrow-blue-big-right-2.svg");
+  width: 32px;
+  height: 21.33px; }
+
+.icon-graduate, .more-about__bullitts-item--graduate:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-graduate.svg");
+  width: 50px;
+  height: 50px; }
+
+.icon-book, .more-about__bullitts-item--book:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-book.svg");
+  width: 50px;
+  height: 50px; }
+
+.icon-paper, .more-about__bullitts-item--paper:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-paper.svg");
+  width: 50px;
+  height: 50px; }
+
+.icon-logo-mgu, .more-about__course-teacher-descr:after {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-logo-mgu.svg");
+  width: 32px;
+  height: 32px; }
 
 *,
 *:before,
@@ -942,7 +1123,8 @@ select {
     justify-content: center;
     align-items: center;
     border-radius: 80px;
-    margin: 0 30px 0 0; }
+    margin: 0 30px 0 0;
+    position: relative; }
     .header__btn-number-of-paid--red {
       border-color: #FD4040; }
     .header__btn-number-of-paid:before {
@@ -955,6 +1137,25 @@ select {
     margin: 0 0 0 5px;
     font: bold 12px/16px "Muller", sans-serif;
     color: #000000; }
+    .header__btn-number-of-paid--warning .header__btn-text-bold {
+      color: #FD4040; }
+  .header__btn-number-of-paid-warning {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background: #FD4040;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: -0.05em;
+    font: bold 9px/1 "Muller", sans-serif;
+    color: #FFFFFF;
+    padding: 1px 0 0 0;
+    position: absolute;
+    right: 6px;
+    top: 3px; }
+    .header__btn-number-of-paid--warning .header__btn-number-of-paid-warning {
+      display: flex; }
   .header__link {
     text-decoration: none;
     font: 400 16px/1 "Muller", sans-serif;
@@ -1692,6 +1893,111 @@ select {
       background: #8672F3;
       transition: all 0.2s ease; }
 
+.modal-classes-successfully-paid {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: none; }
+  .modal-classes-successfully-paid--active {
+    display: block; }
+  .modal-classes-successfully-paid__overlay {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9998; }
+  .modal-classes-successfully-paid__container {
+    z-index: 9999;
+    padding: 60px 0 60px;
+    border-radius: 8px;
+    top: 100px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    position: relative;
+    width: 100%;
+    max-width: 495px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #FFFFFF;
+    flex-direction: column; }
+  .modal-classes-successfully-paid__close {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 1;
+    transition: opacity 0.2s ease; }
+    .modal-classes-successfully-paid__close:hover {
+      opacity: 0.78; }
+  .modal-classes-successfully-paid__title {
+    font: bold 24px/1 "Muller", sans-serif;
+    color: #232323;
+    letter-spacing: 0.02em;
+    width: 100%;
+    text-align: center;
+    padding: 78px 0 0 0;
+    margin: 0 0 30px;
+    position: relative; }
+    .modal-classes-successfully-paid__title:before {
+      content: '';
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+      background: #48C95F;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, 0, 0); }
+    .modal-classes-successfully-paid__title:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, 15.5px, 0);
+      width: 23.5px;
+      height: 17px; }
+  .modal-classes-successfully-paid__descr {
+    font: 400 16px/1.625 "Muller", sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    margin: 0 0 30px; }
+  .modal-classes-successfully-paid__btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #644BEC;
+    border: none;
+    line-height: 1;
+    padding: 18px 44px 18px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 28px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    max-width: 338px; }
+    .modal-classes-successfully-paid__btn:hover {
+      background: #8672F3;
+      transition: all 0.2s ease; }
+
 .welcome {
   width: 100%;
   height: 100vh;
@@ -2169,7 +2475,7 @@ select {
     margin: 0 0 30px;
     padding: 0 30px;
     display: none; }
-    .faq__item-answer--active {
+    .faq__item--active .faq__item-answer {
       display: block; }
 
 .feedback {
@@ -2347,157 +2653,257 @@ select {
     .feedback__text-link:hover {
       opacity: 0.78; }
 
-.sidebar__nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: block;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  margin: 0 0 20px; }
-
-.sidebar__item {
-  text-decoration: none;
-  font: 400 16px/54px "Muller", sans-serif;
-  color: #141D30;
-  letter-spacing: 0.02em;
-  width: 100%;
-  height: 54px;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0 30px 0 64px;
-  transition: all 0.2s ease; }
-  .sidebar__item:before {
-    content: '';
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    background: #F1F4FF;
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
+.sidebar {
+  display: block; }
+  .sidebar--progress {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px; }
+  .sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: block;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin: 0 0 20px; }
+  .sidebar__item {
+    text-decoration: none;
+    font: 400 16px/54px "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: 0.02em;
+    width: 100%;
+    height: 54px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1px 20px 0 64px;
     transition: all 0.2s ease; }
-  .sidebar__item:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
-    transition: all 0.2s ease;
-    opacity: 0.5; }
-  .sidebar__item--pay-for-classes:after {
-    left: 34px; }
-  .sidebar__item--available-classes:after {
-    left: 37.83px; }
-  .sidebar__item--my-lessons:after {
-    left: 35.9px;
-    top: 26px; }
-  .sidebar__item--settings:after {
-    left: 35px; }
-  .sidebar__item--notifications:after {
-    left: 35.13px; }
-  .sidebar__item--exit:after {
-    left: 36.9px;
-    top: 27.3px; }
-  .sidebar__item:hover {
-    color: #644BEC; }
-    .sidebar__item:hover:before {
-      background: #644BEC; }
-    .sidebar__item:hover:after {
-      opacity: 1; }
-  .sidebar__item:first-child {
-    border-radius: 8px 8px 0 0; }
-  .sidebar__item:last-child {
-    border-radius: 0 0 8px 8px; }
-  .sidebar__item--active {
-    color: #FFFFFF;
-    background: #644BEC; }
-    .sidebar__item--active:before {
-      background: rgba(255, 255, 255, 0.2); }
-    .sidebar__item--active:after {
-      opacity: 1; }
-    .sidebar__item--active:hover {
+    .sidebar__item:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background: #F1F4FF;
+      position: absolute;
+      left: 30px;
+      top: calc(50% - 1px);
+      transform: translate3d(0, -50%, 0);
+      transition: all 0.2s ease; }
+    .sidebar__item:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 1px);
+      transform: translate3d(0, -50%, 0);
+      transition: all 0.2s ease;
+      opacity: 0.5; }
+    .sidebar__item--pay-for-classes:after {
+      left: 34px; }
+    .sidebar__item--available-classes:after {
+      left: 37.83px; }
+    .sidebar__item--my-lessons:after {
+      left: 35.9px;
+      top: 26px; }
+    .sidebar__item--settings:after {
+      left: 35px; }
+    .sidebar__item--notifications:after {
+      left: 35.13px; }
+    .sidebar__item--exit:after {
+      left: 36.9px;
+      top: 27.3px; }
+    .sidebar__item:hover {
+      color: #644BEC; }
+      .sidebar__item:hover:before {
+        background: #644BEC; }
+      .sidebar__item:hover:after {
+        opacity: 1; }
+    .sidebar__item:first-child {
+      border-radius: 8px 8px 0 0; }
+    .sidebar__item:last-child {
+      border-radius: 0 0 8px 8px; }
+    .sidebar__item--active {
       color: #FFFFFF;
       background: #644BEC; }
-      .sidebar__item--active:hover:before {
+      .sidebar__item--active:before {
         background: rgba(255, 255, 255, 0.2); }
-
-.sidebar__item-border {
-  content: '';
-  width: calc(100% - 30px);
-  height: 1px;
-  background: #F1F4FF;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0); }
-  .sidebar__item--active .sidebar__item-border {
-    background: #644BEC; }
-
-.sidebar__banner {
-  background: #DFE6FF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  width: 100%;
-  padding: 30px 15px; }
-
-.sidebar__banner-link {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center; }
-
-.sidebar__banner-title {
-  font: bold 20px/1.2 "Muller", sans-serif;
-  color: #141D30;
-  letter-spacing: -0.01em;
-  margin: 0 0 15px; }
-
-.sidebar__banner-title-selected {
-  color: #C06D94; }
-
-.sidebar__banner-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 0 15px;
-  max-width: 191px; }
-
-.sidebar__banner-btn {
-  user-select: none;
-  display: inline-block;
-  font-family: "Muller", sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  text-transform: none;
-  color: #FFFFFF;
-  letter-spacing: 0.03em;
-  height: auto;
-  background: #141D30;
-  border: none;
-  line-height: 1;
-  padding: 16px 44px 16px;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  border-radius: 28px;
-  text-align: center;
-  width: 100%;
-  white-space: nowrap;
-  text-align: center;
-  transition: all 0.2s ease;
-  padding-left: 20px;
-  padding-right: 20px; }
-  .sidebar__banner-btn:hover {
-    background: #434343;
-    transition: all 0.2s ease; }
-  .sidebar__banner:hover .sidebar__banner-btn {
-    background: #434343; }
+      .sidebar__item--active:after {
+        opacity: 1; }
+      .sidebar__item--active:hover {
+        color: #FFFFFF;
+        background: #644BEC; }
+        .sidebar__item--active:hover:before {
+          background: rgba(255, 255, 255, 0.2); }
+  .sidebar__item-numbers {
+    width: 19px;
+    height: 19px;
+    border-radius: 9.5px;
+    background: #644BEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: -0.05em;
+    font: bold 11px/1 "Muller", sans-serif;
+    color: #FFFFFF;
+    padding: 1px 1px 1px 0;
+    position: relative;
+    margin: 0 0 0 10px; }
+  .sidebar__circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background: #48C95F;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    margin: 0 0 0 10px; }
+  .sidebar__item-border {
+    content: '';
+    width: calc(100% - 30px);
+    height: 1px;
+    background: #F1F4FF;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0); }
+    .sidebar__item--active .sidebar__item-border {
+      background: #644BEC; }
+  .sidebar__banner {
+    background: #DFE6FF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    width: 100%;
+    padding: 30px 15px; }
+  .sidebar__banner-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; }
+  .sidebar__banner-title {
+    font: bold 20px/1.2 "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: -0.01em;
+    margin: 0 0 15px; }
+    .sidebar__banner-title--small-indent {
+      margin: 0 0 10px; }
+  .sidebar__banner-descr {
+    font: 400 16px/1.5 "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px; }
+  .sidebar__banner-title-selected {
+    color: #C06D94; }
+  .sidebar__banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    max-width: 191px; }
+  .sidebar__banner-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #141D30;
+    border: none;
+    line-height: 1;
+    padding: 16px 44px 16px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 28px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto; }
+    .sidebar__banner-btn:hover {
+      background: #434343;
+      transition: all 0.2s ease; }
+    .sidebar__banner:hover .sidebar__banner-btn {
+      background: #434343; }
+  .sidebar__row--top {
+    padding: 15px 15px 0 15px;
+    margin: 0 0 15px; }
+  .sidebar__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 15px;
+    width: 100%; }
+  .sidebar__title-text {
+    font: bold 20px/1.2 "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: -0.01em;
+    margin: 0 15px 0 0; }
+  .sidebar__title-numbers {
+    font: bold 20px/1.2 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.5);
+    letter-spacing: -0.01em; }
+  .sidebar__progress {
+    width: 100%;
+    height: 12px;
+    position: relative;
+    background: rgba(100, 75, 236, 0.1);
+    border-radius: 10px; }
+  .sidebar__progress-line {
+    background: linear-gradient(270deg, #644BEC 0%, #AF48C9 79.17%);
+    border-radius: 10px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: width 0.1s ease; }
+  .sidebar__list-lessons {
+    padding: 0 15px;
+    list-style: none;
+    counter-reset: progress-counter -1; }
+  .sidebar__list-lessons-item {
+    font: 400 14px/1.1428 "Muller", sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #F1F4FF;
+    padding: 15px 0 15px 34px;
+    counter-increment: progress-counter;
+    position: relative; }
+    .sidebar__list-lessons-item:before {
+      content: counter(progress-counter) ". ";
+      font: 400 14px/1.1428 "Muller", sans-serif;
+      color: rgba(20, 29, 48, 0.5);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate3d(0, -50%, 0); }
+    .sidebar__list-lessons-item--active {
+      color: #644BEC;
+      font-weight: bold; }
+      .sidebar__list-lessons-item--active:before {
+        font-weight: bold;
+        color: #644BEC; }
+  .sidebar__certificate {
+    font: 400 14px/1.1428 "Muller", sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 23px 15px 11px 15px; }
+    .sidebar__certificate:before {
+      content: '';
+      margin: 0 15px 0 0;
+      transform: translate3d(0, -4px, 0); }
 
 .content {
   background-color: #F1F4FF;
@@ -2561,10 +2967,15 @@ select {
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
-    padding-left: 30px;
+    padding-left: 16px;
     padding-right: 30px;
     padding-top: 12px;
     padding-bottom: 11px; }
+    .content-header--online-classes .content-header__container {
+      padding-top: 0;
+      padding-bottom: 0; }
+    .content-header--lesson .content-header__container {
+      padding-left: 30px; }
   .content-header__row--diff-directions {
     display: flex;
     justify-content: space-between;
@@ -2629,7 +3040,7 @@ select {
     justify-content: flex-start;
     align-items: center;
     font-size: 15px;
-    padding: 15.5px 30px 15.5px 20px; }
+    padding: 15.5px 20px 15.5px 20px; }
     .content-header__btn--back:hover {
       border-color: #8671F3;
       color: #8671F3;
@@ -2637,6 +3048,8 @@ select {
     .content-header__btn--back:before {
       content: '';
       margin: 0 12.5px 0 0; }
+      .content-header--lesson .content-header__btn--back:before {
+        margin-right: 10px; }
   .content-header__link {
     font: 400 16px/1.5 "Muller", sans-serif;
     color: #000000;
@@ -2652,6 +3065,119 @@ select {
       content: '';
       margin: 0 12px 0 0;
       transform: translate3d(0, -1px, 0); }
+  .content-header__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+  .content-header__item {
+    height: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font: bold 15px/1 "Muller", sans-serif;
+    color: #000000;
+    text-decoration: none;
+    padding: 0 15px;
+    overflow: hidden;
+    transition: all 0.2s ease; }
+    .content-header__item:after {
+      content: '';
+      width: calc(100% - 28px);
+      height: 3px;
+      background: #644BEC;
+      display: block;
+      position: absolute;
+      left: 14px;
+      bottom: 0;
+      transform: translate3d(0, 3px, 0);
+      transition: all 0.2s ease; }
+    .content-header__item--active, .content-header__item:hover {
+      color: #644BEC; }
+      .content-header__item--active:after, .content-header__item:hover:after {
+        transform: translate3d(0, 0, 0); }
+  .content-header__item-numbers {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background: #FD4040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: -0.05em;
+    font: 400 9px/1 "Muller", sans-serif;
+    color: #FFFFFF;
+    padding: 1px 0 0 0;
+    position: absolute;
+    right: 0;
+    top: 12px; }
+  .content-header__tooltips-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+  .content-header__tooltip-item {
+    position: relative;
+    margin: 0 33px 0 0; }
+    .content-header__tooltip-item:last-child {
+      margin-right: 0; }
+  .content-header__tooltip-title {
+    font: 400 16px/24px "Muller", sans-serif;
+    color: #000000;
+    letter-spacing: 0.02em;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    opacity: 1;
+    transition: opacity 0.2s ease; }
+    .content-header__tooltip-title:hover {
+      opacity: 0.78; }
+    .content-header__tooltip-title:after {
+      content: '';
+      margin: 0 0 0 12px; }
+  .content-header__tooltip-content {
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: -1px 2px 10px rgba(0, 0, 0, 0.15);
+    padding: 15px 34px 15px 15px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    z-index: -1;
+    display: none; }
+    .content-header__tooltip-item--active .content-header__tooltip-content {
+      display: flex;
+      z-index: 1; }
+    .content-header__tooltip-content:before {
+      content: '';
+      z-index: 2;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 8.5px 9px 8.5px;
+      border-color: transparent transparent #FFFFFF transparent;
+      position: absolute;
+      left: 31.31px;
+      top: -9px;
+      -webkit-filter: drop-shadow(-1px 2px 10px rgba(0, 0, 0, 0.15));
+      filter: drop-shadow(-1px 2px 10px rgba(0, 0, 0, 0.15)); }
+  .content-header__tooltip-content-item {
+    font: 400 16px/1.5 "Muller", sans-serif;
+    color: #000000;
+    letter-spacing: 0.02em;
+    margin: 0 0 10px;
+    text-decoration: none;
+    white-space: nowrap; }
+    .content-header__tooltip-content-item:last-child {
+      margin-bottom: 0; }
+    .content-header__tooltip-content-item--active, .content-header__tooltip-content-item:hover {
+      color: #644BEC; }
 
 .banner-start-stop {
   background: linear-gradient(270deg, #745DED 0%, #B75ACE 84.62%);
@@ -2739,11 +3265,19 @@ select {
   position: relative;
   padding: 15px 30px 15px 30px;
   margin: 0 0 40px; }
-  .item:last-child {
-    margin-bottom: 0; }
   .item--green-line:before {
     content: '';
     background: #48C95F;
+    border-radius: 8px 0 0 8px;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0; }
+  .item--purple-line:before {
+    content: '';
+    background: #AF48C9;
     border-radius: 8px 0 0 8px;
     width: 5px;
     height: 100%;
@@ -2761,6 +3295,16 @@ select {
     left: 0;
     top: 0;
     bottom: 0; }
+  .item--orange-line:before {
+    content: '';
+    background: #F79A38;
+    border-radius: 8px 0 0 8px;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0; }
   .item--disable {
     opacity: 0.5;
     cursor: default; }
@@ -2771,6 +3315,19 @@ select {
     transform: translate3d(-50%, 48px, 0);
     bottom: 0;
     z-index: 1; }
+  .item--archive {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #F1F4FF;
+    padding: 0 0 30px 0;
+    margin: 0 0 30px; }
+    .item--archive:last-child {
+      margin-bottom: 0;
+      border-bottom: none; }
+  .item--online-classes {
+    margin: 0 0 20px; }
+  .item:last-child {
+    margin-bottom: 0; }
   .item__row--top {
     margin: 0 0 15px;
     display: flex;
@@ -2778,15 +3335,23 @@ select {
     align-items: center; }
     .item--folder .item__row--top:after {
       content: ''; }
+    .item--archive .item__row--top {
+      margin: 0 0 0; }
   .item__row--middle {
     margin: 0 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    .item--archive .item__row--middle {
+      margin: 0 0 4px; }
+    .item--online-classes .item__row--middle {
+      align-items: flex-start; }
   .item__row--bottom {
     display: flex;
     justify-content: flex-start;
     align-items: center; }
+  .item__row:last-child {
+    margin-bottom: 0; }
   .item__tags {
     display: flex;
     justify-content: flex-start;
@@ -2804,10 +3369,23 @@ select {
     margin: 0 10px 0 0; }
     .item__tags-item:last-child {
       margin-right: 0; }
+  .item--online-classes .item__col:first-child {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 50px 0 0; }
+  .item--online-classes .item__col:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end; }
   .item__title {
     font: bold 20px/1.2 "Muller", sans-serif;
     color: #141D30;
     letter-spacing: 0.02em; }
+    .item--online-classes .item__title {
+      margin: 0 0 15px; }
+      .item--online-classes .item__title:last-child {
+        margin-bottom: 0; }
   .item__btn {
     display: inline-block !important;
     width: auto !important;
@@ -2865,6 +3443,166 @@ select {
       .item__btn--blue:hover {
         background: #8672F3;
         transition: all 0.2s ease; }
+      .item--online-classes .item__btn--blue {
+        margin: 0 0 15px; }
+    .item__btn--blue-empty {
+      user-select: none;
+      display: inline-block;
+      font-family: "Muller", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: none;
+      color: #644BEC;
+      letter-spacing: 0.03em;
+      height: auto;
+      background: #FFFFFF;
+      border: 1px solid #644BEC;
+      line-height: 1;
+      padding: 15px 16px 13px;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      border-radius: 23.5px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      transition: all 0.2s ease; }
+      .item__btn--blue-empty:hover {
+        color: #8672F3;
+        border-color: #8672F3;
+        transition: all 0.2s ease; }
+    .item__btn--orange {
+      user-select: none;
+      display: inline-block;
+      font-family: "Muller", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: none;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+      height: auto;
+      background: #F79A38;
+      border: none;
+      line-height: 1;
+      padding: 16px 20px 16px;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      border-radius: 23.5px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      transition: all 0.2s ease; }
+      .item__btn--orange:hover {
+        background: rgba(247, 154, 56, 0.9);
+        transition: all 0.2s ease; }
+      .item--online-classes .item__btn--orange {
+        margin: 0 0 15px; }
+    .item__btn--orange-empty {
+      user-select: none;
+      display: inline-block;
+      font-family: "Muller", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: none;
+      color: #F79A38;
+      letter-spacing: 0.03em;
+      height: auto;
+      background: color-white-2;
+      border: 1px solid #F79A38;
+      line-height: 1;
+      padding: 16px 20px 16px;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      border-radius: 23.5px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      transition: all 0.2s ease; }
+      .item__btn--orange-empty:hover {
+        border: 1px solid rgba(247, 154, 56, 0.9);
+        color: rgba(247, 154, 56, 0.9);
+        transition: all 0.2s ease; }
+    .item__btn--black {
+      user-select: none;
+      display: inline-block;
+      font-family: "Muller", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: none;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+      height: auto;
+      background: #141D30;
+      border: none;
+      line-height: 1;
+      padding: 16px 44px 16px;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      border-radius: 28px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      text-align: center;
+      transition: all 0.2s ease; }
+      .item__btn--black:hover {
+        background: #434343;
+        transition: all 0.2s ease; }
+    .item__btn--purple {
+      user-select: none;
+      display: inline-block;
+      font-family: "Muller", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: none;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+      height: auto;
+      background: #AF48C9;
+      border: none;
+      line-height: 1;
+      padding: 16px 20px 16px;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      border-radius: 23.5px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      transition: all 0.2s ease; }
+      .item__btn--purple:hover {
+        background: rgba(175, 72, 201, 0.9);
+        transition: all 0.2s ease; }
+      .item--online-classes .item__btn--purple {
+        margin: 0 0 15px; }
+    .item__btn--purple-empty {
+      user-select: none;
+      display: inline-block;
+      font-family: "Muller", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: none;
+      color: #AF48C9;
+      letter-spacing: 0.03em;
+      height: auto;
+      background: #FFFFFF;
+      border: 1px solid #AF48C9;
+      line-height: 1;
+      padding: 16px 20px 16px;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      border-radius: 23.5px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      transition: all 0.2s ease; }
+      .item__btn--purple-empty:hover {
+        border-color: rgba(175, 72, 201, 0.9);
+        color: rgba(175, 72, 201, 0.9);
+        transition: all 0.2s ease; }
   .item__author {
     display: flex;
     justify-content: flex-start;
@@ -2885,9 +3623,49 @@ select {
     display: flex;
     justify-content: flex-start;
     align-items: center; }
+    .item__history--link {
+      color: #644BEC;
+      text-decoration: none;
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+      .item__history--link:hover {
+        opacity: 0.78; }
     .item__history:before {
       content: '';
       margin: 0 10px 0 0; }
+  .item__descr {
+    font: 400 16px/1.625 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7); }
+    .item--online-classes .item__descr {
+      margin: 0 0 15px; }
+      .item--online-classes .item__descr:last-child {
+        margin-bottom: 0; }
+  .item__alert {
+    font: bold 16px/1.625 "Muller", sans-serif;
+    color: #FF2674; }
+  .item__price-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 15px; }
+  .item__price {
+    font: bold 18px/1.333 "Muller", sans-serif;
+    letter-spacing: 0.02em;
+    white-space: nowrap; }
+    .item__price--purple {
+      color: #AF48C9; }
+    .item__price--blue {
+      color: #644BEC; }
+    .item__price--old {
+      color: #999999;
+      text-decoration-line: line-through;
+      margin: 0 5px 0 0; }
+    .item__price--new {
+      color: #F79A38; }
+  .item__date-next {
+    margin: 0 0 0 auto;
+    font: 400 14px/1.142 "Muller", sans-serif;
+    color: #000000; }
 
 .calendar {
   position: relative;
@@ -3329,15 +4107,23 @@ select {
       transform: translate3d(2px, 3px, 0); }
 
 .archive {
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  padding: 30px;
   width: 100%; }
   .archive__container {
-    width: 100%;
-    height: 100%;
-    padding: 120px 0; }
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 30px 30px 0 30px;
+    width: 100%; }
+    .archive--empty .archive__container {
+      width: 100%;
+      height: 100%;
+      padding: 120px 30px; }
+    .archive__container--without-box-shadow {
+      box-shadow: none;
+      border-radius: 0;
+      background: none;
+      padding-left: 0;
+      padding-right: 0; }
   .archive--empty .archive__title {
     font: bold 24px/1 "Muller", sans-serif;
     color: rgba(0, 0, 0, 0.3);
@@ -3351,6 +4137,1670 @@ select {
       top: 0;
       left: 50%;
       transform: translate3d(-50%, 0, 0); }
+  .archive__btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: none;
+    color: #644BEC;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #644BEC;
+    line-height: 1;
+    padding: 18px 44px 18px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 28px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    display: inline-block;
+    font-size: 15px;
+    padding: 15.5px 20px 15.5px 54px;
+    background-color: transparent;
+    width: auto;
+    position: relative; }
+    .archive__btn:hover {
+      border-color: #8671F3;
+      color: #8671F3;
+      transition: all 0.2s ease; }
+    .archive__btn:before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 50%;
+      transform: translate3d(0, -50%, 0); }
+
+.online-classes__container:first-child {
+  margin: 0 0 30px; }
+
+.online-classes__btn {
+  user-select: none;
+  display: inline-block;
+  font-family: "Muller", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: none;
+  color: #644BEC;
+  letter-spacing: 0.03em;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #644BEC;
+  line-height: 1;
+  padding: 18px 44px 18px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-radius: 28px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-block;
+  font-size: 15px;
+  padding: 15.5px 20px 15.5px 54px;
+  background-color: transparent;
+  width: auto;
+  position: relative; }
+  .online-classes__btn:hover {
+    border-color: #8671F3;
+    color: #8671F3;
+    transition: all 0.2s ease; }
+  .online-classes__btn:before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0); }
+
+.banner-content {
+  padding: 15px 30px;
+  background: #5A69BF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  margin: 0 0 18px; }
+  .banner-content__container {
+    width: 100%;
+    max-width: 1256px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .banner-content__title {
+    font: bold 20px/1.2 "Muller", sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    margin: 0 0 10px; }
+  .banner-content__text-wrapper {
+    margin: 0 0 15px; }
+  .banner-content__text {
+    font: 400 14px/16px "Muller", sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 0.02em; }
+  .banner-content__price-new {
+    font: bold 14px/16px "Muller", sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    margin: 0 5px; }
+  .banner-content__price-old {
+    font: bold 14px/16px "Muller", sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.02em;
+    text-decoration-line: line-through; }
+  .banner-content__date-and-location {
+    font: 400 14px/1.142 "Muller", sans-serif;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .banner-content__date-and-location:before {
+      content: '';
+      margin: 0 10px 0 0; }
+  .banner-content__btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #141D30;
+    border: none;
+    line-height: 1;
+    padding: 16px 44px 16px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 28px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .banner-content__btn:hover {
+      background: #434343;
+      transition: all 0.2s ease; }
+    .banner-content:hover .banner-content__btn {
+      background: #434343; }
+  .banner-content__img {
+    width: 192.32px;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -33px;
+    left: 457px; }
+
+.banner-recommend__title-block {
+  font: 500 12px/1.166 "Muller", sans-serif;
+  color: #B0C1FF;
+  letter-spacing: 0.02em;
+  position: relative;
+  text-align: center;
+  margin: 20px 0 18px; }
+  .banner-recommend__title-block:before, .banner-recommend__title-block:after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #CFD8F5;
+    position: absolute;
+    top: calc(50% + -2px);
+    transform: translate3d(0, -50%, 0); }
+  .banner-recommend__title-block:before {
+    width: 40.201005025125628%;
+    left: 0; }
+  .banner-recommend__title-block:after {
+    width: 40.201005025125628%;
+    right: 0; }
+
+.banner-recommend__link {
+  padding: 15px 30px;
+  background: linear-gradient(270deg, #F79A38 3.34%, #FFD875 87.96%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  margin: 0 0 18px; }
+  .banner-recommend__link:before {
+    content: '';
+    display: block;
+    background-image: url("../img/bgs/bg-8.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 198.46px;
+    height: 88.27px;
+    position: absolute;
+    right: 15.39px;
+    top: 7.93px;
+    z-index: 1; }
+
+.banner-recommend__container {
+  width: 100%;
+  max-width: 1256px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.banner-recommend__title {
+  font: bold 20px/1.2 "Muller", sans-serif;
+  color: #AB5A04;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px; }
+
+.banner-recommend__text-wrapper {
+  margin: 0 0 15px; }
+
+.banner-recommend__text {
+  font: 400 14px/16px "Muller", sans-serif;
+  color: #AB5A04;
+  letter-spacing: 0.02em; }
+
+.banner-recommend__price-new {
+  font: bold 14px/16px "Muller", sans-serif;
+  color: #FD4040;
+  letter-spacing: 0.02em;
+  margin: 0 5px; }
+
+.banner-recommend__price-old {
+  font: bold 14px/16px "Muller", sans-serif;
+  color: rgba(171, 90, 4, 0.5);
+  letter-spacing: 0.02em;
+  text-decoration-line: line-through; }
+
+.banner-recommend__date-and-location {
+  font: 400 14px/1.142 "Muller", sans-serif;
+  color: #AB5A04;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .banner-recommend__date-and-location:before {
+    content: '';
+    margin: 0 10px 0 0; }
+
+.banner-recommend__btn {
+  user-select: none;
+  display: inline-block;
+  font-family: "Muller", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: none;
+  color: #644BEC;
+  letter-spacing: 0.03em;
+  height: auto;
+  background: #FFFFFF;
+  border: none;
+  line-height: 1;
+  padding: 16px 20px 16px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-radius: 23.5px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #F79A38; }
+  .banner-recommend__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.2s ease; }
+  .banner-recommend__link:hover .banner-recommend__btn {
+    background: rgba(255, 255, 255, 0.9); }
+
+.banner-recommend__img {
+  width: 192.32px;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: -33px;
+  left: 457px; }
+
+.my-lessons {
+  width: 100%; }
+  .my-lessons--no-classes .my-lessons__container {
+    width: 100%;
+    height: 100%;
+    padding: 40px 30px; }
+  .my-lessons__container--without-box-shadow {
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    padding-left: 0;
+    padding-right: 0; }
+  .my-lessons--no-classes .my-lessons__title {
+    font: bold 24px/1 "Muller", sans-serif;
+    color: rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 78px 0 0 0;
+    position: relative; }
+    .my-lessons--no-classes .my-lessons__title:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0); }
+
+.lesson__header {
+  padding: 15px 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 0 20px; }
+
+.lesson__title {
+  font: bold 20px/1.2 "Muller", sans-serif;
+  letter-spacing: 0.02em;
+  color: #141D30;
+  width: 100%;
+  max-width: 393px;
+  padding: 0 15px 0 0; }
+
+.lesson__author {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.lesson__author-img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  border-radius: 16px;
+  margin: 0 10px 0 0; }
+
+.lesson__author-title {
+  font: 400 14px/1.142 "Muller", sans-serif;
+  color: #000000; }
+
+.lesson__history {
+  margin: 0 0 0 15px;
+  font: 400 14px/1.142 "Muller", sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transform: translate3d(0, 7px, 0); }
+  .lesson__history:before {
+    content: '';
+    margin: 0 10px 0 0; }
+
+.lesson__link {
+  font: 400 14px/1.1428 "Muller", sans-serif;
+  color: #644BEC;
+  text-decoration: none;
+  margin: 0 0 0 auto;
+  transform: translate3d(0, 9px, 0);
+  opacity: 1;
+  transition: opacity 0.2s ease; }
+  .lesson__link:hover {
+    opacity: 0.78; }
+
+.lesson__content {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px; }
+  .lesson__content--text {
+    padding: 15px 76px 23px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 0 20px; }
+    .lesson__content--text:before {
+      content: '';
+      display: block;
+      background-image: url("../img/bgs/bg-9.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 332.47px;
+      height: 121.2px;
+      position: absolute;
+      right: 40.39px;
+      top: 18px;
+      z-index: 1; }
+  .lesson__content--video {
+    padding: 30px 30px 30px 30px;
+    margin: 0 0 20px; }
+
+.lesson__content-title {
+  font: bold 16px/2 "Muller", sans-serif;
+  color: #000000;
+  margin: 0 0 12px; }
+
+.lesson__content-list {
+  list-style: none; }
+
+.lesson__content-list-item {
+  font: 400 14px/1.2 "Muller", sans-serif;
+  color: #000000;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 16px; }
+  .lesson__content-list-item:before {
+    content: '•';
+    display: block;
+    font: 400 14px/1.2 "Muller", sans-serif;
+    color: #000000;
+    margin: 0 4px 0 0; }
+  .lesson__content-list-item:last-child {
+    margin-bottom: 0; }
+
+.lesson__btn-download {
+  user-select: none;
+  display: inline-block;
+  font-family: "Muller", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: none;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  height: auto;
+  background: #644BEC;
+  border: none;
+  line-height: 1;
+  padding: 15px 16px 13px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-radius: 23.5px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15.5px 30px 15.5px 30px;
+  position: relative;
+  z-index: 2; }
+  .lesson__btn-download:hover {
+    background: #8672F3;
+    transition: all 0.2s ease; }
+  .lesson__btn-download:before {
+    content: '';
+    margin: 0 10px 0 0; }
+  .lesson__btn-download--without-icon:before {
+    display: none; }
+
+.lesson__video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 419px; }
+
+.lesson__video-poster {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  cursor: pointer; }
+  .lesson__video-poster:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0); }
+  .lesson__video-poster--hidden {
+    display: none; }
+
+.lesson__video-poster-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  object-fit: cover;
+  object-position: center; }
+
+.lesson__video {
+  user-select: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  object-fit: contain;
+  object-position: center; }
+
+.lesson__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.lesson__btn {
+  user-select: none;
+  display: inline-block;
+  font-family: "Muller", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: none;
+  color: #644BEC;
+  letter-spacing: 0.03em;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #644BEC;
+  line-height: 1;
+  padding: 15px 16px 13px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-radius: 23.5px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  padding: 15px 16px 15px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; }
+  .lesson__btn:hover {
+    color: #8672F3;
+    border-color: #8672F3;
+    transition: all 0.2s ease; }
+  .lesson__btn:before, .lesson__btn:after {
+    content: '';
+    opacity: 1;
+    transition: all 0.2s ease; }
+  .lesson__btn:hover:before, .lesson__btn:hover:after {
+    opacity: 0.88; }
+  .lesson__btn--disable {
+    opacity: 0.5; }
+  .lesson__btn--prev:before {
+    margin: 0 10px 0 0; }
+  .lesson__btn--next:after {
+    margin: 0 0 0 10px; }
+
+.lesson__date {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  margin: 0 0 10px;
+  position: relative;
+  z-index: 2; }
+
+.lesson__date-text {
+  font: 500 14px/1 "Muller", sans-serif;
+  color: #141D30;
+  margin: 0 10px 0 0; }
+
+.lesson__date-link {
+  font: 400 14px/1 "Muller", sans-serif;
+  color: #141D30;
+  opacity: 1;
+  transition: opacity 0.2s ease; }
+  .lesson__date-link:hover {
+    opacity: 0.78; }
+  .lesson__date-link:last-child {
+    margin: 0 0 0 auto;
+    font-weight: 500; }
+
+.notifications__container {
+  padding: 30px 36px 30px 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 0 0 20px; }
+  .notifications__container--without-box-shadow {
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    padding: 0 0 0 0; }
+
+.notifications__item {
+  padding: 0 0 15px;
+  margin: 0 0 15px;
+  border-bottom: 1px solid #F1F4FF;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  .notifications__item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0; }
+
+.notifications__col--left {
+  margin: 0 10px 0 0; }
+
+.notifications__col--middle {
+  margin: 0 10px 0 0;
+  padding: 4px 0 0 0; }
+
+.notifications__col--right {
+  margin: 0 0 0 auto;
+  padding: 5px 0 0 0; }
+
+.notifications__icon--bell {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: #F1F4FF;
+  border-radius: 16px; }
+  .notifications__icon--bell:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0); }
+
+.notifications__icon--close {
+  opacity: 1;
+  transition: opacity 0.2s ease; }
+  .notifications__icon--close:hover {
+    opacity: 0.78; }
+
+.notifications__title {
+  margin: 0 0 10px;
+  font: bold 16px/24px "Muller", sans-serif;
+  letter-spacing: 0.02em;
+  color: #141D30; }
+
+.notifications__date {
+  font: 400 14px/1.142 "Muller", sans-serif;
+  color: rgba(0, 0, 0, 0.5); }
+
+.notifications__btn {
+  user-select: none;
+  display: inline-block;
+  font-family: "Muller", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: none;
+  color: #644BEC;
+  letter-spacing: 0.03em;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #644BEC;
+  line-height: 1;
+  padding: 18px 44px 18px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-radius: 28px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-block;
+  font-size: 15px;
+  padding: 15.5px 20px 15.5px 54px;
+  background-color: transparent;
+  width: auto;
+  position: relative; }
+  .notifications__btn:hover {
+    border-color: #8671F3;
+    color: #8671F3;
+    transition: all 0.2s ease; }
+  .notifications__btn:before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0); }
+
+.settings {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 30px;
+  position: relative; }
+  .settings__inner-wrapper {
+    padding: 0 0 30px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid #F1F4FF; }
+    .settings__inner-wrapper:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none; }
+  .settings__row {
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    .settings__row--big-indent {
+      margin: 0 0 31px; }
+    .settings__row:last-child {
+      margin-bottom: 0; }
+  .settings__title {
+    font: bold 20px/1.2 "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: 0.02em;
+    margin: 0 0 15px; }
+  .settings__col {
+    margin: 0 22px 0 0;
+    width: 30.342384887839433%; }
+    .settings__col--middle-width {
+      max-width: 113px; }
+    .settings__col--short-width {
+      width: 80px;
+      margin: 0 0 0 auto; }
+    .settings__col:last-child {
+      margin-right: 0; }
+  .settings__item--avatar-circle {
+    position: absolute;
+    right: 35px;
+    top: 45px; }
+  .settings__label {
+    font: 400 12px/1.3333333333 "Muller", sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0 0 10px; }
+  .settings__text-input {
+    user-select: none;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 15px 16px 13px;
+    margin: 0;
+    display: block;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: normal;
+    font-family: "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7);
+    text-align: left;
+    background: rgba(100, 75, 236, 0.1);
+    border-radius: 4px;
+    transition: all 0.3s ease; }
+    .settings__text-input::-webkit-input-placeholder {
+      color: rgba(20, 29, 48, 0.7);
+      transition: all 0.3s ease; }
+    .settings__text-input::-moz-placeholder {
+      color: rgba(20, 29, 48, 0.7);
+      transition: all 0.3s ease; }
+    .settings__text-input:-moz-placeholder {
+      color: rgba(20, 29, 48, 0.7);
+      transition: all 0.3s ease; }
+    .settings__text-input:-ms-input-placeholder {
+      color: rgba(20, 29, 48, 0.7);
+      transition: all 0.3s ease; }
+    .settings__text-input:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .settings__text-input:focus::-moz-placeholder {
+      color: transparent; }
+    .settings__text-input:focus:-moz-placeholder {
+      color: transparent; }
+    .settings__text-input:focus:-ms-input-placeholder {
+      color: transparent; }
+    .settings__text-input:focus {
+      outline: none;
+      color: #141D30;
+      transition: all 0.3s ease; }
+  .settings__select-wrapper {
+    position: relative;
+    height: 44px; }
+    .settings__select-wrapper:before {
+      content: '';
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      transform: translate3d(0, -50%, 0); }
+  .settings__select {
+    user-select: none;
+    border-radius: 4px;
+    background: rgba(100, 75, 236, 0.1);
+    padding-top: 15px;
+    padding-right: 16px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+    margin: 0;
+    outline: none;
+    border: none;
+    font: 400 16px/1 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7);
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%; }
+  .settings__select-option {
+    font: 400 16px/1 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7); }
+  .settings__avatar-circle {
+    margin: 0 0 10px; }
+  .settings__avatar-profile-pic {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px; }
+  .settings__avatar-image {
+    position: relative; }
+  .settings__avatar-file-upload {
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+    border: none;
+    outline: none; }
+  .settings__avatar-upload-btn {
+    font: 400 12px/1.333 "Muller", sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    user-select: none;
+    border: none;
+    outline: none; }
+  .settings__descr {
+    font: 400 16px/1 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7); }
+  .settings__btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #644BEC;
+    border: none;
+    line-height: 1;
+    padding: 15px 16px 13px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    padding: 16px 61px 16px 61px;
+    width: auto; }
+    .settings__btn:hover {
+      background: #8672F3;
+      transition: all 0.2s ease; }
+  .settings__bank-card {
+    text-decoration: none;
+    border-radius: 8px;
+    position: relative;
+    display: none; }
+    .settings__bank-card--add {
+      padding: 65px 51px;
+      border: 2px dashed rgba(100, 75, 236, 0.5);
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+      .settings__bank-card--add:hover {
+        opacity: 0.78; }
+    .settings__bank-card--mastercard {
+      padding: 83px 31px 81px 31px;
+      background: linear-gradient(180deg, rgba(241, 244, 255, 0.5) 0%, rgba(223, 230, 255, 0.5) 100%);
+      border: 2px solid rgba(100, 75, 236, 0.5); }
+      .settings__bank-card--mastercard:after {
+        content: '';
+        position: absolute;
+        right: 31px;
+        bottom: 20px; }
+    .settings__bank-card--visa {
+      padding: 83px 31px 81px 31px;
+      background: linear-gradient(180deg, rgba(241, 244, 255, 0.5) 0%, rgba(223, 230, 255, 0.5) 100%);
+      border: 2px solid rgba(100, 75, 236, 0.5); }
+      .settings__bank-card--visa:after {
+        content: '';
+        position: absolute;
+        right: 31px;
+        bottom: 25px; }
+    .settings__bank-card--active {
+      display: block; }
+  .settings__bank-card-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #644BEC;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #644BEC;
+    line-height: 1;
+    padding: 15px 16px 13px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12.5px 30px 12.5px 30px;
+    letter-spacing: 0; }
+    .settings__bank-card-btn:hover {
+      color: #8672F3;
+      border-color: #8672F3;
+      transition: all 0.2s ease; }
+    .settings__bank-card-btn:before {
+      content: '';
+      width: 19px;
+      height: 19px;
+      margin: 0 10px 0 0; }
+  .settings__bank-card-text {
+    font: bold 20px/1 "Muller", sans-serif;
+    color: #644BEC;
+    text-align: center;
+    white-space: nowrap; }
+  .settings__bank-card-close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    cursor: pointer; }
+    .settings__bank-card-close:hover {
+      opacity: 0.78; }
+
+.pay-for-classes {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 30px; }
+  .pay-for-classes__title {
+    font: bold 24px/1 "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px; }
+  .pay-for-classes__descr {
+    font: 400 16px/1.375 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7);
+    margin: 0 0 12px; }
+    .pay-for-classes__descr:last-child {
+      margin-bottom: 0; }
+  .pay-for-classes__descr-bold {
+    font: bold 16px/1 "Muller", sans-serif;
+    color: #644BEC;
+    margin: 0 0 0 5px; }
+  .pay-for-classes__descr-red {
+    color: #FD4040; }
+  .pay-for-classes__descr-link {
+    text-decoration: none;
+    color: #644BEC;
+    opacity: 1;
+    transition: opacity 0.2s ease; }
+    .pay-for-classes__descr-link:hover {
+      opacity: 0.78; }
+  .pay-for-classes__offers-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px 0 30px 0;
+    width: 100%; }
+  .pay-for-classes__offers-item {
+    background: rgba(100, 75, 236, 0.05);
+    border-radius: 4px;
+    padding: 30px 8px 30px 8px;
+    position: relative;
+    width: 18.072289156626506%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    height: 251px; }
+    .pay-for-classes__offers-item:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3.9px;
+      background: #AF48C9;
+      border-radius: 4px 4px 0 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0; }
+    .pay-for-classes__offers-item--selected {
+      background: #644BEC; }
+      .pay-for-classes__offers-item--selected:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 11px;
+        transform: translate3d(-50%, 0, 0); }
+  .pay-for-classes__offers-title {
+    font: 400 13px/1 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.5);
+    text-align: center;
+    margin: 0 0 8px; }
+    .pay-for-classes__offers-item--selected .pay-for-classes__offers-title {
+      color: rgba(255, 255, 255, 0.5); }
+  .pay-for-classes__offers-price {
+    font: bold 20.8px/1 "Muller", sans-serif;
+    color: #141D30;
+    text-align: center;
+    margin: 0 0 14px; }
+    .pay-for-classes__offers-item--selected .pay-for-classes__offers-price {
+      color: #FFFFFF; }
+  .pay-for-classes__offers-saving {
+    font: 400 12px/1 "Muller", sans-serif;
+    color: #141D30;
+    white-space: nowrap;
+    text-align: center;
+    background: rgba(175, 72, 201, 0.1);
+    border-radius: 18px;
+    padding: 5px 10px 4px; }
+    .pay-for-classes__offers-item--selected .pay-for-classes__offers-saving {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.2); }
+  .pay-for-classes__offers-descr {
+    font: 400 12px/1 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.5);
+    text-align: center;
+    margin: auto 0 15px 0; }
+    .pay-for-classes__offers-item--selected .pay-for-classes__offers-descr {
+      color: rgba(255, 255, 255, 0.5); }
+  .pay-for-classes__offers-btn {
+    text-decoration: none;
+    font: bold 12px/1 "Muller", sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    background: #AF48C9;
+    padding: 12px 15px 11px;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    opacity: 1;
+    transition: opacity 0.2s ease; }
+    .pay-for-classes__offers-btn:hover {
+      opacity: 0.78; }
+    .pay-for-classes__offers-item--selected .pay-for-classes__offers-btn {
+      background: #FFFFFF;
+      color: #644BEC; }
+  .pay-for-classes__how-it-works {
+    border-top: 1px solid #F1F4FF;
+    padding: 29px 0 0 0; }
+  .pay-for-classes__how-it-works-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .pay-for-classes__how-it-works-title {
+    text-align: center;
+    font: bold 24px/1 "Muller", sans-serif;
+    letter-spacing: 0.02em;
+    color: #141D30;
+    text-align: center;
+    margin: 0 0 30px;
+    width: 100%; }
+  .pay-for-classes__how-it-works-item {
+    width: 31.877213695395514%;
+    max-width: 270px;
+    padding: 115px 0 0 0;
+    position: relative; }
+    .pay-for-classes__how-it-works-item:before {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      background: #F7F6FE;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, 0, 0); }
+    .pay-for-classes__how-it-works-item:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, 0, 0); }
+    .pay-for-classes__how-it-works-item--payment:after {
+      top: 25px; }
+    .pay-for-classes__how-it-works-item--group:after {
+      top: 25px; }
+    .pay-for-classes__how-it-works-item--add-money:after {
+      top: 28px; }
+  .pay-for-classes__how-it-works-text {
+    font: 400 14px/1.571 "Muller", sans-serif;
+    color: #141D30;
+    text-align: center; }
+    .pay-for-classes__how-it-works-item .pay-for-classes__how-it-works-text:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 39px;
+      transform: translate3d(26px, 0, 0); }
+    .pay-for-classes__how-it-works-item:last-child .pay-for-classes__how-it-works-text:after {
+      display: none; }
+  .pay-for-classes__how-it-works-text-bold {
+    font-weight: bold; }
+
+.more-about {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 30px; }
+  .more-about--classes .more-about__cover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-image: url("../img/bgs/bg-10.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 38px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px; }
+  .more-about--classes-in-group .more-about__cover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-image: url("../img/bgs/bg-11.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 38px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px; }
+  .more-about--intensives .more-about__cover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-image: url("../img/bgs/bg-12.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 38px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px; }
+  .more-about__cover-tag {
+    background: rgba(241, 244, 255, 0.2);
+    border-radius: 4px;
+    font: 500 12px/1.166 "Muller", sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.02em;
+    padding: 6px 10px 4px;
+    margin: 0 0 20px; }
+  .more-about__date {
+    margin: 0 0 20px;
+    font: 400 14px/1.142 "Muller", sans-serif;
+    color: #FFFFFF; }
+  .more-about__cover-title {
+    font: bold 24px/1 "Muller", sans-serif;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin: 0 0 20px; }
+  .more-about__cover-price {
+    font: 400 24px/1 "Muller", sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 0 0 20px; }
+  .more-about__cover-price-old {
+    font: 400 24px/1 "Muller", sans-serif;
+    letter-spacing: 0.02em;
+    text-decoration-line: line-through;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px 0 0; }
+  .more-about__cover-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #644BEC;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #FFFFFF;
+    border: none;
+    line-height: 1;
+    padding: 16px 20px 16px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .more-about__cover-btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.2s ease; }
+    .more-about--intensives .more-about__cover-btn {
+      color: #F79A38; }
+  .more-about__descr {
+    font: 500 18px/1.444 "Muller", sans-serif;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    max-width: 724px;
+    margin: 0 auto 60px auto; }
+  .more-about__bullitts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 0 60px;
+    margin: 0 0 60px;
+    border-bottom: 1px solid #F1F4FF; }
+    .more-about--classes-in-group .more-about__bullitts {
+      margin-bottom: 0; }
+  .more-about__bullitts-item {
+    width: 100%;
+    max-width: 270px;
+    position: relative;
+    padding: 115px 0 0 0; }
+    .more-about__bullitts-item:before {
+      content: '';
+      display: block;
+      background: #FFFFFF;
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, 0, 0); }
+    .more-about__bullitts-item:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate3d(-50%, 0, 0); }
+    .more-about__bullitts-item--graduate:after {
+      top: 25px; }
+    .more-about__bullitts-item--book:after {
+      top: 24px; }
+    .more-about__bullitts-item--paper:after {
+      top: 26px; }
+  .more-about__bullitts-item-text {
+    font: 400 16px/1.625 "Muller", sans-serif;
+    color: #141D30;
+    text-align: center; }
+  .more-about__bullitts-item-text-bold {
+    font-weight: bold; }
+  .more-about__program-title {
+    font: bold 24px/1 "Muller", sans-serif;
+    color: #141D30;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 0 0 15px; }
+  .more-about__program-descr {
+    font: 400 16px/1.625 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.5);
+    text-align: center;
+    margin: 0 0 30px; }
+  .more-about__program-item {
+    background: #F7F6FE;
+    border-radius: 6.70099px;
+    margin: 0 0 20.99px; }
+    .more-about__program-item:last-child {
+      margin-bottom: 0; }
+  .more-about__program-item-question {
+    padding: 25.13px 25.13px 25.13px 25.13px;
+    font: bold 18px/1 "Muller", sans-serif;
+    color: #000000;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.1s ease; }
+    .more-about__program-item-question:after {
+      content: '';
+      position: absolute;
+      right: 26.8px;
+      top: 50%;
+      transform: translate3d(0, -50%, 0); }
+    .more-about__program-item--active .more-about__program-item-question {
+      color: #644BEC; }
+    .more-about--intensives .more-about__program-item--active .more-about__program-item-question {
+      color: #F79A38; }
+  .more-about__program-item-answer {
+    font: 400 15px/1.466 "Muller", sans-serif;
+    color: #000000;
+    padding: 0 69.65px 25.11px 25px;
+    display: none; }
+    .more-about__program-item--active .more-about__program-item-answer {
+      display: block; }
+  .more-about__cost-of-training {
+    padding: 60px 0; }
+  .more-about__cost-of-training-title {
+    font: bold 24px/1 "Muller", sans-serif;
+    color: #141D30;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin: 0 0 29px; }
+  .more-about__cost-of-training-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 548.4px;
+    margin-left: auto;
+    margin-right: auto; }
+    .more-about__cost-of-training-wrapper--center {
+      justify-content: center; }
+  .more-about__cost-of-training-item {
+    width: 100%;
+    max-width: 255px;
+    background: rgba(100, 75, 236, 0.05);
+    border-radius: 5.19998px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 39.65px 0 39px 0; }
+    .more-about__cost-of-training-item .more-about--intensives {
+      margin: 30.43px 0 29px 0; }
+    .more-about__cost-of-training-item:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3.9px;
+      border-radius: 5.19998px 5.19998px 0 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0; }
+    .more-about__cost-of-training-item--green:after {
+      background: #48C95F; }
+    .more-about__cost-of-training-item--blue:after {
+      background: #644BEC; }
+    .more-about__cost-of-training-item--orange {
+      max-width: 370px; }
+      .more-about__cost-of-training-item--orange:after {
+        background: #F79A38; }
+  .more-about__cost-of-training-subtitle {
+    font: 400 13px/13px "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.5);
+    text-align: center;
+    margin: 0 0 6px; }
+  .more-about__cost-of-training-price {
+    font: bold 21px/21px "Muller", sans-serif;
+    color: #141D30;
+    text-align: center;
+    margin: 0 0 27.3px; }
+    .more-about--intensives .more-about__cost-of-training-price {
+      margin-bottom: 10.57px; }
+  .more-about__cost-of-training-price-old {
+    font: bold 21px/21px "Muller", sans-serif;
+    color: #999999;
+    text-decoration: line-through;
+    text-align: center;
+    margin: 0 0 27.3px;
+    margin-bottom: 15px; }
+  .more-about__cost-of-training-item--green .more-about__cost-of-training-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #48C95F;
+    border: none;
+    line-height: 1;
+    padding: 16px 20px 16px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    padding: 11.7px 28.6px;
+    font-size: 13px;
+    width: auto; }
+    .more-about__cost-of-training-item--green .more-about__cost-of-training-btn:hover {
+      background: rgba(72, 201, 95, 0.9);
+      transition: all 0.2s ease; }
+  .more-about__cost-of-training-item--blue .more-about__cost-of-training-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #644BEC;
+    border: none;
+    line-height: 1;
+    padding: 15px 16px 13px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    padding: 11.7px 28.6px;
+    font-size: 13px;
+    width: auto; }
+    .more-about__cost-of-training-item--blue .more-about__cost-of-training-btn:hover {
+      background: #8672F3;
+      transition: all 0.2s ease; }
+  .more-about__cost-of-training-item--orange .more-about__cost-of-training-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #F79A38;
+    border: none;
+    line-height: 1;
+    padding: 16px 20px 16px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    padding: 11.7px 28.6px;
+    font-size: 13px;
+    width: auto;
+    margin: 0 0 15px; }
+    .more-about__cost-of-training-item--orange .more-about__cost-of-training-btn:hover {
+      background: rgba(247, 154, 56, 0.9);
+      transition: all 0.2s ease; }
+  .more-about__cost-of-training-warning {
+    font: bold 14px/1.4285 "Muller", sans-serif;
+    color: #FF2674;
+    text-align: center; }
+  .more-about__course-teacher-title {
+    font: bold 24px/1 "Muller", sans-serif;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #141D30;
+    margin: 0 0 29px;
+    width: 100%; }
+  .more-about__course-teacher-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    background: #F7F6FE;
+    border-radius: 8px;
+    padding: 60px 50px; }
+    .more-about__course-teacher-row:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3.9px;
+      background: #644BEC;
+      border-radius: 5.19998px 5.19998px 0 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0; }
+    .more-about--intensives .more-about__course-teacher-row:after {
+      background: #F79A38; }
+  .more-about__course-teacher-col--left {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 50px 0 0; }
+  .more-about__course-teacher-col--right {
+    width: 100%;
+    max-width: 498px; }
+  .more-about__course-teacher-img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%; }
+  .more-about__course-teacher-subtitle {
+    font: bold 20px/1 "Muller", sans-serif;
+    color: #141D30;
+    text-align: left;
+    margin: 0 0 9px; }
+  .more-about__course-teacher-descr {
+    font: 500 16px/1 "Muller", sans-serif;
+    color: #141D30;
+    text-align: left;
+    margin: 0 0 30px;
+    padding: 0 47px 0 0;
+    display: inline-block;
+    position: relative; }
+    .more-about__course-teacher-descr:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -16px; }
+  .more-about__course-teacher-text {
+    font: 400 16px/1.5 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7);
+    text-align: left; }
+  .more-about__course-teacher-wrapper {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; }
+  .more-about__course-teacher-assessment {
+    margin: 0 84px 0 0; }
+    .more-about__course-teacher-assessment:last-child {
+      margin-right: 0; }
+  .more-about__course-teacher-assessment-title {
+    font: 400 15px/1 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.7);
+    margin: 0 0 5px; }
+  .more-about__faq {
+    padding: 60px 0 0 0;
+    margin: 0 0 60px; }
+  .more-about__faq-title {
+    font: bold 24px/1 "Muller", sans-serif;
+    color: #141D30;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 0 0 30px; }
+  .more-about__faq-descr {
+    font: 400 16px/1.625 "Muller", sans-serif;
+    color: rgba(20, 29, 48, 0.5);
+    text-align: center;
+    margin: 0 0 30px; }
+  .more-about__faq-item {
+    border-radius: 6.70099px;
+    margin: 0 0 20.99px;
+    border: 0.837624px solid #DFE6FF; }
+    .more-about__faq-item:last-child {
+      margin-bottom: 0; }
+  .more-about__faq-item-question {
+    padding: 25.13px 25.13px 25.13px 25.13px;
+    font: bold 18px/1 "Muller", sans-serif;
+    color: #000000;
+    position: relative;
+    cursor: pointer; }
+    .more-about__faq-item-question:after {
+      content: '';
+      position: absolute;
+      right: 26.8px;
+      top: 50%;
+      transform: translate3d(0, -50%, 0); }
+  .more-about__faq-item-answer {
+    font: 400 15px/1.466 "Muller", sans-serif;
+    color: #000000;
+    padding: 0 69.65px 25.11px 25px;
+    display: none; }
+    .more-about__faq-item--active .more-about__faq-item-answer {
+      display: block; }
+  .more-about__try-it-for-free {
+    background: #F7F6FE;
+    border-radius: 5.56579px;
+    padding: 28px 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .more-about__try-it-for-free-title {
+    font: bold 22px/1.454 "Muller", sans-serif;
+    color: #141D30; }
+  .more-about__try-it-for-free-btn {
+    user-select: none;
+    display: inline-block;
+    font-family: "Muller", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: none;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    height: auto;
+    background: #644BEC;
+    border: none;
+    line-height: 1;
+    padding: 15px 16px 13px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 23.5px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    padding: 17px 31px 15px;
+    width: auto; }
+    .more-about__try-it-for-free-btn:hover {
+      background: #8672F3;
+      transition: all 0.2s ease; }
+    .more-about--classes-in-group .more-about__try-it-for-free-btn {
+      background: #AF48C9; }
+    .more-about--intensives .more-about__try-it-for-free-btn {
+      background: #F79A38; }
 
 .footer {
   background: #141D30;
