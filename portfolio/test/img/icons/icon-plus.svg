@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="43px" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icon-plus</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-14.2026208%" y1="78.0398606%" x2="122.429885%" y2="59.4245321%" id="linearGradient-1">
+            <stop stop-color="#7203CA" offset="0%"></stop>
+            <stop stop-color="#0060F1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-plus" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <polygon id="Path" style="mix-blend-mode: color-dodge;" points="43 24.5424546 24.6137931 24.5424546 24.6137931 43 18.3862069 43 18.3862069 24.5424546 0 24.5424546 0 18.5589646 18.3862069 18.5589646 18.3862069 0 24.6137931 0 24.6137931 18.5589646 43 18.5589646"></polygon>
+        </g>
+    </g>
+</svg>
