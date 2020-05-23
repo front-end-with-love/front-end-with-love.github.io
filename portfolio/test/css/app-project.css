@@ -332,6 +332,28 @@ template {
   min-height: 20px;
   height: 20px; }
 
+.icon-close, .form__close {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-close.svg");
+  min-width: 18px;
+  width: 18px;
+  min-height: 18px;
+  height: 18px; }
+
+.icon-ok {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/icons/icon-close.svg");
+  min-width: 6px;
+  width: 6px;
+  min-height: 5px;
+  height: 5px; }
+
 *,
 *:before,
 *:after {
@@ -1943,6 +1965,27 @@ select {
       left: 50%;
       top: 50%;
       transform: translate3d(-50%, -50%, 0); }
+
+.form {
+  z-index: 9999;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0); }
+  .form__close {
+    opacity: 1;
+    transition: opacity 0.25s ease;
+    cursor: pointer; }
+    .form__close:hover {
+      opacity: 0.75; }
+  .form__overlay {
+    background: #032F72;
+    z-index: 9998;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute; }
 
 .slick-slider {
   position: relative;
