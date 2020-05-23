@@ -1971,7 +1971,8 @@ select {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate3d(-50%, -50%, 0); }
+  transform: translate3d(-50%, -50%, 0);
+  display: none; }
   .form__close {
     opacity: 1;
     transition: opacity 0.25s ease;
@@ -1985,7 +1986,8 @@ select {
     right: 0;
     top: 0;
     bottom: 0;
-    position: absolute; }
+    position: absolute;
+    display: none; }
 
 .slick-slider {
   position: relative;
