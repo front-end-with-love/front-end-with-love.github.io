@@ -41,8 +41,8 @@
             </div>
           </div>
           <div class="descr__btns-wrapper">
-            <div class="descr__btn descr__btn--gradient">Заказать</div>
-            <div class="descr__btn descr__btn--gradient-2">Бесплатный тест-драйв</div>
+            <div class="descr__btn descr__btn--order descr__btn--gradient">Заказать</div>
+            <div class="descr__btn descr__btn--test-drive descr__btn--gradient-2">Бесплатный тест-драйв</div>
           </div>
           <div class="descr__add-text">Еще один плюс активации и&nbsp;наличия кабинета пользователя на&nbsp;официальном сайте (jintech.ltd/activation/)&nbsp;&mdash; возможность идентификации самокатов JINTECH в&nbsp;случае их&nbsp;кражи. Серийный номер в&nbsp;личном кабинете позволит быстро установить собственника и&nbsp;подтвердить факт покупки товара в&nbsp;магазине или с&nbsp;рук (б/у).</div>
         </div>
@@ -172,6 +172,9 @@
     <div class="video">
       <div class="video__container"><img class="video__cover" src="img/video/1.png">
         <div class="video__play"></div>
+        <div class="plyr__video-embed" id="player">
+          <iframe src="https://www.youtube.com/embed/bCxyckRVgxQ?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen="" allowtransparency="" allow="autoplay" autoplay="1"></iframe>
+        </div>
       </div>
     </div>
     <div class="items">
@@ -222,7 +225,7 @@
             <li class="test__list-item">Бесплатный тест драйв на&nbsp;специальной площадке около магазин</li>
             <li class="test__list-item">Длительный тест драйв на&nbsp;неделю за&nbsp;3&nbsp;999 при этом после тест драйва эту сумму можно вычесть из&nbsp;цены самоката доплатить разницу и&nbsp;забрать самокат.</li>
           </ul>
-          <div class="test__btn">Записаться</div>
+          <div class="test__btn test__btn--test-drive">Записаться</div>
         </div>
       </div>
     </div>
@@ -240,8 +243,8 @@
             </div>
           </div>
           <div class="descr__btns-wrapper">
-            <div class="descr__btn descr__btn--gradient">Заказать</div>
-            <div class="descr__btn descr__btn--gradient-2">Бесплатный тест-драйв</div>
+            <div class="descr__btn descr__btn--order descr__btn--gradient">Заказать</div>
+            <div class="descr__btn descr__btn--test-drive descr__btn--gradient-2">Бесплатный тест-драйв</div>
           </div>
           <div class="descr__add-text">Еще один плюс активации и&nbsp;наличия кабинета пользователя на&nbsp;официальном сайте (jintech.ltd/activation/)&nbsp;&mdash; возможность идентификации самокатов JINTECH в&nbsp;случае их&nbsp;кражи. Серийный номер в&nbsp;личном кабинете позволит быстро установить собственника и&nbsp;подтвердить факт покупки товара в&nbsp;магазине или с&nbsp;рук (б/у).</div>
         </div>
@@ -283,27 +286,94 @@
         </div>
       </div>
     </footer>
-    <div class="form form--request-for-callback" data-form="0">
+    <div class="form form--request-for-callback">
       <div class="form__close"></div>
       <div class="form__container">
         <div class="form__title">Заявка на обратный звонок</div>
-        <form class="form__feedback-form">
+        <form class="form__feedback-form" name="request-for-callback">
           <div class="form__row">
             <div class="form__label">Ваше имя</div>
-            <input class="form__input-text" type="text" value="" placeholder="">
+            <input class="form__input-text" type="text" value="" placeholder="" required>
           </div>
           <div class="form__row">
             <div class="form__label">Ваш телефон</div>
-            <input class="form__input-text" type="text" value="" placeholder="+7">
+            <input class="form__input-text" type="text" value="" id="" placeholder="+7" name="phone" required>
           </div>
           <div class="form__row form__row--two-cols">
-            <input class="form__input-checkbox" type="checkbox" id="user-agreement" name="phone">
+            <input class="form__input-checkbox" type="checkbox" id="user-agreement" required>
             <label class="form__text" for="user-agreement">Я&nbsp;ознакомился с&nbsp;<a class="form__link" href="#" target="_blank">Политикой конфиденциальности&nbsp;</a><br>и&nbsp;принимаю условия</label>
           </div>
           <div class="form__row">
-            <button class="form__btn" type="button">Отправить</button>
+            <button class="form__btn" type="submit">Отправить</button>
           </div>
         </form>
+      </div>
+    </div>
+    <div class="form form--test-drive">
+      <div class="form__close"></div>
+      <div class="form__container">
+        <div class="form__title">Заявка на тест-драйв</div>
+        <form class="form__feedback-form" name="request-for-callback">
+          <div class="form__row">
+            <div class="form__label">Ваше имя</div>
+            <input class="form__input-text" type="text" value="" placeholder="" required>
+          </div>
+          <div class="form__row">
+            <div class="form__label">Ваш телефон</div>
+            <input class="form__input-text" type="text" value="" id="" placeholder="+7" name="phone" required>
+          </div>
+          <div class="form__row">
+            <div class="form__label">Вариант тест-драйва</div>
+            <div class="form__select-wrapper">
+              <select class="form__select">
+                <option class="form__select-item" disabled>Выберите нужный</option>
+                <option class="form__select-item">Первый</option>
+                <option class="form__select-item">Второй</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row form__row--two-cols">
+            <input class="form__input-checkbox" type="checkbox" id="user-agreement" required>
+            <label class="form__text" for="user-agreement">Я&nbsp;ознакомился с&nbsp;<a class="form__link" href="#" target="_blank">Политикой конфиденциальности&nbsp;</a><br>и&nbsp;принимаю условия</label>
+          </div>
+          <div class="form__row">
+            <button class="form__btn" type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="form form--ordering-product">
+      <div class="form__close"></div>
+      <div class="form__container">
+        <div class="form__title">Заказ товара</div>
+        <form class="form__feedback-form" name="ordering-product">
+          <div class="form__row">
+            <div class="form__label">Ваше имя</div>
+            <input class="form__input-text" type="text" value="" placeholder="" required>
+          </div>
+          <div class="form__row">
+            <div class="form__label">Ваш телефон</div>
+            <input class="form__input-text" type="text" value="" id="" placeholder="+7" name="phone" required>
+          </div>
+          <div class="form__row form__row--two-cols">
+            <input class="form__input-checkbox" type="checkbox" id="ordering-product" required>
+            <label class="form__text" for="ordering-product">Я&nbsp;ознакомился с&nbsp;<a class="form__link" href="#" target="_blank">Политикой конфиденциальности&nbsp;</a><br>и&nbsp;принимаю условия</label>
+          </div>
+          <div class="form__row">
+            <button class="form__btn" type="submit">Заказать</button>
+          </div>
+        </form>
+        <div class="form__descr">Замок для крепления<br>самоката в&nbsp;подарок<br>каждому, кто оформит<br>заказ через сайт</div><img class="form__img" src="img/bgs/form/1.png">
+      </div>
+    </div>
+    <div class="form form--thanks">
+      <div class="form__close"></div>
+      <div class="form__container">
+        <div class="form__title form__title--indent-bottom">Спасибо за&nbsp;заявку!</div>
+        <div class="form__title">Ожидайте звонок оператора</div>
+        <div class="form__row">
+          <div class="form__btn form__btn--thanks">Ок</div>
+        </div>
       </div>
     </div>
     <div class="form__overlay"></div>
