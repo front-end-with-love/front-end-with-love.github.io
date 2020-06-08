@@ -11,6 +11,64 @@
     <link rel="stylesheet" href="css/app-project.css">
   </head>
   <body>
+    <div class="nav">
+      <div class="nav__container nav__container--indent-bottom">
+        <div class="nav__text">C&nbsp;9:00&nbsp;&mdash; 17:00</div>
+        <div class="nav__text"><a class="nav__contacts-link" href="tel:+78452323050">8 (8452) 32-30-50</a>,&nbsp;<a class="nav__contacts-link" href="tel:+78452323050">8 (8452) 32-30-50</a></div>
+      </div>
+      <div class="nav__container">
+        <div class="nav__list nav__list--global">
+          <div class="nav__item"><a class="nav__list-link" href="#">О компании</a></div>
+          <div class="nav__item"><a class="nav__list-link nav__list-link--secondary-list" href="#">Газовые баллоны</a>
+            <div class="nav__list nav__list--local">
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот газообразный</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот жидкий</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот ОСЧ</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Углекислота пищевая</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Сжатый воздух</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Гелий</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Ацителен</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Пропан</a></div>
+            </div>
+          </div>
+          <div class="nav__item"><a class="nav__list-link nav__list-link--secondary-list" href="#">Технические газы</a>
+            <div class="nav__list nav__list--local">
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот газообразный</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот жидкий</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот ОСЧ</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Углекислота пищевая</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Сжатый воздух</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Гелий</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Ацителен</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Пропан</a></div>
+            </div>
+          </div>
+          <div class="nav__item"><a class="nav__list-link nav__list-link--secondary-list" href="#">Прочее</a>
+            <div class="nav__list nav__list--local">
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот газообразный</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот жидкий</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Азот ОСЧ</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Углекислота пищевая</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Сжатый воздух</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Гелий</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Ацителен</a></div>
+              <div class="nav__item"><a class="nav__list-link" href="#">Пропан</a></div>
+            </div>
+          </div>
+          <div class="nav__item"><a class="nav__list-link" href="#">Доставка</a>
+            <div class="nav__list nav__list--local">
+              <div class="nav__item"><a class="nav__list-link" href="#"></a></div>
+            </div>
+          </div>
+          <div class="nav__item"><a class="nav__list-link" href="#">Контакты</a>
+            <div class="nav__list nav__list--local">
+              <div class="nav__item"><a class="nav__list-link" href="#"></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav__btn">Прайс на товары</div>
+      </div>
+    </div>
     <div class="wrapper">
       <sidebar class="sidebar">
         <div class="sidebar__container"><a class="sidebar__logo" href="/"></a>
@@ -27,7 +85,7 @@
       </sidebar>
       <div class="content">
         <div class="cover">
-          <div class="cover__container cover__container--top"><a class="cover__logo" href="/"> </a>
+          <div class="cover__container cover__container--top cover__container--active"><a class="cover__logo" href="/"></a>
             <nav class="cover__nav"><a class="cover__nav-item" href="#">О компании</a><a class="cover__nav-item" href="#">Доставка</a><a class="cover__nav-item" href="#">Контакты</a></nav><a class="cover__btn cover__btn--white" href="#">Смотреть прайс</a>
             <div class="cover__contacts">
               <div class="cover__contacts-item">
@@ -35,6 +93,8 @@
               </div>
               <div class="cover__contacts-item"><a class="cover__contacts-link" href="mailto:info@russ-gas.ru">info@russ-gas.ru</a><a class="cover__contacts-link" href="#">Смотреть на карте</a></div>
             </div>
+            <div class="cover__nav-btn cover__nav-btn--open cover__nav-btn--active"></div>
+            <div class="cover__nav-btn cover__nav-btn--close"></div>
           </div>
           <div class="cover__container cover__container--bottom">
             <h1 class="cover__title">Продажа газов</h1>
@@ -169,17 +229,25 @@
             </div>
             <div class="footer__col">
               <div class="footer__title">Контакты:</div>
-              <div class="footer__text"> <a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50,</a><a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50</a></div>
+              <div class="footer__text"><a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50</a><a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50</a></div>
             </div>
             <div class="footer__col footer__col--big-indent">
-              <div class="footer__text"> <a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50,</a><a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50</a></div>
+              <div class="footer__text"><a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50</a><a class="footer__link" href="tel:+78452323050">+7 (8452) 32-30-50</a></div>
             </div>
             <div class="footer__col footer__col--big-indent">
               <div class="footer__text">
                 <div class="footer__text-item"><span class="footer__label">Email:&nbsp;</span><a class="footer__link" href="mailto:info@russ-gas.ru">info@russ-gas.ru</a></div>
-                <div class="footer__text-item"><span class="footer__label">Скайп:&nbsp;</span><a class="footer__link" href="russ-gas.ru">russ-gas.ru</a></div>
+                <div class="footer__text-item"><span class="footer__label">Скайп:&nbsp;</span><a class="footer__link" href="skype:russ-gas.ru?call">russ-gas.ru</a></div>
               </div>
             </div>
+          </div>
+        </footer>
+        <footer class="footer footer--mobile">
+          <div class="footer__container">
+            <div class="footer__col">
+              <div class="footer__time">C&nbsp;9:00&nbsp;&mdash; 17:00</div><a class="footer__tel" href="tel:+78452323050">8 (8452) 32-30-50</a>
+            </div>
+            <div class="footer__col"><a class="footer__email" href="mailto:info@russ-gas.ru">info@russ-gas.ru</a><a class="footer__map" href="#">Смотреть на карте</a></div>
           </div>
         </footer>
       </div>
