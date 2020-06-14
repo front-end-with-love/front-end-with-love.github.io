@@ -696,7 +696,7 @@ select {
       .header__btn--white:disabled:hover, .header__btn--white[disabled]:hover {
         opacity: 0.5; }
     .header__btn--white:hover {
-      background: black;
+      background: linear-gradient(283.28deg, #0197ED 6.44%, #027ED9 81.75%);
       color: white;
       transition: all 0.2s ease; }
     @media (max-width: 1024px) {
@@ -824,40 +824,40 @@ select {
     @media (max-width: 1600px) {
       .cover__nav-item {
         margin: 0 32px 0 0; } }
-  .cover__btn--white {
+  .cover__btn--black {
     user-select: none;
     display: inline-block;
     font-family: Akrobat, sans-serif;
     font-weight: 800;
     font-size: 16px;
     text-transform: none;
-    color: black;
+    color: white;
     width: 100%;
     height: auto;
-    background: white;
-    letter-spacing: 0.05em;
+    background: #23205E;
     border: none;
     line-height: 1;
-    padding: 15.5px 0 15.5px;
+    padding: 14.5px 0 14.5px;
     cursor: pointer;
     outline: none;
     text-decoration: none;
     border-radius: 6px;
     text-align: center;
+    letter-spacing: 0.05em;
     transition: all 0.2s ease;
     max-width: 191px;
     margin: 0 0 0 auto; }
-    .cover__btn--white:disabled, .cover__btn--white[disabled] {
+    .cover__btn--black:disabled, .cover__btn--black[disabled] {
       opacity: 0.5;
       cursor: default; }
-      .cover__btn--white:disabled:hover, .cover__btn--white[disabled]:hover {
+      .cover__btn--black:disabled:hover, .cover__btn--black[disabled]:hover {
         opacity: 0.5; }
-    .cover__btn--white:hover {
-      background: black;
-      color: white;
+    .cover__btn--black:hover {
+      color: black;
+      background: white;
       transition: all 0.2s ease; }
     @media (max-width: 1024px) {
-      .cover__btn--white {
+      .cover__btn--black {
         display: none; } }
   .cover__btn--blue {
     user-select: none;
@@ -1469,6 +1469,9 @@ select {
       background: #00B646; }
     .category__item-label--red {
       background: #D95048; }
+  .category__item-img-wrapper {
+    padding: 17px 0 0 0;
+    background: #EDF2F5; }
   .category__item-img {
     width: 100%;
     height: auto;
@@ -1714,8 +1717,8 @@ select {
       .delivery__btn:disabled:hover, .delivery__btn[disabled]:hover {
         opacity: 0.5; }
     .delivery__btn:hover {
-      color: white;
-      background: #140D8C;
+      color: black;
+      background: white;
       transition: all 0.2s ease; }
     .delivery--animate .delivery__btn {
       opacity: 1; }
@@ -1879,8 +1882,8 @@ select {
       .about-company__btn:disabled:hover, .about-company__btn[disabled]:hover {
         opacity: 0.5; }
     .about-company__btn:hover {
-      color: white;
-      background: #140D8C;
+      color: black;
+      background: white;
       transition: all 0.2s ease; }
     .about-company--animate .about-company__btn {
       opacity: 1; }
@@ -2066,13 +2069,15 @@ select {
       background: #00B646; }
     .catalog__item-label--red {
       background: #D95048; }
+  .catalog__item-img-wrapper {
+    padding: 17px 0 0 0;
+    background: #EDF2F5; }
   .catalog__item-img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 4px 4px 0 0;
-    margin: 0 0 11px;
-    background: #EDF2F5; }
+    margin: 0 0 11px; }
     @media (max-width: 1600px) {
       .catalog__item-img {
         margin: 0 0 12px; } }
