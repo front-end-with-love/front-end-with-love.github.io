@@ -199,8 +199,5 @@ node_modules
 dist
 /dist
 dist/
-start-project.sh
-reset-project.sh
-reload-project.sh
 TODO.md
 yarn.lock
