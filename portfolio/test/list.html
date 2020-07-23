@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lmarkt_assembly | Список страниц</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="skype-toolbar" content="skype-toolbar-parser-compatible">
+    <link rel="stylesheet" href="css/app-project.css">
+  </head>
+  <body>
+    <style>
+      .index {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 50px 20px;
+      }
+      .index__container {
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+      }
+      .index__list {
+      }
+      .index__title {
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        margin: 0 0 40px;
+      }
+      .index__subtitle {
+        margin: 0 0 15px;
+        font-weight: bold;
+      }
+      .index__row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0 0 30px;
+      }
+      @media screen and (max-width: 1024px) {
+        .index__row {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      .index__col {
+        margin: 0 40px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      @media screen and (max-width: 1024px) {
+        .index__col {
+          margin: 0 0 30px;
+          width: 50%;
+        }
+      }
+      .index__link {
+        margin: 0 0 10px;
+        color: #000;
+        font-family: Georgia;
+      }
+    </style>
+    <section class="index">
+      <div class="index__container">
+        <h1 class="index__title">Список страниц</h1>
+        <div class="index__row">
+          <div class="index__col">
+            <div class="index__subtitle">Разное</div><a class="index__link" href="index.html">Главная</a>
+          </div>
+          <div class="index__col">
+            <div class="index__subtitle">Вход</div><a class="index__link" href="sign-in.html">Вход</a><a class="index__link" href="sign-in-enter-sms.html">Вход ввод смс</a><a class="index__link" href="sign-in-enter-sms-invalid.html">Вход ввод смс неверный код</a><a class="index__link" href="sign-in-enter-name.html">Вход ввод ФИ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
