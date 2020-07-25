@@ -1295,13 +1295,30 @@ select {
     text-decoration: none;
     margin: 0 0 37px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     position: relative; }
     .nav__ad-item:last-child {
       margin-bottom: 0; }
-  .nav__ad-img {
-    display: block;
-    width: 100%;
-    height: auto; }
+    .nav__ad-item--with-text {
+      height: 380px;
+      overflow: hidden; }
+  .nav__subtitle {
+    font: 400 20px/1.2 "Archive", sans-serif;
+    color: white;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 25px 0 13px 0;
+    padding: 0 10px; }
+  .nav__title {
+    font: 400 30px/1.2 "Archive", sans-serif;
+    color: white;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 10px; }
   .nav__ad-price {
     font: 700 30px/45px "Open Sans", sans-serif;
     color: #A0148E;
@@ -1315,7 +1332,19 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    white-space: nowrap; }
+    white-space: nowrap;
+    z-index: 2; }
+  .nav__ad-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1; }
+    .nav__ad-item--with-text .nav__ad-img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0; }
 
 .cover {
   position: relative;
