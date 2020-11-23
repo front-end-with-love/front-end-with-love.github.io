@@ -504,7 +504,7 @@ select {
         left: 50%;
         transform: translate3d(-50%, 0, 0);
         width: 90%;
-        padding: 16px 24px;
+        padding: 16px 15px;
         top: 33px; } }
     .cover__text-wrapper:before {
       content: '';
