@@ -71,7 +71,7 @@
       arrows: false,
       dots: true,
       infinite: true,
-      speed: 3000,
+      speed: 100,
       fade: true,
       cssEase: 'linear'
     });
@@ -79,7 +79,6 @@
 
   // Init
   initNav('.header__item');
-  initNav('.products__btn');
   animateElementsInTechnology();
   initSliderTechnology('.technology__item--with-slider[data-slider="1"]', 4900);
   initSliderTechnology('.technology__item--with-slider[data-slider="2"]', 5800);
