@@ -15,10 +15,13 @@
       <div class="header__container">
         <div class="header__col header__col--left"><a class="header__logo" href="/"></a></div>
         <div class="header__col header__col--center">
-          <nav class="header__nav"><a class="header__item" href="index.html#home">Home</a><a class="header__item" href="index.html#chess">Insights</a><a class="header__item header__item--active" href="index.html#products">Products</a><a class="header__item" href="index.html#technology">Technology</a><a class="header__item" href="index.html#feedback">Company</a></nav>
+          <nav class="header__nav header__nav--desktop"><a class="header__item" href="index.html#home">Home</a><a class="header__item" href="index.html#chess">Insights</a><a class="header__item" href="index.html#products">Products</a><a class="header__item" href="index.html#technology">Technology</a><a class="header__item" href="index.html#feedback">Company</a></nav>
         </div>
-        <div class="header__col header__col--right"><a class="products__btn" href="index.html">Go back</a></div>
+        <div class="header__col header__col--right"><a class="header__btn header__btn--desktop" href="index.html">Go back</a>
+          <div class="header__btn header__btn--mobile"></div>
+        </div>
       </div>
+      <div class="header__nav header__nav--mobile"><a class="header__item header__item--active" href="index.html#home">Home</a><a class="header__item" href="index.html#chess">Insights</a><a class="header__item" href="index.html#products">Products</a><a class="header__item" href="index.html#technology">Technology</a><a class="header__item" href="index.html#feedback">Company</a><a class="header__item header__item--btn" href="index.html">Go back</a></div>
     </header>
     <section class="products products--descr" data-section="products-descr">
       <div class="products__container products__container--header">
@@ -463,5 +466,7 @@
         </div>
       </div>
     </footer>
+    <script src="js/app-project-base.js"></script>
+    <script src="js/app-project-run.js"></script>
   </body>
 </html>

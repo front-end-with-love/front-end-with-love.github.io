@@ -33,37 +33,41 @@
   // Слушаем вертикальный скролл и определяем активный пункт навигации
   function onScroll(event) {
     let scrollPos = $(document).scrollTop();
-    $('.header__item').each(function () {
+    $('.header__item--animate').each(function () {
       let curLink = $(this);
       let curLinkData = $(curLink).data('section');
       let refElement = $("section[data-section='" + curLinkData + "']");
-      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
-        $('.header__item').removeClass('header__item--active');
-        curLink.addClass('header__item--active');
-      } else {
-        curLink.removeClass('header__item--active');
+      if (refElement.length) {
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
+          $('.header__item--animate').removeClass('header__item--active');
+          curLink.addClass('header__item--active');
+        } else {
+          curLink.removeClass('header__item--active');
+        }
       }
     });
   }
 
-  // Анимируем появление элементов в блоке "Технологии"
+  // Анимация появления элементов в блоке "Технологии"
   function animateElementsInTechnology() {
     $(window).scroll(function () {
       let $curElement = $('.technology');
-      let top_of_element = $curElement.offset().top;
-      let bottom_of_element = $curElement.offset().top + $curElement.outerHeight();
-      let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-      let top_of_screen = $(window).scrollTop();
+      if ($curElement.length) {
+        let top_of_element = $curElement.offset().top;
+        let bottom_of_element = $curElement.offset().top + $curElement.outerHeight();
+        let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        let top_of_screen = $(window).scrollTop();
 
-      if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
-        $curElement.addClass('technology--animate');
-      } else {
+        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
+          $curElement.addClass('technology--animate');
+        } else {
+        }
       }
     });
   }
 
   // Слайдер в карточках блока "Технологии"
-  function initSliderTechnology (element, speed) {
+  function initSliderTechnology(element, speed) {
     let $slider = $(element).find('.technology__item-slider');
     $slider.slick({
       autoplay: true,
@@ -77,10 +81,74 @@
     });
   }
 
+  // Открыть/закрыть мобильную навигацию
+  function showHideMobileNav () {
+    $('.header__btn.header__btn--mobile').on('click', function () {
+      $('.header__nav--mobile').toggleClass('header__nav--active');
+      $('.header__btn.header__btn--mobile').toggleClass('header__btn--close');
+    });
+
+    $('.header__nav--mobile .header__item').on('click', function () {
+      $('.header__nav--mobile').toggleClass('header__nav--active');
+      $('.header__btn.header__btn--mobile').toggleClass('header__btn--close');
+    });
+  }
+
+  // Продукты. Слайдер на мобильных устройствах : начало
+  function initProductsSlider () {
+    $(window).on('load', function () {
+      if ($(window).outerWidth() <= 1024) {
+        initSlick();
+      } else {
+        $('.products__container--list').filter('.slick-initialized').slick('unslick');
+      }
+    });
+
+    $(window).on('resize', function () {
+      if ($(window).outerWidth() <= 1024) {
+        initSlick();
+      } else {
+        $('.products__container--list').filter('.slick-initialized').slick('unslick');
+      }
+    });
+
+    function initSlick() {
+      $('.products__container--list').slick({
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '30px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    }
+  }
+  // Продукты. Слайдер на мобильных устройствах : конец
+
   // Init
-  initNav('.header__item');
+  initNav('.header__item--animate');
   animateElementsInTechnology();
   initSliderTechnology('.technology__item--with-slider[data-slider="1"]', 4900);
   initSliderTechnology('.technology__item--with-slider[data-slider="2"]', 5800);
   initSliderTechnology('.technology__item--with-slider[data-slider="3"]', 6300);
+  showHideMobileNav();
+  initProductsSlider();
 })();

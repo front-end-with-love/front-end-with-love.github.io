@@ -11,21 +11,29 @@
     <link rel="stylesheet" href="css/app-project.min.css">
   </head>
   <body>
-    <header class="header">
+    <header class="header header--primary">
       <div class="header__container">
         <div class="header__col header__col--left"><a class="header__logo" href="/"></a></div>
         <div class="header__col header__col--center">
-          <nav class="header__nav">
-            <div class="header__item header__item--active" data-section="home">Home</div>
-            <div class="header__item" data-section="chess">Insights</div>
-            <div class="header__item" data-section="products">Products</div>
-            <div class="header__item" data-section="technology">Technology</div>
-            <div class="header__item" data-section="feedback">Company</div>
+          <nav class="header__nav header__nav--desktop">
+            <div class="header__item header__item--animate header__item--active" data-section="home">Home</div>
+            <div class="header__item header__item--animate" data-section="chess">Insights</div>
+            <div class="header__item header__item--animate" data-section="products">Products</div>
+            <div class="header__item header__item--animate" data-section="technology">Technology</div>
+            <div class="header__item header__item--animate" data-section="feedback">Company</div>
           </nav>
         </div>
-        <div class="header__col header__col--right"><a class="header__btn" href="#">Sign in</a></div>
+        <div class="header__col header__col--right"><a class="header__btn header__btn--desktop" href="#">Sign in</a>
+          <div class="header__btn header__btn--mobile"></div>
+        </div>
       </div>
-      <div class="header__container header__container--mobile"></div>
+      <nav class="header__nav header__nav--mobile">
+        <div class="header__item header__item--animate header__item--active" data-section="home">Home</div>
+        <div class="header__item header__item--animate" data-section="chess">Insights</div>
+        <div class="header__item header__item--animate" data-section="products">Products</div>
+        <div class="header__item header__item--animate" data-section="technology">Technology</div>
+        <div class="header__item header__item--animate" data-section="feedback">Company</div><a class="header__item header__item--btn" href="#">Sign in</a>
+      </nav>
     </header>
     <section class="cover" id="home" data-section="home">
       <div class="cover__container">
@@ -65,7 +73,12 @@
             </div>
           </div>
         </div>
-        <div class="cover__col cover__col--right"><img class="cover__img" src="img/examples/1.webp"></div>
+        <div class="cover__col cover__col--right">
+          <picture class="cover__img">
+            <source srcset="img/examples/6.webp" media="(max-width: 768px)">
+            <source srcset="img/examples/1.webp"><img srcset="img/examples/6.webp" alt="">
+          </picture>
+        </div>
       </div>
     </section>
     <section class="chess" id="chess" data-section="chess">
@@ -248,8 +261,7 @@
       <div class="feedback-form__container feedback-form__container--content">
         <div class="feedback-form__row">
           <div class="feedback-form__col feedback-form__col--left">
-            <div class="feedback-form__subtitle feedback-form__subtitle--letter">Reach out for a&nbsp;partnership proposal</div>
-            <div class="feedback-form__descr">contact@weathertrade.net</div>
+            <div class="feedback-form__subtitle feedback-form__subtitle--letter">Reach out for a&nbsp;partnership proposal</div><a class="feedback-form__descr" href="mailto:contact@weathertrade.net">contact@weathertrade.net</a>
           </div>
           <div class="feedback-form__col feedback-form__col--right">
             <div class="feedback-form__subtitle feedback-form__subtitle--placemark">We&nbsp;are based in&nbsp;Paris</div>
