@@ -6,7 +6,7 @@ import photo from '@/assets/img/1.jpeg'
 <template>
   <section id="contact" class="contact">
     <div class="contact__top reveal-trigger">
-      <div class="contact__text-wrapper">
+      <div class="contact__top-left">
         <span class="contact__num reveal-text">[04]&nbsp;&mdash; CONTACT</span>
         <h2 class="contact__title">
           <span class="reveal-text delay-100 block">Let's<br /></span>
@@ -72,8 +72,6 @@ import photo from '@/assets/img/1.jpeg'
   object-fit: cover;
   border-radius: 50%;
   flex-shrink: 0;
-  display: block;
-  margin: 3.5rem 1.5rem;
 }
 .contact__num {
   font-family: var(--font-mono);

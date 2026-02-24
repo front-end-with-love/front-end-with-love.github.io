@@ -72,8 +72,6 @@ import photo from '@/assets/img/1.jpeg'
   object-fit: cover;
   border-radius: 50%;
   flex-shrink: 0;
-  display: block;
-  margin: 3.5rem 1.5rem;
 }
 .contact__num {
   font-family: var(--font-mono);

@@ -73,7 +73,7 @@ import photo from '@/assets/img/1.jpeg'
   border-radius: 50%;
   flex-shrink: 0;
   display: block;
-  margin: 3.5rem 1.5rem;
+  margin: 3rem 2rem;
 }
 .contact__num {
   font-family: var(--font-mono);
