@@ -72,7 +72,6 @@
 .contact__title-outline {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   color: transparent;
-  display: block;
 }
 .contact__grid {
   display: grid;

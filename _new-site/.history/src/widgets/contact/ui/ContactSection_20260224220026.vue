@@ -72,7 +72,6 @@
 .contact__title-outline {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   color: transparent;
-  display: block;
 }
 .contact__grid {
   display: grid;
@@ -125,9 +124,6 @@
 @media (max-width: 767px) {
   .contact__grid {
     gap: 2rem;
-  }
-  .contact__footer {
-    text-align: right;
   }
 }
 @media (min-width: 768px) {

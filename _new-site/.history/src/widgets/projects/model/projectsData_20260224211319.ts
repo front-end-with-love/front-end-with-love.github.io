@@ -118,7 +118,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: 7,
-    title: 'Nemoloko',
+    title: 'Немолоко',
     tags: ['Promo · Freelance', '~80–100 h'],
     stack: 'Pug · SASS · Vue.js · jQuery · Grunt',
     description:
@@ -151,7 +151,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: 9,
-    title: 'Varezhkino',
+    title: 'Варежкино',
     tags: ['Landing · Freelance', '~30–40 h'],
     stack: 'Pug · SASS · jQuery · Grunt',
     description:
