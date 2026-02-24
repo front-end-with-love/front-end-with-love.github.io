@@ -601,6 +601,11 @@ const principles = [
   margin: 0;
 }
 
+@media (max-width: 767px) {
+  .stack__core-label {
+    border-right: none;
+  }
+}
 @media (min-width: 768px) {
   .stack {
     padding-left: 3rem;

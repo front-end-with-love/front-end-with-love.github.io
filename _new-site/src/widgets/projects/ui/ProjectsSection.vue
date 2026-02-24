@@ -177,6 +177,7 @@ function toggle(i: number) {
   padding: 0.25rem 0.5rem;
   border-radius: 9999px;
   color: #888;
+  white-space: nowrap;
 }
 .projects__stack {
   font-family: var(--font-mono);

@@ -25,6 +25,9 @@
         <a href="https://github.com/front-end-with-love" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger">
           Github Account
         </a>
+        <a href="https://career.habr.com/frontend-dev-ru" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger">
+          Habr
+        </a>
       </div>
     </div>
     <footer class="contact__footer">
@@ -117,6 +120,11 @@
 }
 .contact__footer-right {
   text-align: right;
+}
+@media (max-width: 767px) {
+  .contact__grid {
+    gap: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .contact {

@@ -85,6 +85,12 @@ onUnmounted(() => {
   color: #888;
 }
 .hero__title {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-left: 1rem;
+  padding-right: 0;
+  box-sizing: content-box;
   font-family: var(--font-display);
   font-size: clamp(4rem, 18vw, 20rem);
   font-weight: 700;
@@ -140,6 +146,7 @@ onUnmounted(() => {
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
   position: relative;
+  white-space: nowrap;
 }
 .hero__btn:hover {
   background: #fff;
@@ -193,10 +200,25 @@ onUnmounted(() => {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+@media (max-width: 479px) {
+  .hero {
+    padding-top: 6rem;
+  }
+  .hero__bottom {
+    margin-top: 2.5rem;
+  }
+  .hero__cta {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
 @media (min-width: 768px) {
   .hero {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+  .hero__title {
+    padding-left: 3rem;
   }
   .hero__title-wrap--offset {
     padding-left: 3vw;
