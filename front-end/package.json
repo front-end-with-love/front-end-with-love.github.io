@@ -2,20 +2,20 @@
     "name": "app-project",
     "version": "0.0.1",
     "devDependencies": {
+        "breakpoint-sass": "latest",
         "grunt": "latest",
-        "grunt-contrib-pug": "1.0.0",
-        "grunt-autoprefixer": "latest",
+        "grunt-autoprefixer": "^3.0.0",
         "grunt-browserify": "latest",
         "grunt-contrib-concat": "latest",
         "grunt-contrib-connect": "latest",
         "grunt-contrib-copy": "latest",
-        "grunt-contrib-watch": "latest",
-        "grunt-sass": "2.1.0",
         "grunt-contrib-cssmin": "latest",
+        "grunt-contrib-pug": "^3.0.0",
         "grunt-contrib-uglify": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-sass": "^3.1.0",
         "jit-grunt": "latest",
         "load-grunt-config": "latest",
-        "breakpoint-sass": "latest",
         "time-grunt": "latest"
     }
 }
