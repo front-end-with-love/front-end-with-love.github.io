@@ -36,10 +36,11 @@ import photo from '@/assets/img/1.jpeg'
     </div>
     <footer class="contact__footer">
       <div>
-        <p>&copy;&nbsp;2026&nbsp;MIKHAIL&nbsp;KHLEBNIKOV<br>ALL&nbsp;RIGHTS RESERVED</p>
+        <p>&copy;&nbsp;2026&nbsp;MIKHAIL&nbsp;KHLEBNIKOV</p>
+        <p>ALL&nbsp;RIGHTS RESERVED</p>
       </div>
       <div class="contact__footer-right">
-        <p>BUILT WITH MY&nbsp;BRAINS AND<br>VARIANT.COM/CURSOR.COM</p>
+        <p>BUILT WITH VARIANT.COM + CURSOR + LLM<br></p>
       </div>
     </footer>
   </section>

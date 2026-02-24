@@ -39,7 +39,7 @@ import photo from '@/assets/img/1.jpeg'
         <p>&copy;&nbsp;2026&nbsp;MIKHAIL&nbsp;KHLEBNIKOV<br>ALL&nbsp;RIGHTS RESERVED</p>
       </div>
       <div class="contact__footer-right">
-        <p>BUILT WITH MY&nbsp;BRAINS AND<br>VARIANT.COM/CURSOR.COM</p>
+        <p>BUILT WITH MY BRAINS AND<br>VARIANT.COM/CURSOR.COM</p>
       </div>
     </footer>
   </section>
