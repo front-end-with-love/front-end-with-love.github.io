@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+---
+---
+description: Vue 3 TS frontend — concise human style, experienced developer
+globs: ["**/*.ts", "**/*.vue", "**/*.tsx"]
+alwaysApply: true
+---
+
+Генерировать только лаконичный идиоматичный код опытного фронтенд-разработчика:
+- JSDoc: максимум одна короткая строка-описание назначения функции/компонента. Удалять все @param, @returns, дублирование типов.
+- Типы, имена переменных, сигнатуры функций сами объясняют контракт.
+- KISS/DRY: без wrapper-функций, избыточных интерфейсов, длинных provide/inject строк.
+- Composition API: короткие composables, один объект возврата вместо множества колбэков.
+- Компоненты: минимум props, предпочтение provide/inject через typed Symbol или единый context object.
+- Barrel-файлы, store, api: минимальные экспорты, короткие имена.
+- Соответствовать .prettierrc (semi:false, singleQuote:true, tabWidth:2, printWidth:100, trailingComma:none) и .eslintrc.
+- Избегать академических паттернов: нет избыточных типов, комментариев к очевидному, перечислений полей в JSDoc.

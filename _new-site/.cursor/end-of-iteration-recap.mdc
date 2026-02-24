@@ -1,0 +1,21 @@
+---
+description: В конце итерации — короткий образовательный блок «как устроен проект»
+alwaysApply: true
+---
+
+GLOBAL RULE:
+At the end of every completed iteration, add a short educational summary that explains how this part of the project works.
+
+The summary must include, when applicable:
+- Technologies and languages used
+- Architecture and component/module structure
+- Key algorithms or data flow
+- Technical decisions and why they were chosen
+
+Style requirements:
+- Concise
+- Educational
+- Factual
+- No fluff, no marketing language
+
+If the task is purely visual or non-technical, explicitly state that no technical explanation is applicable for this iteration.
