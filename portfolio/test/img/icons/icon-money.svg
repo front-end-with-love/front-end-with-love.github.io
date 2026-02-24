@@ -1,0 +1,10 @@
+<svg id="svg_img_comp-jukgf3e0" class="_1eMqj"><defs><filter id="faded-comp-jukgf3e0" color-interpolation-filters="sRGB">
+    <feComponentTransfer result="srcRGB"></feComponentTransfer>
+    <feColorMatrix type="saturate" values="0.2"></feColorMatrix>
+    <feComponentTransfer><feFuncR type="linear" slope="0.85" intercept="0.08"></feFuncR>
+        <feFuncG type="linear" slope="0.85" intercept="0.08"></feFuncG>
+        <feFuncB type="linear" slope="0.85" intercept="0.08"></feFuncB></feComponentTransfer>
+    <feComponentTransfer><feFuncR type="linear" slope="0.9"></feFuncR><feFuncG type="linear" slope="0.9"></feFuncG><feFuncB type="linear" slope="0.9"></feFuncB></feComponentTransfer>
+    <feColorMatrix type="matrix" values="0.13725490196078427 0 0 0 0.8627450980392157 0.1333333333333333 0 0 0 0.8666666666666667 0.13725490196078427 0 0 0 0.8627450980392157 0 0 0 1 0"></feColorMatrix>
+    <feComponentTransfer></feComponentTransfer>
+</filter></defs></svg>
