@@ -8,7 +8,7 @@ const items = [
   '•',
   'Animation',
   '•',
-  'Ready to work',
+  'Available for Work',
   '•'
 ]
 </script>

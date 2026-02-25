@@ -8,6 +8,13 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 const modules = [Navigation]
+
+const swiperBreakpoints = {
+  768: {
+    slidesPerView: 1.3,
+    spaceBetween: 0
+  }
+}
 </script>
 
 <template>
@@ -25,6 +32,7 @@ const modules = [Navigation]
         :modules="modules"
         :slides-per-view="1"
         :space-between="0"
+        :breakpoints="swiperBreakpoints"
         :speed="600"
         :navigation="{ nextEl: '.workflow__arrow--next', prevEl: '.workflow__arrow--prev' }"
         class="workflow__swiper"

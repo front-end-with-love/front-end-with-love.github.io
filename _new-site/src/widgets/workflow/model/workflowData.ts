@@ -34,6 +34,6 @@ export const workflowData: WorkflowStep[] = [
     title: 'Delivery',
     summary: 'Git workflow · Structured commits · Documentation',
     description:
-      'Feature-based branching strategy. Structured and traceable commits. Clean pull request review. Final UI polish. Documentation of block structure and integration rules. Predictable handoff for further development or scaling.'
+      'Feature-based branching strategy. Structured and traceable commits. Clean pull request reviews. Final UI polish. Documentation of block structure and integration rules. Predictable handoff for further development or scaling.'
   }
 ]

@@ -141,7 +141,7 @@ const principles = [
         <div class="stack__ai-items">
           <div class="stack__ai-item">
             <div class="stack__ai-item-title">Cursor IDE</div>
-            <div class="stack__ai-item-desc">LLM into real-world dev. Structured rules, context engineering, diff-based workflows.</div>
+            <div class="stack__ai-item-desc">LLM-integrated development. Structured rules, context engineering, diff-based workflows.</div>
           </div>
           <div class="stack__ai-item">
             <div class="stack__ai-item-title">Prompt Engineering</div>
@@ -149,7 +149,7 @@ const principles = [
           </div>
           <div class="stack__ai-item">
             <div class="stack__ai-item-title">AI Refactoring</div>
-            <div class="stack__ai-item-desc">Controlled automation. 3&ndash;4-х speed while maintaining quality.</div>
+            <div class="stack__ai-item-desc">Controlled automation. 3&ndash;4&times; faster while maintaining quality.</div>
           </div>
         </div>
         <div class="stack__ai-footer">

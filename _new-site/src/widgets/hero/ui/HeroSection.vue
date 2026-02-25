@@ -30,7 +30,7 @@ onUnmounted(() => {
 <template>
   <section ref="heroRef" class="hero">
     <div class="hero__top reveal-trigger">
-      <span class="hero__label reveal-text">FRONTEND&nbsp;/ UI-UX DEV</span>
+      <span class="hero__label reveal-text">FRONTEND&nbsp;/ UI/UX DEV</span>
       <span class="hero__label reveal-text delay-100">SCROLL&nbsp;TO EXPLORE</span>
     </div>
     <h1 ref="titleRef" class="hero__title">

@@ -8,6 +8,13 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 const modules = [Navigation]
+
+const swiperBreakpoints = {
+  768: {
+    slidesPerView: 1.15,
+    spaceBetween: 0
+  }
+}
 </script>
 
 <template>

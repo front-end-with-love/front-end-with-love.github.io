@@ -19,7 +19,7 @@ export const projectsData: ProjectItem[] = [
     tags: ['Dubai · 2023', '3 mo.'],
     stack: 'Gulp · HTML · SASS · JS',
     description:
-      'UX/UI layout developer for an international construction company based in Dubai. Markup and JS for a closed internal system on 1C-Bitrix CMS: forms, validation, integration scripts.',
+      'UI/UX layout developer for an international construction company based in Dubai. Markup and JS for a closed internal system on 1C-Bitrix CMS: forms, validation, integration scripts.',
     bullets: [
       'Figma-synced design system in HTML/CSS/JS',
       'JS scripts for form logic, validation, CMS integration',

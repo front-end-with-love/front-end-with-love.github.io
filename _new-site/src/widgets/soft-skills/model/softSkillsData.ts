@@ -45,7 +45,7 @@ export const softSkillsData: SoftSkill[] = [
     title: 'Empathy & business context',
     summary: 'User · Value · Context',
     description:
-      'Understanding why the product exists, who the end user is, and which solutions add value in context; able to put myself in the user’s or colleague’s shoes.'
+      'Understanding why the product exists, who the end user is, and which solutions add value in context; putting myself in the user’s or colleague’s shoes.'
   },
   {
     title: 'Reliability & accountability',
