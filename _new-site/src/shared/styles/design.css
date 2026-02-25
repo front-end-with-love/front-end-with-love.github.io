@@ -101,7 +101,8 @@ body.hover-active .cursor-ring {
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
-.reveal-text.active {
+.reveal-text.active,
+.reveal-text[data-revealed='true'] {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform: translateY(0);
   opacity: 1;

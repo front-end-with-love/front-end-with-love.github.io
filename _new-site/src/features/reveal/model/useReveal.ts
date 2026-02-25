@@ -12,7 +12,10 @@ export function useReveal(selector = '.reveal-trigger') {
           const target = entry.target as HTMLElement
           const texts = target.querySelectorAll('.reveal-text')
           texts.forEach((el, i) => {
-            setTimeout(() => el.classList.add('active'), i * 100)
+            setTimeout(() => {
+              el.classList.add('active')
+              el.setAttribute('data-revealed', 'true')
+            }, i * 100)
           })
           observer?.unobserve(target)
         })

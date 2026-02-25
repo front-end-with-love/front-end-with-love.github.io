@@ -1,16 +1,41 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, nextTick } from 'vue'
 
 /** About / profile: stats, experience highlights. */
 const selectedCompany = ref<string | null>(null)
+const mobileDescRef = ref<HTMLElement | null>(null)
 
 function toggleCompany(company: string) {
   selectedCompany.value = selectedCompany.value === company ? null : company
 }
 
+function goToNextCompany() {
+  if (!selectedCompany.value) return
+  const idx = experience.findIndex((e) => e.company === selectedCompany.value)
+  const nextIdx = idx < 0 ? 0 : (idx + 1) % experience.length
+  selectedCompany.value = experience[nextIdx].company
+  nextTick(() => {
+    mobileDescRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+}
+
 const selectedExperience = computed(() =>
   experience.find((e) => e.company === selectedCompany.value)
 )
+
+const nextCompany = computed(() => {
+  if (!selectedCompany.value) return null
+  const idx = experience.findIndex((e) => e.company === selectedCompany.value)
+  if (idx < 0 || idx >= experience.length - 1) return null
+  return experience[idx + 1]
+})
+
+watch(selectedCompany, (val) => {
+  if (!val || typeof window === 'undefined' || window.innerWidth >= 768) return
+  nextTick(() => {
+    mobileDescRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+})
 const stats = [
   { value: '14', label: 'Years Exp' },
   { value: '120+', label: 'Projects' },
@@ -39,12 +64,12 @@ const experience: Array<{
     tag: 'GAMEDEV / EXPERIMENTAL',
     year: '2022',
     description: {
-      about: 'A hub of services for games.',
+      about: 'Hub of services for games.',
       location: 'Tyumen, 100-1000 employees.',
       position: 'Frontend developer (middle) • UI/UX layout developer.',
       period: 'May 2022 — September 2022 (5 months).',
       responsibilities:
-        'Worked in the experimental projects team of Xsolla, global leader in in-game acquiring, developing cutting-edge frontend for innovative prototypes; participated in the creation of proof-of-concept projects supporting advanced research initiatives in the gaming industry.',
+        'Worked in experimental projects team of Xsolla, global leader in in-game acquiring, developing cutting-edge frontend for innovative prototypes; participated in creation of proof-of-concept projects supporting advanced research initiatives in the gaming industry.',
       technologies: [
         'HTML',
         'JavaScript',
@@ -65,12 +90,12 @@ const experience: Array<{
     year: '2017',
     description: {
       about:
-        'An agency focused on business problem-solving, developing websites, services, and mobile applications.',
+        'Focused on business task resolution, develops websites, services and mobile applications.',
       location: 'Saint Petersburg, 10-100 employees.',
       position: 'Frontend developer (intern) • front-end developer.',
       period: 'March 2017 — July 2017 (5 months).',
       responsibilities:
-        'Developed websites on Angular, BEM, Stylus with exceptional attention to detail, including pixel-perfect precision.',
+        'Developed websites on Angular, BEM, Stylus with exceptional attention to details, including pixel-perfect precision.',
       technologies: ['JavaScript', 'HTML', 'landing page layout', 'Angular']
     }
   },
@@ -81,12 +106,12 @@ const experience: Array<{
     year: '2016',
     description: {
       about:
-        'Develops software for designers, including stock photo platform Moose, graphic editor Lunacy, multiple APIs and icon sets.',
+        'Develops software for designers, including realistic photo constructor Moose, graphic editor Lunacy, multiple APIs and icon sets.',
       location: 'Buenos Aires, 100-1000 employees.',
       position: 'Frontend developer (junior) • front-end developer.',
       period: 'February 2016 — September 2016 (8 months).',
       responsibilities:
-        'Contributed to the development and support of the frontend for icons8.com platform used by designers worldwide; collaborated with an international team on interface improvements and user experience optimization.',
+        'Contributed to development and support of frontend for icons8.com platform used by designers worldwide; collaborated with international team on interface improvements and user experience optimization.',
       technologies: ['JavaScript', 'Vue.js', 'SCSS', 'HTML', 'valid markup']
     }
   },
@@ -97,12 +122,12 @@ const experience: Array<{
     year: '2015',
     description: {
       about:
-        'An ideal design partner for brands and corporations: 5 boutiques and a design factory with multidisciplinary art directors.',
+        'Ideal design partner for brands and corporations: 5 boutiques and design factory with multidisciplinary art directors.',
       location: 'Tver, 10-100 employees.',
       position: 'Frontend developer (middle).',
       period: 'April 2015 — July 2015 (4 months).',
       responsibilities:
-        'Developed frontend for presentation websites in a renowned design studio, implementing complex animations and interactive features; participated in projects for major brands and startups, solving creative challenges to achieve advanced design solutions.',
+        'Developed frontend for presentation websites in renowned design studio, implementing complex animations and interactive functions; participated in projects for major brands and startups, solving creative tasks to achieve advanced design solutions.',
       technologies: ['JavaScript', 'HTML', 'CSS', 'jQuery', 'BEM', 'valid markup']
     }
   },
@@ -117,7 +142,7 @@ const experience: Array<{
       position: 'Frontend developer (middle) • front-end developer.',
       period: 'September 2014 — April 2015 (8 months).',
       responsibilities:
-        'Developed landing pages, catalog websites and online stores; participated in the design and development of the studio\'s corporate website.',
+        'Developed landing pages, catalog websites and online stores; participated in design and development of studio corporate website.',
       technologies: [
         'JavaScript',
         'CSS',
@@ -141,7 +166,7 @@ const experience: Array<{
       position: 'Frontend developer (junior) • front-end developer.',
       period: 'June 2012 — August 2012 (3 months).',
       responsibilities:
-        'Specialized in the creation of interactive and animated web elements for brand projects and presentation websites using advanced JavaScript libraries and CSS animations; contributed to Awwwards-awarded projects demonstrating high-level web design and development.',
+        'Specialized in creation of interactive and animated web elements for brand projects and presentation websites using advanced JavaScript libraries and CSS animations; contributed to Awwwards-awarded projects demonstrating high-level web design and development.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'animation creation']
     }
   },
@@ -152,12 +177,12 @@ const experience: Array<{
     year: '2011–12',
     description: {
       about:
-        'E-commerce and corporate web development; government and commercial projects.',
+        'E-commerce and corporate web development; state and commercial projects.',
       location: 'Tver.',
       position: 'Web developer (middle) • web technologist and layout specialist.',
       period: 'December 2011 — May 2012 (6 months).',
       responsibilities:
-        'Developed and maintained frontend for online stores and corporate websites, ensuring cross-browser compatibility and responsive design; participated in a government project for a public procurement accounting system, contributing to frontend and user interface implementation.',
+        'Developed and maintained frontend for online stores and corporate websites, ensuring cross-browser compatibility and adaptive design; participated in state project for public procurement accounting system, contributing to frontend and user interface implementation.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'adaptive markup']
     }
   }
@@ -211,68 +236,69 @@ const experience: Array<{
           <span class="about__stat-label">{{ s.label }}</span>
         </div>
       </div>
+      <div
+        v-if="selectedCompany && selectedExperience?.description"
+        ref="mobileDescRef"
+        class="about__description-wrap about__description-wrap--mobile"
+      >
+        <dl class="about__desc">
+          <template v-if="selectedExperience.description.about">
+            <dt class="about__desc-label">About</dt>
+            <dd class="about__desc-value">{{ selectedExperience.description.about }}</dd>
+          </template>
+          <dt class="about__desc-label">Location</dt>
+          <dd class="about__desc-value">{{ selectedExperience.description.location }}</dd>
+          <dt class="about__desc-label">Position</dt>
+          <dd class="about__desc-value">{{ selectedExperience.description.position }}</dd>
+          <dt class="about__desc-label">Period</dt>
+          <dd class="about__desc-value about__desc-value--period">
+            {{ selectedExperience.description.period }}
+          </dd>
+          <dt class="about__desc-label">Work</dt>
+          <dd class="about__desc-value about__desc-value--body">
+            {{ selectedExperience.description.responsibilities }}
+          </dd>
+          <dt class="about__desc-label">Stack</dt>
+          <dd class="about__desc-value about__desc-tags">
+            <span
+              v-for="t in selectedExperience.description.technologies"
+              :key="t"
+              class="about__desc-tag"
+            >
+              {{ t }}
+            </span>
+          </dd>
+        </dl>
+        <button
+          v-if="nextCompany"
+          type="button"
+          class="about__next-btn"
+          @click="goToNextCompany"
+        >
+          NEXT: {{ nextCompany.company }}
+        </button>
+      </div>
       <h4 class="about__sub"><span class="reveal-text delay-300">EXPERIENCE HIGHLIGHTS</span></h4>
       <div class="about__rows reveal-trigger">
-        <template v-for="(e, index) in experience" :key="e.company">
-          <div
-            class="about__row reveal-text"
-            :class="{ 'about__row--selected': selectedCompany === e.company }"
-            role="button"
-            tabindex="0"
-            @click="toggleCompany(e.company)"
-            @keydown.enter.space.prevent="toggleCompany(e.company)"
-          >
-            <div class="about__row-col about__row-col--left">
-              <h5 class="about__company">{{ e.company }}</h5>
-              <span class="about__role">{{ e.role }}</span>
-            </div>
-            <div class="about__row-col about__row-col--right">
-              <span class="about__tag">{{ e.tag }}</span>
-              <span class="about__year">{{ e.year }}</span>
-            </div>
+        <div
+          v-for="e in experience"
+          :key="e.company"
+          class="about__row reveal-text"
+          :class="{ 'about__row--selected': selectedCompany === e.company }"
+          role="button"
+          tabindex="0"
+          @click="toggleCompany(e.company)"
+          @keydown.enter.space.prevent="toggleCompany(e.company)"
+        >
+          <div class="about__row-col about__row-col--left">
+            <h5 class="about__company">{{ e.company }}</h5>
+            <span class="about__role">{{ e.role }}</span>
           </div>
-          <div
-            v-if="selectedCompany === e.company"
-            class="about__description-wrap about__description-wrap--mobile"
-          >
-            <dl class="about__desc">
-              <template v-if="e.description.about">
-                <dt class="about__desc-label">About</dt>
-                <dd class="about__desc-value">{{ e.description.about }}</dd>
-              </template>
-              <dt class="about__desc-label">Location</dt>
-              <dd class="about__desc-value">{{ e.description.location }}</dd>
-              <dt class="about__desc-label">Position</dt>
-              <dd class="about__desc-value">{{ e.description.position }}</dd>
-              <dt class="about__desc-label">Period</dt>
-              <dd class="about__desc-value about__desc-value--period">
-                {{ e.description.period }}
-              </dd>
-              <dt class="about__desc-label">Work</dt>
-              <dd class="about__desc-value about__desc-value--body">
-                {{ e.description.responsibilities }}
-              </dd>
-              <dt class="about__desc-label">Stack</dt>
-              <dd class="about__desc-value about__desc-tags">
-                <span
-                  v-for="t in e.description.technologies"
-                  :key="t"
-                  class="about__desc-tag"
-                >
-                  {{ t }}
-                </span>
-              </dd>
-            </dl>
-            <button
-              v-if="index < experience.length - 1"
-              type="button"
-              class="about__next-btn"
-              @click="selectedCompany = experience[index + 1].company"
-            >
-              Next: {{ experience[index + 1].company }}
-            </button>
+          <div class="about__row-col about__row-col--right">
+            <span class="about__tag">{{ e.tag }}</span>
+            <span class="about__year">{{ e.year }}</span>
           </div>
-        </template>
+        </div>
       </div>
     </div>
   </section>
@@ -318,10 +344,10 @@ const experience: Array<{
 }
 .about__description-wrap--mobile {
   position: relative;
-  margin-bottom: 1rem;
-  padding: 1rem 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
+  scroll-margin-top: 24px;
 }
 @media (min-width: 768px) {
   .about__description-wrap--mobile {

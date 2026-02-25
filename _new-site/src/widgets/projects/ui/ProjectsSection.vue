@@ -1,12 +1,15 @@
 <script setup lang="ts">
-/** Projects accordion: open/close one at a time. */
+/** Projects accordion: multiple items can be open. */
 import { ref } from 'vue'
 import { projectsData } from '../model/projectsData'
 
-const openIndex = ref<number | null>(null)
+const openSet = ref<Set<number>>(new Set())
 
 function toggle(i: number) {
-  openIndex.value = openIndex.value === i ? null : i
+  const next = new Set(openSet.value)
+  if (next.has(i)) next.delete(i)
+  else next.add(i)
+  openSet.value = next
 }
 </script>
 
@@ -22,12 +25,12 @@ function toggle(i: number) {
         v-for="(p, i) in projectsData"
         :key="p.id"
         class="projects__item"
-        :class="{ 'is-open': openIndex === i }"
+        :class="{ 'is-open': openSet.has(i) }"
       >
         <button
           type="button"
           class="projects__trigger"
-          :aria-expanded="openIndex === i"
+          :aria-expanded="openSet.has(i)"
           @click="toggle(i)"
         >
           <span class="projects__index">0{{ i + 1 }}</span>
@@ -40,7 +43,7 @@ function toggle(i: number) {
           <span class="projects__stack">{{ p.stack }}</span>
           <span class="projects__icon" aria-hidden="true">+</span>
         </button>
-        <div class="projects__body" :style="{ maxHeight: openIndex === i ? '1200px' : '0' }">
+        <div class="projects__body" :style="{ maxHeight: openSet.has(i) ? '1200px' : '0' }">
           <div class="projects__body-inner">
             <div class="projects__body-left">
               <p class="projects__desc">{{ p.description }}</p>

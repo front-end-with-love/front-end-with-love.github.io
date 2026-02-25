@@ -1,38 +1,29 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 
-/** Fixed top nav: logo, status, menu button scrolls to contact. Hides on scroll down, shows on scroll up. */
-const navHidden = ref(false)
-const lastScrollY = ref(0)
-const scrollThreshold = 60
+/** Top nav in document flow: logo, status, menu button scrolls to contact. Scrolls away with page; entrance animation on load. */
+const entered = ref(false)
 
 function scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
 }
 
-function onScroll() {
-  const y = window.scrollY
-  if (y <= 0) {
-    navHidden.value = false
-  } else if (y > lastScrollY.value && y > scrollThreshold) {
-    navHidden.value = true
-  } else if (y < lastScrollY.value) {
-    navHidden.value = false
-  }
-  lastScrollY.value = y
-}
-
 onMounted(() => {
-  lastScrollY.value = window.scrollY
-  window.addEventListener('scroll', onScroll, { passive: true })
-})
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (reduceMotion) {
+    entered.value = true
+    return
+  }
+  nextTick(() => {
+    requestAnimationFrame(() => {
+      entered.value = true
+    })
+  })
 })
 </script>
 
 <template>
-  <nav class="landing-nav" :class="{ 'landing-nav--hidden': navHidden }">
+  <nav class="landing-nav" :class="{ 'landing-nav--entered': entered }">
     <div class="landing-nav__col landing-nav__col--left">
       <a href="#" class="landing-nav__logo">
         <span class="landing-nav__logo-text">MH</span>
@@ -60,9 +51,7 @@ onUnmounted(() => {
 
 <style scoped>
 .landing-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   padding: 1.5rem 2rem;
   display: flex;
@@ -72,11 +61,20 @@ onUnmounted(() => {
   mix-blend-mode: difference;
   color: #e1e1e1;
   pointer-events: none;
-  transform: translateY(0);
-  transition: transform 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
-.landing-nav--hidden {
-  transform: translateY(-100%);
+.landing-nav--entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-nav {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
 }
 .landing-nav__col {
   display: flex;

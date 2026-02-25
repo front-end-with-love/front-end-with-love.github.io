@@ -160,7 +160,7 @@ const modules = [Navigation]
 }
 @media (min-width: 768px) {
   .workflow__slide {
-    padding: 3.5rem 10%;
+    padding: 3rem 10%;
   }
 }
 .workflow__slide-num {
