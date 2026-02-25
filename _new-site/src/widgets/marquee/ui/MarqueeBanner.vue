@@ -14,21 +14,28 @@ const items = [
 </script>
 
 <template>
-  <div class="marquee-wrap">
-    <div class="marquee-inner">
-      <template v-for="(item, i) in items" :key="i">
-        <span v-if="item === '•'" class="marquee-inner__dot">{{ item }}</span>
-        <span v-else class="marquee-inner__text">{{ item }}</span>
-      </template>
-      <template v-for="(item, i) in items" :key="`dup-${i}`">
-        <span v-if="item === '•'" class="marquee-inner__dot">{{ item }}</span>
-        <span v-else class="marquee-inner__text">{{ item }}</span>
-      </template>
+  <div class="marquee-outer">
+    <div class="marquee-wrap">
+      <div class="marquee-inner">
+        <template v-for="(item, i) in items" :key="i">
+          <span v-if="item === '•'" class="marquee-inner__dot">{{ item }}</span>
+          <span v-else class="marquee-inner__text">{{ item }}</span>
+        </template>
+        <template v-for="(item, i) in items" :key="`dup-${i}`">
+          <span v-if="item === '•'" class="marquee-inner__dot">{{ item }}</span>
+          <span v-else class="marquee-inner__text">{{ item }}</span>
+        </template>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.marquee-outer {
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+}
 .marquee-wrap {
   overflow: hidden;
   display: flex;
@@ -37,8 +44,6 @@ const items = [
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: #050505;
   transform: rotate(1deg) scale(1.05);
-  position: relative;
-  z-index: 20;
 }
 .marquee-inner {
   display: flex;
