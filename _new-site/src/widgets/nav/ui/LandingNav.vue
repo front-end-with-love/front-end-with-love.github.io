@@ -1,12 +1,38 @@
 <script setup lang="ts">
-/** Fixed top nav: logo, status, menu button scrolls to contact. */
+import { ref, onMounted, onUnmounted } from 'vue'
+
+/** Fixed top nav: logo, status, menu button scrolls to contact. Hides on scroll down, shows on scroll up. */
+const navHidden = ref(false)
+const lastScrollY = ref(0)
+const scrollThreshold = 60
+
 function scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
 }
+
+function onScroll() {
+  const y = window.scrollY
+  if (y <= 0) {
+    navHidden.value = false
+  } else if (y > lastScrollY.value && y > scrollThreshold) {
+    navHidden.value = true
+  } else if (y < lastScrollY.value) {
+    navHidden.value = false
+  }
+  lastScrollY.value = y
+}
+
+onMounted(() => {
+  lastScrollY.value = window.scrollY
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
 </script>
 
 <template>
-  <nav class="landing-nav">
+  <nav class="landing-nav" :class="{ 'landing-nav--hidden': navHidden }">
     <div class="landing-nav__col landing-nav__col--left">
       <a href="#" class="landing-nav__logo">
         <span class="landing-nav__logo-text">MH</span>
@@ -46,6 +72,11 @@ function scrollToContact() {
   mix-blend-mode: difference;
   color: #e1e1e1;
   pointer-events: none;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+.landing-nav--hidden {
+  transform: translateY(-100%);
 }
 .landing-nav__col {
   display: flex;
