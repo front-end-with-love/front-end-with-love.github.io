@@ -317,7 +317,6 @@ const principles = [
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s;
-  will-change: background-color;
 }
 .stack__skill:hover {
   background: rgba(255, 255, 255, 0.03);
@@ -342,7 +341,6 @@ const principles = [
   background: #ccff00;
   margin-bottom: 1.5rem;
   transition: width 0.5s;
-  will-change: width;
 }
 .stack__skill:hover .stack__skill-line {
   width: 3rem;
@@ -423,7 +421,6 @@ const principles = [
   padding: 1.25rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s;
-  will-change: background-color;
 }
 .stack__framework-item:last-child {
   border-bottom: none;
@@ -624,7 +621,6 @@ const principles = [
   gap: 1.5rem;
   align-items: center;
   transition: background 0.3s;
-  will-change: background-color;
 }
 .stack__principle:hover {
   background: rgba(255, 255, 255, 0.03);
@@ -661,7 +657,6 @@ const principles = [
   line-height: 1;
   flex-shrink: 0;
   transition: color 0.3s;
-  will-change: color;
 }
 .stack__principle:hover .stack__principle-num {
   color: rgba(204, 255, 0, 0.1);

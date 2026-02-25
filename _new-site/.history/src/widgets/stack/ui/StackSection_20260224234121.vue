@@ -43,13 +43,9 @@ const principles = [
     <div class="stack__glow" aria-hidden="true" />
     <div class="stack__header reveal-trigger">
       <span class="stack__num reveal-text">[04]&nbsp;&mdash; ARSENAL</span>
-      <div class="stack__header-cols">
-        <div class="stack__header-col stack__header-col--left">
-          <h2 class="stack__title"><span class="reveal-text delay-100">Stack</span></h2>
-        </div>
-        <div class="stack__header-col stack__header-col--right">
-          <span class="stack__sub reveal-text delay-300">FRONT-END ENGINEERING</span>
-        </div>
+      <div class="stack__header-row">
+        <h2 class="stack__title"><span class="reveal-text delay-100">Stack</span></h2>
+        <span class="stack__sub reveal-text delay-300">FRONT-END ENGINEERING</span>
       </div>
       <div class="stack__header-line" />
     </div>
@@ -107,7 +103,7 @@ const principles = [
       <div class="stack__motion-build">
         <div class="stack__motion reveal-trigger">
           <span class="stack__block-num reveal-text">03 &middot; MOTION</span>
-          <h3 class="stack__block-title"><span class="reveal-text delay-100 block">Animation<br />Layer</span></h3>
+          <h3 class="stack__block-title"><span class="reveal-text delay-100 block">Animation Layer</span></h3>
           <ul class="stack__motion-list">
             <li v-for="m in motionItems" :key="m.name" class="stack__motion-item">
               <span class="stack__motion-name" :class="{ 'stack__motion-name--muted': m.dots < 5 }">{{ m.name }}</span>
@@ -192,12 +188,6 @@ const principles = [
   position: relative;
   overflow: hidden;
 }
-@media (min-width: 768px) {
-  .stack {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
 .stack__glow {
   position: absolute;
   top: 0;
@@ -219,14 +209,11 @@ const principles = [
   color: #ccff00;
   margin-bottom: 1rem;
 }
-.stack__header-cols {
+.stack__header-row {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
-}
-.stack__header-col {
-  flex: 0 0 auto;
 }
 .stack__title {
   font-family: var(--font-display);
@@ -241,11 +228,6 @@ const principles = [
   letter-spacing: 0.2em;
   margin-bottom: 0.5rem;
   display: none;
-}
-@media (min-width: 768px) {
-  .stack__sub {
-    display: block;
-  }
 }
 .stack__header-line {
   width: 100%;
@@ -263,11 +245,6 @@ const principles = [
   overflow: hidden;
   margin-bottom: 1px;
 }
-@media (min-width: 768px) {
-  .stack__core {
-    grid-template-columns: 1fr 2.25fr;
-  }
-}
 .stack__core-label {
   background: #0f0f0f;
   padding: 2.5rem;
@@ -275,11 +252,6 @@ const principles = [
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-@media (max-width: 767px) {
-  .stack__core-label {
-    border-right: none;
-  }
 }
 .stack__core-num {
   font-family: var(--font-mono);
@@ -306,35 +278,19 @@ const principles = [
   display: grid;
   grid-template-columns: 1fr;
 }
-@media (min-width: 768px) {
-  .stack__core-skills {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .stack__skill {
   background: #0f0f0f;
   padding: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s;
-  will-change: background-color;
 }
 .stack__skill:hover {
   background: rgba(255, 255, 255, 0.03);
 }
-@media (min-width: 768px) {
-  .stack__skill {
-    border-bottom: none;
-  }
-}
 .stack__skill--last {
   border-right: none;
   border-bottom: none;
-}
-@media (min-width: 768px) {
-  .stack__skill--last {
-    border-right: none;
-  }
 }
 .stack__skill-line {
   width: 1.5rem;
@@ -342,7 +298,6 @@ const principles = [
   background: #ccff00;
   margin-bottom: 1.5rem;
   transition: width 0.5s;
-  will-change: width;
 }
 .stack__skill:hover .stack__skill-line {
   width: 3rem;
@@ -383,11 +338,6 @@ const principles = [
   grid-template-columns: 1fr;
   gap: 1px;
 }
-@media (min-width: 768px) {
-  .stack__row2 {
-    grid-template-columns: 5fr 4fr 3fr;
-  }
-}
 .stack__block-num {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -423,7 +373,6 @@ const principles = [
   padding: 1.25rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s;
-  will-change: background-color;
 }
 .stack__framework-item:last-child {
   border-bottom: none;
@@ -471,7 +420,7 @@ const principles = [
 .stack__motion-list {
   list-style: none;
   padding: 0;
-  margin: 2rem 0 0 0;
+  margin: 0;
 }
 .stack__motion-item {
   display: flex;
@@ -612,11 +561,6 @@ const principles = [
   border-radius: 1rem;
   overflow: hidden;
 }
-@media (min-width: 768px) {
-  .stack__principles {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 .stack__principle {
   background: #0f0f0f;
   padding: 2.5rem;
@@ -624,7 +568,6 @@ const principles = [
   gap: 1.5rem;
   align-items: center;
   transition: background 0.3s;
-  will-change: background-color;
 }
 .stack__principle:hover {
   background: rgba(255, 255, 255, 0.03);
@@ -632,26 +575,11 @@ const principles = [
 .stack__principle--br {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-@media (min-width: 768px) {
-  .stack__principle--br {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-}
 .stack__principle--rr {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
-@media (min-width: 768px) {
-  .stack__principle--rr {
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-  }
-}
 .stack__principle--r {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
-}
-@media (min-width: 768px) {
-  .stack__principle:nth-child(3) {
-    border-bottom: none;
-  }
 }
 .stack__principle-num {
   font-family: var(--font-display);
@@ -661,7 +589,6 @@ const principles = [
   line-height: 1;
   flex-shrink: 0;
   transition: color 0.3s;
-  will-change: color;
 }
 .stack__principle:hover .stack__principle-num {
   color: rgba(204, 255, 0, 0.1);
@@ -672,5 +599,47 @@ const principles = [
   line-height: 1.3;
   padding-top: 0;
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .stack__core-label {
+    border-right: none;
+  }
+}
+@media (min-width: 768px) {
+  .stack {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .stack__sub {
+    display: block;
+  }
+  .stack__core {
+    grid-template-columns: 1fr 2.25fr;
+  }
+  .stack__core-skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stack__skill {
+    border-bottom: none;
+  }
+  .stack__skill--last {
+    border-right: none;
+  }
+  .stack__row2 {
+    grid-template-columns: 5fr 4fr 3fr;
+  }
+  .stack__principles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stack__principle--br {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .stack__principle--rr {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .stack__principle:nth-child(3) {
+    border-bottom: none;
+  }
 }
 </style>

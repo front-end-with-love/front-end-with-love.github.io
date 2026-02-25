@@ -1,8 +1,6 @@
+/* Order: normalize → design (tokens, reset, utilities). */
+@import 'normalize.css';
 @import './shared/styles/design.css';
-
-* {
-  box-sizing: border-box;
-}
 
 #app {
   min-height: 100vh;

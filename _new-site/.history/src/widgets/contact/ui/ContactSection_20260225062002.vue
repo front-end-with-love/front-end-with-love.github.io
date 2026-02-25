@@ -135,7 +135,6 @@ import photo from '@/assets/img/1.jpeg'
   text-decoration-color: #555;
   margin-bottom: 1rem;
   transition: color 0.3s;
-  will-change: color;
 }
 .contact__link:hover {
   color: #ccff00;
@@ -160,7 +159,12 @@ import photo from '@/assets/img/1.jpeg'
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-
+@media (max-width: 767px) {
+  .contact__footer-col--left,
+  .contact__footer-col--right {
+    text-align: center;
+  }
+}
 @media (min-width: 768px) {
   .contact__footer {
     flex-direction: row;
@@ -172,15 +176,9 @@ import photo from '@/assets/img/1.jpeg'
   flex: 0 0 auto;
 }
 .contact__footer-col--left {
-  text-align: left;
+  text-align: center;
 } 
 .contact__footer-col--right {
-  text-align: right;
-}
-@media (max-width: 767px) {
-  .contact__footer-col--left,
-  .contact__footer-col--right {
-    text-align: center;
-  }
+  text-align: center;
 }
 </style>

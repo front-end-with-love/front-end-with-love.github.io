@@ -15,7 +15,7 @@ function toggle(i: number) {
     <div class="projects__header reveal-trigger">
       <span class="projects__num reveal-text">[03]&nbsp;&mdash; SELECTED WORKS</span>
       <h2 class="projects__title"><span class="reveal-text delay-100">Projects</span></h2>
-      <p class="projects__meta"><span class="reveal-text delay-300 block">Layout &middot; JS &middot; Scripts &middot; Interaction scenarios<br />SPA &middot; Landing &middot; E-com &middot; Web3 &middot; AI · Tver &rarr; Worldwide</span></p>
+      <p class="projects__meta"><span class="reveal-text delay-300 block">SPA &middot; Landing &middot; E-com &middot; Web3 &middot; AI<br />Tver &rarr; Worldwide</span></p>
     </div>
     <div class="projects__accordion">
       <div
@@ -106,12 +106,6 @@ function toggle(i: number) {
   margin-bottom: 4rem;
   padding: 0 1rem;
 }
-@media (min-width: 768px) {
-  .projects__header {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
 .projects__num {
   font-family: var(--font-mono);
   display: block;
@@ -150,20 +144,12 @@ function toggle(i: number) {
   color: inherit;
   cursor: pointer;
   transition: background 0.3s;
-  will-change: background-color;
 }
 .projects__trigger > div {
   min-width: 0;
 }
 .projects__trigger:hover {
   background: rgba(255, 255, 255, 0.03);
-}
-@media (min-width: 768px) {
-  .projects__trigger {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    grid-template-columns: 2rem 1fr 14rem 2.5rem;
-  }
 }
 .projects__item.is-open .projects__name {
   color: #ccff00;
@@ -178,7 +164,6 @@ function toggle(i: number) {
   font-size: clamp(1.5rem, 3vw, 3rem);
   font-weight: 700;
   transition: color 0.3s;
-  will-change: color;
 }
 .projects__tags {
   display: flex;
@@ -203,11 +188,6 @@ function toggle(i: number) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media (min-width: 768px) {
-  .projects__stack {
-    display: block;
-  }
-}
 .projects__icon {
   width: 2.5rem;
   height: 2.5rem;
@@ -218,7 +198,6 @@ function toggle(i: number) {
   align-items: center;
   justify-content: center;
   transition: all 0.5s;
-  will-change: transform;
 }
 .projects__item.is-open .projects__icon {
   transform: rotate(45deg);
@@ -229,7 +208,6 @@ function toggle(i: number) {
 .projects__body {
   overflow: hidden;
   transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: max-height;
 }
 .projects__body-inner {
   padding: 1rem 1rem 3rem;
@@ -237,30 +215,11 @@ function toggle(i: number) {
   grid-template-columns: 1fr;
   gap: 0;
 }
-@media (min-width: 768px) {
-  .projects__body-inner {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
-    padding-top: 1.5rem;
-  }
-}
 .projects__body-left {
   grid-column: 1;
 }
-@media (min-width: 768px) {
-  .projects__body-left {
-    grid-column: 2 / span 5;
-  }
-}
 .projects__body-right {
   grid-column: 1;
-}
-@media (min-width: 768px) {
-  .projects__body-right {
-    grid-column: 8 / span 5;
-  }
 }
 .projects__demo {
   font-family: var(--font-mono);
@@ -270,7 +229,6 @@ function toggle(i: number) {
   margin-bottom: 1rem;
   display: inline-block;
   transition: opacity 0.3s;
-  will-change: opacity;
 }
 .projects__demo:hover {
   opacity: 0.8;
@@ -361,7 +319,6 @@ function toggle(i: number) {
   color: #e1e1e1;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
-  will-change: background-color, color;
 }
 .projects__archive:hover {
   background: #fff;
@@ -369,7 +326,6 @@ function toggle(i: number) {
 }
 .projects__arrow {
   transition: transform 0.3s;
-  will-change: transform;
 }
 .projects__archive:hover .projects__arrow {
   transform: translate(2px, -2px);
@@ -378,5 +334,30 @@ function toggle(i: number) {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: #444;
+}
+@media (min-width: 768px) {
+  .projects__header,
+  .projects__trigger,
+  .projects__body-inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .projects__trigger {
+    grid-template-columns: 2rem 1fr 14rem 2.5rem;
+  }
+  .projects__body-inner {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    padding-top: 1.5rem;
+  }
+  .projects__body-left {
+    grid-column: 2 / span 5;
+  }
+  .projects__body-right {
+    grid-column: 8 / span 5;
+  }
+  .projects__stack {
+    display: block;
+  }
 }
 </style>

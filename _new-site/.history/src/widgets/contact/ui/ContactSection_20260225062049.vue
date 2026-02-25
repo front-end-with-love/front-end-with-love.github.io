@@ -135,7 +135,6 @@ import photo from '@/assets/img/1.jpeg'
   text-decoration-color: #555;
   margin-bottom: 1rem;
   transition: color 0.3s;
-  will-change: color;
 }
 .contact__link:hover {
   color: #ccff00;

@@ -35,10 +35,10 @@ import photo from '@/assets/img/1.jpeg'
       </div>
     </div>
     <footer class="contact__footer">
-      <div class="contact__footer-col contact__footer-col--left">
+      <div>
         <p>&copy;&nbsp;2026&nbsp;MIKHAIL&nbsp;KHLEBNIKOV<br>ALL&nbsp;RIGHTS RESERVED</p>
       </div>
-      <div class="contact__footer-col contact__footer-col--right">
+      <div class="contact__footer-right">
         <p>BUILT WITH MY&nbsp;BRAINS AND<br>VARIANT.COM/CURSOR.COM</p>
       </div>
     </footer>
@@ -54,12 +54,6 @@ import photo from '@/assets/img/1.jpeg'
   padding: 8rem 1rem 2rem;
   background: #050505;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-@media (min-width: 768px) {
-  .contact {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
 }
 .contact__top {
   display: flex;
@@ -107,17 +101,6 @@ import photo from '@/assets/img/1.jpeg'
   grid-template-columns: 1fr;
   gap: 4rem;
 }
-@media (max-width: 767px) {
-  .contact__grid {
-    gap: 2rem;
-  }
-}
-@media (min-width: 768px) {
-  .contact__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-}
 .contact__intro {
   font-size: 1.25rem;
   color: #888;
@@ -135,7 +118,6 @@ import photo from '@/assets/img/1.jpeg'
   text-decoration-color: #555;
   margin-bottom: 1rem;
   transition: color 0.3s;
-  will-change: color;
 }
 .contact__link:hover {
   color: #ccff00;
@@ -151,7 +133,7 @@ import photo from '@/assets/img/1.jpeg'
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-end;
   padding-top: 2rem;
   margin-top: 6rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -160,27 +142,30 @@ import photo from '@/assets/img/1.jpeg'
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-
+.contact__footer-right {
+  text-align: right;
+}
+@media (max-width: 767px) {
+  .contact__grid {
+    gap: 2rem;
+  }
+  .contact__footer {
+    text-align: right;
+  }
+}
 @media (min-width: 768px) {
+  .contact {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .contact__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
   .contact__footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-  }
-}
-.contact__footer-col {
-  flex: 0 0 auto;
-}
-.contact__footer-col--left {
-  text-align: left;
-} 
-.contact__footer-col--right {
-  text-align: right;
-}
-@media (max-width: 767px) {
-  .contact__footer-col--left,
-  .contact__footer-col--right {
-    text-align: center;
   }
 }
 </style>

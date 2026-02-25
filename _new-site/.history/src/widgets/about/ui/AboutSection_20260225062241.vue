@@ -145,7 +145,6 @@ const experience = [
   margin: 0 -1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: background 0.3s;
-  will-change: background-color;
 }
 .about__row:hover {
   background: rgba(255, 255, 255, 0.05);

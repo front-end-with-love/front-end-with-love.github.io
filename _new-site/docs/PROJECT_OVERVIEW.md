@@ -73,3 +73,12 @@ npm run preview # local preview of dist/
 
 Deploy: manually copy `dist/` contents to the target branch/location on GitHub Pages.
 `base: '/'` in `vite.config.ts` assumes site served from repo root (`front-end-with-love.github.io`).
+
+## SEO (2026)
+
+- **index.html:** meta description, canonical URL, Open Graph and Twitter Card tags, theme-color. Production URL used: `https://front-end-with-love.github.io/`. To change it (e.g. subpath or custom domain), update canonical, `og:url`, `twitter:url`, and JSON-LD `url` in index.html.
+- **Structured data:** JSON-LD for `Person` (name, jobTitle, sameAs) and `WebSite` (name, url, description). No FAQ/HowTo (deprecated for rich results).
+- **public/robots.txt:** allows all crawlers, references sitemap. Edit `Sitemap:` if base URL changes.
+- **public/sitemap.xml:** single entry for the homepage. Add more `<url>` entries when new routes exist.
+- **OG image:** meta points to `https://front-end-with-love.github.io/og-image.jpg`. Add a 1200×630 image to `public/og-image.jpg` for stable social previews.
+- **Semantics:** one visible h1 (Hero name); loader uses `<p role="status">`. Contact photo has explicit `width`/`height` to reduce CLS.

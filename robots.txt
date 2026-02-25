@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://front-end-with-love.github.io/sitemap.xml

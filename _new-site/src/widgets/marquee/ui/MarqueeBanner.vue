@@ -46,6 +46,7 @@ const items = [
   align-items: center;
   gap: 2rem;
   animation: marquee 20s linear infinite;
+  will-change: transform;
 }
 @keyframes marquee {
   0% {

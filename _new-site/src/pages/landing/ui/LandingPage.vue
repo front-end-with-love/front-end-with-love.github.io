@@ -1,10 +1,11 @@
 <script setup lang="ts">
-/** Landing page: composition of widgets (loader, nav, hero, marquee, about, projects, stack, contact). */
+/** Landing page: composition of widgets (loader, nav, hero, marquee, about, soft-skills, projects, stack, contact). */
 import { LoaderScreen } from '@/widgets/loader'
 import { LandingNav } from '@/widgets/nav'
 import { HeroSection } from '@/widgets/hero'
 import { MarqueeBanner } from '@/widgets/marquee'
 import { AboutSection } from '@/widgets/about'
+import { SoftSkillsSection } from '@/widgets/soft-skills'
 import { ProjectsSection } from '@/widgets/projects'
 import { StackSection } from '@/widgets/stack'
 import { ContactSection } from '@/widgets/contact'
@@ -39,6 +40,7 @@ useReveal('.reveal-trigger, section')
       <HeroSection />
       <MarqueeBanner />
       <AboutSection />
+      <SoftSkillsSection />
       <ProjectsSection />
       <StackSection />
       <ContactSection />
@@ -65,6 +67,11 @@ useReveal('.reveal-trigger, section')
   mix-blend-mode: difference;
   color: #e1e1e1;
 }
+@media (max-width: 767px) {
+  .landing-page__sidebar {
+    display: none;
+  }
+}
 .landing-page__sidebar-link {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -73,6 +80,7 @@ useReveal('.reveal-trigger, section')
   transform: rotate(-90deg);
   transform-origin: left;
   transition: color 0.3s;
+  will-change: color;
 }
 .landing-page__sidebar-link:hover {
   color: #ccff00;
@@ -80,10 +88,5 @@ useReveal('.reveal-trigger, section')
 .landing-page__main {
   position: relative;
   z-index: 10;
-}
-@media (max-width: 767px) {
-  .landing-page__sidebar {
-    display: none;
-  }
 }
 </style>

@@ -19,9 +19,10 @@ export const projectsData: ProjectItem[] = [
     tags: ['Dubai · 2023', '3 mo.'],
     stack: 'Gulp · HTML · SASS · JS',
     description:
-      'UX/UI layout developer for an international construction company based in Dubai. Markup for a closed internal system on 1C-Bitrix CMS.',
+      'UX/UI layout developer for an international construction company based in Dubai. Markup and JS for a closed internal system on 1C-Bitrix CMS: forms, validation, integration scripts.',
     bullets: [
       'Figma-synced design system in HTML/CSS/JS',
+      'JS scripts for form logic, validation, CMS integration',
       'Pixel-perfect match to mockups',
       'Gulp-based project build setup',
       'International team, close collaboration with design'
@@ -35,13 +36,13 @@ export const projectsData: ProjectItem[] = [
     tags: ['Web3 · 2022', '9 mo.'],
     stack: 'Next.js · React · TypeScript',
     description:
-      'Frontend development for an NFT casino on Next.js. Advanced stage: full cycle from design to component architecture.',
+      'Frontend development for an NFT casino on Next.js. Full cycle: design, component architecture, React/TypeScript for UI and game flow, client-side state and interaction scenarios.',
     bullets: [
       'Responsive fluid layout 320px–2560px',
       'Pixel-perfect match to mockups',
-      'Component-based UI structure',
-      'Reusable UI components',
-      'Client-side interface logic'
+      'Component-based UI structure and reusable components',
+      'TypeScript: state, game logic, client-side scenarios',
+      'Web3 integration and interface scripts'
     ],
     verification: 'Happy to provide code access and pass a technical interview.',
     techTags: ['Next.js', 'React', 'TypeScript', 'CSS Modules', 'Web3']
@@ -52,14 +53,14 @@ export const projectsData: ProjectItem[] = [
     tags: ['Catalog · Global', '2 mo.'],
     stack: 'BEM · SASS · Gulp',
     description:
-      'Multilingual portal with a catalog of mods, maps, skins and articles for Minecraft PE. Component markup with BEM for CMS.',
+      'Multilingual portal with a catalog of mods, maps, skins and articles for Minecraft PE. BEM markup plus vanilla JS: filters, galleries, accordions, modals, adaptive menu, interaction scenarios.',
     bullets: [
       'Component structure for cards, filters, galleries (BEM)',
+      'JS for filters, accordions, modals, adaptive menu',
       'SEO-optimized HTML and CSS',
       'Responsive 320px–2560px',
-      'Accordions, modals, adaptive menu',
       'Accessibility and semantic markup',
-      'Non-trivial JS for UI behavior'
+      'Non-trivial scripts for UI behavior and user flows'
     ],
     verification: 'Happy to share code, design snippets, and pass a technical interview.',
     techTags: ['HTML', 'SCSS', 'JavaScript', 'BEM', 'Gulp', 'A11Y · SEO'],
@@ -71,12 +72,13 @@ export const projectsData: ProjectItem[] = [
     tags: ['E-commerce', '2 mo.'],
     stack: 'SCSS · BEM · Gulp',
     description:
-      'Landing and product catalog for a subscription flower delivery service. Premium look, subtle animation, business section.',
+      'Landing and product catalog for a subscription flower delivery service. Premium look, JS for accordions, modals, sticky header, WhatsApp widget, form handling and animation scenarios.',
     bullets: [
       'Home, catalog, order form, business section, contacts',
-      'Accordions, modals, sticky header, WhatsApp widget',
+      'JS for accordions, modals, sticky header, WhatsApp widget, forms',
       'Typography and visual hierarchy aligned with design',
-      'Accessibility and semantics'
+      'Accessibility and semantics',
+      'Interactive scenarios and scroll/click behavior'
     ],
     verification: 'Happy to show code, walk through the markup, and pass a technical interview.',
     techTags: ['HTML', 'SCSS', 'JavaScript', 'BEM', 'Gulp'],
@@ -88,12 +90,13 @@ export const projectsData: ProjectItem[] = [
     tags: ['Corporate', '3 mo.'],
     stack: 'HTML · SCSS · BEM',
     description:
-      'Corporate site for an engineering institute: strict style, technical content, brand guidelines.',
+      'Corporate site for an engineering institute: strict style, technical content, brand guidelines. JS for maps, contact form, dynamic blocks and integration scripts.',
     bullets: [
       'Pages: About, Projects, Contacts, Careers, News',
-      'Maps and contact form integration',
+      'JS scripts for maps, contact form, validation',
       'Pixel-perfect to technical mockups',
-      'Typography and semantics for SEO'
+      'Typography and semantics for SEO',
+      'Dynamic behavior and integration scenarios'
     ],
     verification: 'Happy to provide code samples, markup, and pass a technical interview.',
     techTags: ['HTML', 'SCSS', 'JavaScript', 'BEM · Gulp', 'SEO'],
@@ -122,10 +125,11 @@ export const projectsData: ProjectItem[] = [
     tags: ['Promo · Freelance', '~80–100 h'],
     stack: 'Pug · SASS · Vue.js · jQuery · Grunt',
     description:
-      'Layout of a promo page for an innovative product. Desktop and mobile, scroll-based animations from video reference and designer feedback.',
+      'Layout of a promo page for an innovative product. Vue.js and Skrollr for structure and scroll-driven animation scenarios; desktop and mobile from video reference and designer feedback.',
     bullets: [
       'Desktop and mobile versions',
-      'Scroll-driven animations (Skrollr, Vue.js for structure)',
+      'Vue.js + Skrollr: scroll scenarios, animation logic, state',
+      'JS-driven scroll and interaction flows',
       'Adaptive design and layout ownership',
       'BEM, modular Pug/SASS, Grunt build'
     ],
@@ -139,10 +143,11 @@ export const projectsData: ProjectItem[] = [
     tags: ['Portfolio case · Freelance', '~30–40 h'],
     stack: 'Pug · SASS · jQuery · Grunt',
     description:
-      'Case layout for a design studio portfolio. Single desktop mockup plus animation references; layout later reused as a base for 7 other cases.',
+      'Case layout for a design studio portfolio. jQuery for animations and interaction scenarios; single desktop mockup plus refs, layout reused as base for 7 other cases.',
     bullets: [
       'Unified block structure for reuse across cases',
-      'Adaptive design and animation conceived and implemented independently',
+      'jQuery: animation and interaction scenarios, scroll/click logic',
+      'Adaptive design and animation conceived and implemented in JS',
       'BEM, Grunt, Pug, SASS'
     ],
     verification: 'Happy to share code and discuss the approach.',
@@ -155,10 +160,11 @@ export const projectsData: ProjectItem[] = [
     tags: ['Landing · Freelance', '~30–40 h'],
     stack: 'Pug · SASS · jQuery · Grunt',
     description:
-      'One-page presentation site. Desktop mockup and reference sites in spec; adaptivity and animation implemented with minimal client input.',
+      'One-page presentation site. jQuery for adaptivity, animation and interaction scenarios; desktop mockup and refs in spec, minimal client input.',
     bullets: [
       'Simple presentation landing',
-      'Adaptive layout and animation',
+      'jQuery: adaptive behavior, animation, interactive scenarios',
+      'Adaptive layout and animation scripts',
       'BEM, Grunt, Pug, SASS'
     ],
     verification: 'Happy to share code and walk through the markup.',

@@ -7,7 +7,7 @@ const { progress, loaded } = useLoader()
 <template>
   <div class="loader-screen" :class="{ loaded }" data-testid="loader">
     <div class="loader-screen__bar">
-      <h1 class="loader-screen__title">LOADING</h1>
+      <p class="loader-screen__title" role="status" aria-live="polite">LOADING</p>
       <div class="loader-screen__counter">{{ progress }}%</div>
     </div>
   </div>
@@ -24,6 +24,7 @@ const { progress, loaded } = useLoader()
   padding: 2rem;
   transform-origin: top;
   transition: transform 1s cubic-bezier(0.87, 0, 0.13, 1);
+  will-change: transform;
 }
 .loader-screen.loaded {
   transform: scaleY(0);

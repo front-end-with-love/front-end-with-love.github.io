@@ -87,7 +87,6 @@ function scrollToContact() {
   font-weight: 700;
   letter-spacing: -0.05em;
   transition: color 0.3s;
-  will-change: color;
 }
 .landing-nav__logo:hover .landing-nav__logo-text {
   color: #ccff00;
@@ -118,7 +117,6 @@ function scrollToContact() {
   display: block;
   transform: translateY(-0.4px);
   animation: nav-pulse 2s ease-in-out infinite;
-  will-change: opacity;
 }
 @keyframes nav-pulse {
   0%, 100% { opacity: 1; }
@@ -142,7 +140,6 @@ function scrollToContact() {
   height: 1px;
   background: #fff;
   transition: width 0.3s;
-  will-change: width;
 }
 .landing-nav__menu-line--first {
   width: 3rem;
