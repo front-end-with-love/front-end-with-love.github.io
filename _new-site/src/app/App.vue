@@ -13,7 +13,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="cursor-dot" aria-hidden="true" />
-  <div class="cursor-ring" aria-hidden="true" />
+  <template v-if="!isTouch">
+    <div class="cursor-dot" aria-hidden="true" />
+    <div class="cursor-ring" aria-hidden="true" />
+  </template>
   <router-view />
 </template>

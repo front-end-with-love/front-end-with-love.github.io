@@ -185,8 +185,7 @@ function toggle(i: number) {
 }
 .projects__tags {
   display: flex;
-  padding: 0 8rem 0 0;
-  flex-wrap: wrap;
+  
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
