@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/** Landing page: composition of widgets (loader, nav, hero, marquee, about, soft-skills, projects, workflow, stack, contact). */
+/** Landing page: composition of widgets (loader, nav, hero, marquee, about, soft-skills, projects, stack, contact). */
 import bgImg from '@/assets/img/2.jpg'
 import { LoaderScreen } from '@/widgets/loader'
 import { LandingNav } from '@/widgets/nav'
@@ -8,7 +8,6 @@ import { MarqueeBanner } from '@/widgets/marquee'
 import { AboutSection } from '@/widgets/about'
 import { SoftSkillsSection } from '@/widgets/soft-skills'
 import { ProjectsSection } from '@/widgets/projects'
-import { WorkflowSection } from '@/widgets/workflow'
 import { StackSection } from '@/widgets/stack'
 import { ContactSection } from '@/widgets/contact'
 import { useCursor } from '@/features/cursor'
@@ -47,7 +46,6 @@ useReveal('.reveal-trigger, section')
       <AboutSection />
       <SoftSkillsSection />
       <ProjectsSection />
-      <WorkflowSection />
       <StackSection />
       <ContactSection />
     </main>
@@ -71,7 +69,7 @@ useReveal('.reveal-trigger, section')
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000d6;
+    background-color: #000000ac;
   }
 }
 .landing-page__sidebar {

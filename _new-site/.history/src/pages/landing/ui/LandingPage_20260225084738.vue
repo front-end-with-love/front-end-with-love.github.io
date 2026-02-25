@@ -1,6 +1,7 @@
 <script setup lang="ts">
-/** Landing page: composition of widgets (loader, nav, hero, marquee, about, soft-skills, projects, workflow, stack, contact). */
+/** Landing page: composition of widgets (loader, nav, hero, marquee, about, soft-skills, projects, stack, contact). */
 import bgImg from '@/assets/img/2.jpg'
+import bgImg2 from '@/assets/img/3.jpg'
 import { LoaderScreen } from '@/widgets/loader'
 import { LandingNav } from '@/widgets/nav'
 import { HeroSection } from '@/widgets/hero'
@@ -8,7 +9,6 @@ import { MarqueeBanner } from '@/widgets/marquee'
 import { AboutSection } from '@/widgets/about'
 import { SoftSkillsSection } from '@/widgets/soft-skills'
 import { ProjectsSection } from '@/widgets/projects'
-import { WorkflowSection } from '@/widgets/workflow'
 import { StackSection } from '@/widgets/stack'
 import { ContactSection } from '@/widgets/contact'
 import { useCursor } from '@/features/cursor'
@@ -23,7 +23,7 @@ useReveal('.reveal-trigger, section')
 <template>
   <div
     class="landing-page"
-     :style="{ backgroundImage: `url(${bgImg})` }"
+    :style="{ backgroundImage: `url(${bgImg}), url(${bgImg2})` }"
   >
     <LoaderScreen />
     <LandingNav />
@@ -47,7 +47,6 @@ useReveal('.reveal-trigger, section')
       <AboutSection />
       <SoftSkillsSection />
       <ProjectsSection />
-      <WorkflowSection />
       <StackSection />
       <ContactSection />
     </main>
@@ -58,8 +57,8 @@ useReveal('.reveal-trigger, section')
 .landing-page {
   position: relative;
   min-height: 100vh;
-  background-size: 100% 50%;
-  background-position: top center;
+  background-size: 100% 100%;
+  background-position: center;
   background-repeat: no-repeat;
   &:after {
     content: '';
@@ -71,7 +70,7 @@ useReveal('.reveal-trigger, section')
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000d6;
+    background-color: #000000ab;
   }
 }
 .landing-page__sidebar {

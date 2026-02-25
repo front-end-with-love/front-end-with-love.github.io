@@ -7,7 +7,7 @@ import photo from '@/assets/img/1.jpeg'
   <section id="contact" class="contact">
     <div class="contact__top reveal-trigger">
       <div class="contact__text-wrapper">
-        <span class="contact__num reveal-text">[06]&nbsp;&mdash; CONTACT</span>
+        <span class="contact__num reveal-text">[05]&nbsp;&mdash; CONTACT</span>
         <h2 class="contact__title">
           <span class="reveal-text delay-100 block">Let's<br /></span>
           <span class="contact__title-outline reveal-text delay-300">Talk</span>
@@ -21,10 +21,10 @@ import photo from '@/assets/img/1.jpeg'
           Open for new opportunities. Ready for code verification and technical interviews.
         </p>
         <ul class="contact__availability reveal-text">
-<li><span class="contact__availability-label">Location: </span> Russia, Tver</li>
-<li><span class="contact__availability-label">Timezone: </span> UTC+3 &middot; Moscow &middot; Async-friendly</li>
-<li><span class="contact__availability-label">Status: </span> Open to&nbsp;work</li>
-<li><span class="contact__availability-label">Format: </span> Remote &middot; Full-time &middot; Freelance</li>
+<li><span class="contact__availability-label">Location</span> Russia, Tver</li>
+<li><span class="contact__availability-label">Timezone</span> UTC+3 &middot; Moscow &middot; Async-friendly</li>
+<li><span class="contact__availability-label">Status</span> Open to&nbsp;work</li>
+<li><span class="contact__availability-label">Format</span> Remote &middot; Full-time &middot; Freelance</li>
 </ul>
       </div>
       <div class="contact__links reveal-text delay-200">

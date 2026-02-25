@@ -123,7 +123,7 @@ export const projectsData: ProjectItem[] = [
     id: 7,
     title: 'Nemoloko',
     tags: ['Promo · Freelance', '~80–100 h'],
-    stack: 'Pug · SASS · Vue.js · jQuery · Grunt',
+    stack: 'Pug · SASS · Vue.js',
     description:
       'Layout of a promo page for an innovative product. Vue.js and Skrollr for structure and scroll-driven animation scenarios; desktop and mobile from video reference and designer feedback.',
     bullets: [

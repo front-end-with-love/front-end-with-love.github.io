@@ -7,7 +7,7 @@ import photo from '@/assets/img/1.jpeg'
   <section id="contact" class="contact">
     <div class="contact__top reveal-trigger">
       <div class="contact__text-wrapper">
-        <span class="contact__num reveal-text">[06]&nbsp;&mdash; CONTACT</span>
+        <span class="contact__num reveal-text">[05]&nbsp;&mdash; CONTACT</span>
         <h2 class="contact__title">
           <span class="reveal-text delay-100 block">Let's<br /></span>
           <span class="contact__title-outline reveal-text delay-300">Talk</span>
@@ -18,14 +18,14 @@ import photo from '@/assets/img/1.jpeg'
     <div class="contact__grid reveal-trigger">
       <div class="contact__info reveal-text">
         <p class="contact__intro">
-          Open for new opportunities. Ready for code verification and technical interviews.
+          Open for new opportunities. Ready for code verification and technical interviews.<br><br>.
         </p>
         <ul class="contact__availability reveal-text">
-<li><span class="contact__availability-label">Location: </span> Russia, Tver</li>
-<li><span class="contact__availability-label">Timezone: </span> UTC+3 &middot; Moscow &middot; Async-friendly</li>
-<li><span class="contact__availability-label">Status: </span> Open to&nbsp;work</li>
-<li><span class="contact__availability-label">Format: </span> Remote &middot; Full-time &middot; Freelance</li>
-</ul>
+          <li><span class="contact__availability-label">Location</span> Russia, Tver</li>
+          <li><span class="contact__availability-label">Timezone</span> UTC+3 · Moscow · Async-friendly</li>
+          <li><span class="contact__availability-label">Status</span> Open to work</li>
+          <li><span class="contact__availability-label">Format</span> Remote · Full-time · Freelance</li>
+        </ul>
       </div>
       <div class="contact__links reveal-text delay-200">
         <a href="mailto:frontend.dev.ru@gmail.com" class="contact__link hover-trigger">frontend.dev.ru@gmail.com</a>
@@ -58,22 +58,8 @@ import photo from '@/assets/img/1.jpeg'
   flex-direction: column;
   justify-content: space-between;
   padding: 8rem 1rem 2rem;
-  will-change: background-position;
-  background: linear-gradient(-45deg, #050505, #0f0f0f, #1a1a1a, #252525);
-  background-size: 400% 400%;
-  animation: contact-gradient 15s ease infinite;
+  background: #050505;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-@keyframes contact-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 @media (min-width: 768px) {
   .contact {

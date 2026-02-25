@@ -15,7 +15,7 @@ function toggle(i: number) {
     <div class="projects__header reveal-trigger">
       <span class="projects__num reveal-text">[03]&nbsp;&mdash; SELECTED WORKS</span>
       <h2 class="projects__title"><span class="reveal-text delay-100">Projects</span></h2>
-      <p class="projects__meta"><span class="reveal-text delay-300 block">Layout &middot; JS &middot; Scripts &middot; Interaction scenarios<br />SPA &middot; Landing &middot; E-com &middot; AI &middot; Russia &rarr; Worldwide</span></p>
+      <p class="projects__meta"><span class="reveal-text delay-300 block">Layout &middot; JS &middot; Scripts &middot; Interaction scenarios<br />SPA &middot; Landing &middot; E-com &middot; AI<br>Russia &rarr; Worldwide</span></p>
     </div>
     <div class="projects__accordion">
       <div

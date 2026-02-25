@@ -32,6 +32,7 @@ widgets/
   marquee/                  # infinite CSS marquee
   about/                    # stats + experience table
   projects/                 # accordion, data in model/projectsData.ts
+  workflow/                 # workflow methodology slider (GSAP), BRIEF→DEPLOY
   stack/                    # skills/tools editorial layout
   contact/                  # links + footer
 

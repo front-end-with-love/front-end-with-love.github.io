@@ -42,7 +42,7 @@ const principles = [
   <section class="stack">
     <div class="stack__glow" aria-hidden="true" />
     <div class="stack__header reveal-trigger">
-      <span class="stack__num reveal-text">[04]&nbsp;&mdash; ARSENAL</span>
+      <span class="stack__num reveal-text">[05]&nbsp;&mdash; ARSENAL</span>
       <div class="stack__header-cols">
         <div class="stack__header-col stack__header-col--left">
           <h2 class="stack__title"><span class="reveal-text delay-100">Stack</span></h2>

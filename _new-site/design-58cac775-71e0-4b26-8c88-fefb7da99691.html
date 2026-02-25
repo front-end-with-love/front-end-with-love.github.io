@@ -1,0 +1,234 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">Soft Skills Portfolio - Horizontal Scroll</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="5"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet" vid="8">
+    <style vid="9">
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #050505;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .font-display {
+            font-family: 'Syncopate', sans-serif;
+        }
+        
+        .horizontal-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .horizontal-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .skill-slide {
+            flex: 0 0 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #222;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #CCFF00;
+            transform: scale(1.5);
+        }
+
+        .slide-bg-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            z-index: -1;
+            pointer-events: none;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: #444;
+            text-transform: uppercase;
+            animation: bounce-x 2s infinite;
+        }
+
+        @keyframes bounce-x {
+            0%, 20%, 50%, 80%, 100% {transform: translateX(-50%);}
+            40% {transform: translateX(-30%);}
+            60% {transform: translateX(-70%);}
+        }
+    </style>
+</head>
+<body class="selection:bg-[#CCFF00] selection:text-black" vid="10">
+
+    
+
+    <div class="fixed left-10 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4" id="dot-nav" vid="23">
+        
+    </div>
+
+    <div class="horizontal-container" id="scroll-container" vid="24">
+        
+        
+        <section class="skill-slide" vid="25">
+            <div class="slide-bg-number" vid="26">01</div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight text-[#CCFF00] text-center max-w-5xl leading-none" vid="27">
+                Communication &amp; Documentation
+            </h2>
+            <div class="mt-8 flex gap-4 text-xs tracking-widest text-gray-500 uppercase font-bold" vid="28">
+                <span vid="29">Docs</span> • <span vid="30">Reports</span> • <span vid="31">Clarity</span>
+            </div>
+            <div class="absolute bottom-24 max-w-2xl px-6" vid="32">
+                <p class="text-center text-gray-400 text-sm md:text-base leading-relaxed" vid="33">
+                    Maintaining steady, respectful communication; writing clear documentation, code comments, and reports; explaining technical concepts clearly to colleagues and non-technical stakeholders.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="skill-slide" vid="34">
+            <div class="slide-bg-number" vid="35">02</div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight text-white text-center max-w-5xl leading-none" vid="36">
+                Teamwork
+            </h2>
+            <div class="mt-8 flex gap-4 text-xs tracking-widest text-gray-500 uppercase font-bold" vid="37">
+                <span vid="38">Collaboration</span> • <span vid="39">Git</span> • <span vid="40">Jira</span>
+            </div>
+            <div class="absolute bottom-24 max-w-2xl px-6" vid="41">
+                <p class="text-center text-gray-400 text-sm md:text-base leading-relaxed" vid="42">
+                    Collaborating constructively, sharing knowledge, supporting colleagues, resolving conflicts, contributing to project success using industry-standard tools.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="skill-slide" vid="43">
+            <div class="slide-bg-number" vid="44">03</div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight text-white text-center max-w-5xl leading-none" vid="45">
+                Problem Solving
+            </h2>
+            <div class="mt-8 flex gap-4 text-xs tracking-widest text-gray-500 uppercase font-bold" vid="46">
+                <span vid="47">Decomposition</span> • <span vid="48">Root Cause</span>
+            </div>
+            <div class="absolute bottom-24 max-w-2xl px-6" vid="49">
+                <p class="text-center text-gray-400 text-sm md:text-base leading-relaxed" vid="50">
+                    Finding effective solutions to complex problems, decomposing issues, analyzing requirements, and weighing pros and cons of technical approaches.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="skill-slide" vid="51">
+            <div class="slide-bg-number" vid="52">04</div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight text-white text-center max-w-5xl leading-none" vid="53">
+                Adaptability &amp; Learning
+            </h2>
+            <div class="mt-8 flex gap-4 text-xs tracking-widest text-gray-500 uppercase font-bold" vid="54">
+                <span vid="55">Quick Ramp-up</span> • <span vid="56">New Stack</span>
+            </div>
+            <div class="absolute bottom-24 max-w-2xl px-6" vid="57">
+                <p class="text-center text-gray-400 text-sm md:text-base leading-relaxed" vid="58">
+                    Getting up to speed quickly with the stack at hand; adapting to new frameworks, languages, methodologies, and changing priorities.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="skill-slide" vid="59">
+            <div class="slide-bg-number" vid="60">05</div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight text-white text-center max-w-5xl leading-none" vid="61">
+                Time Management
+            </h2>
+            <div class="mt-8 flex gap-4 text-xs tracking-widest text-gray-500 uppercase font-bold" vid="62">
+                <span vid="63">Priorities</span> • <span vid="64">Deadlines</span>
+            </div>
+            <div class="absolute bottom-24 max-w-2xl px-6" vid="65">
+                <p class="text-center text-gray-400 text-sm md:text-base leading-relaxed" vid="66">
+                    Planning time effectively, estimating task duration realistically, prioritizing, and meeting deadlines without sacrificing quality.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="scroll-hint hidden md:block" vid="67">
+        Scroll horizontally
+    </div>
+
+    <script vid="68">
+        const container = document.getElementById('scroll-container');
+        const slides = document.querySelectorAll('.skill-slide');
+        const dotNav = document.getElementById('dot-nav');
+
+        
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = `nav-dot ${i === 0 ? 'active' : ''}`;
+            dot.onclick = () => {
+                container.scrollTo({ left: window.innerWidth * i, behavior: 'smooth' });
+            };
+            dotNav.appendChild(dot);
+        });
+
+        
+        container.addEventListener('scroll', () => {
+            const index = Math.round(container.scrollLeft / window.innerWidth);
+            const dots = document.querySelectorAll('.nav-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            
+            slides.forEach((slide, i) => {
+                const title = slide.querySelector('h2');
+                if (i === index) {
+                    title.classList.add('text-[#CCFF00]');
+                    title.classList.remove('text-white');
+                } else {
+                    title.classList.remove('text-[#CCFF00]');
+                    title.classList.add('text-white');
+                }
+            });
+        });
+
+        
+        container.addEventListener('wheel', (evt) => {
+            if (evt.deltaY !== 0) {
+                evt.preventDefault();
+                container.scrollLeft += evt.deltaY;
+            }
+        });
+    </script>
+
+
+</body></html>

@@ -123,7 +123,7 @@ export const projectsData: ProjectItem[] = [
     id: 7,
     title: 'Nemoloko',
     tags: ['Promo · Freelance', '~80–100 h'],
-    stack: 'Pug · SASS · Vue.js · jQuery · Grunt',
+    stack: 'Pug · SASS · Vue.js',
     description:
       'Layout of a promo page for an innovative product. Vue.js and Skrollr for structure and scroll-driven animation scenarios; desktop and mobile from video reference and designer feedback.',
     bullets: [
@@ -134,7 +134,7 @@ export const projectsData: ProjectItem[] = [
       'BEM, modular Pug/SASS, Grunt build'
     ],
     verification: 'Happy to share code and walk through the implementation.',
-    techTags: ['Pug', 'SASS', 'Vue.js'],
+    techTags: ['Pug', 'SASS', 'Vue.js', 'jQuery', 'Grunt', 'BEM'],
     demoUrl: 'https://front-end-with-love.github.io/portfolio/nmlk/'
   },
   {
