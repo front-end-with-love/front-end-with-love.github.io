@@ -11,8 +11,13 @@ import pet3Image from '../assets/pet-3.webp'
 import pet4Image from '../assets/pet-4.webp'
 import pet5Image from '../assets/pet-5.webp'
 
-// ref-массив для доступа к DOM карточек (привязка через :ref="(el) => setCardRef(el, i)")
 const cardRefs = ref<(HTMLElement | null)[]>([])
+const glitchTriggerIndex = ref<number | null>(null)
+const glitchTriggerVariant = ref(0)
+const hoveredCardIndex = ref<number | null>(null)
+const hoveredCardVariant = ref(0)
+let glitchScheduleId: ReturnType<typeof setTimeout> | undefined
+let glitchTimeoutId: ReturnType<typeof setTimeout> | undefined
 const imagesById: Record<string, string> = {
   'llm-2-siri': pet1Image,
   astrology: pet2Image,
@@ -30,6 +35,12 @@ function setCardRef(el: unknown, i: number) {
 
 // Коэффициенты параллакса по скроллу для каждой карточки (разные направления и силы)
 const scrollParallaxRates = [0.35, -0.5, 0.28, -0.42, 0.45]
+
+function getGlitchVariantClass(i: number): string {
+  if (glitchTriggerIndex.value === i) return `pet-projects__image-wrapper--glitch-variant-${glitchTriggerVariant.value}`
+  if (hoveredCardIndex.value === i) return `pet-projects__image-wrapper--glitch-variant-${hoveredCardVariant.value}`
+  return ''
+}
 
 onMounted(() => {
   nextTick(() => {
@@ -71,10 +82,29 @@ onMounted(() => {
         })
       })
     }
+    const n = petProjectsData.length
+    if (n > 0) {
+      function scheduleNext() {
+        const delayMs = 3000 + Math.random() * (20000 - 3000)
+        glitchScheduleId = setTimeout(() => {
+          if (glitchTimeoutId) clearTimeout(glitchTimeoutId)
+          glitchTriggerVariant.value = Math.floor(Math.random() * 3)
+          glitchTriggerIndex.value = Math.floor(Math.random() * n)
+          glitchTimeoutId = setTimeout(() => {
+            glitchTriggerIndex.value = null
+            glitchTimeoutId = undefined
+          }, 550)
+          scheduleNext()
+        }, delayMs)
+      }
+      scheduleNext()
+    }
   })
 })
 
 onUnmounted(() => {
+  if (glitchScheduleId) clearTimeout(glitchScheduleId)
+  if (glitchTimeoutId) clearTimeout(glitchTimeoutId)
   ScrollTrigger.getAll().forEach((t) => {
     const trigger = t.trigger as Element | undefined
     if (
@@ -109,7 +139,15 @@ onUnmounted(() => {
           class="pet-projects__item featured-portfolio-top"
         >
           <div class="pet-projects__link-wrap">
-            <div class="pet-projects__image-wrapper portfolio-listing-image-wrapper">
+            <div
+              class="pet-projects__image-wrapper portfolio-listing-image-wrapper"
+              :class="[
+                { 'pet-projects__image-wrapper--glitch-trigger': glitchTriggerIndex === i },
+                getGlitchVariantClass(i)
+              ]"
+              @mouseenter="hoveredCardIndex = i; hoveredCardVariant = Math.floor(Math.random() * 3)"
+              @mouseleave="hoveredCardIndex = null"
+            >
               <div class="pet-projects__hover-overlay portfolio-listing-hover-overlay bottom-align">
                 <div class="pet-projects__hover-content">
                   <p class="pet-projects__hover-text">{{ item.description }}</p>
@@ -324,39 +362,108 @@ onUnmounted(() => {
   background-size: cover;
   opacity: 0;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-layer:nth-child(1) {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-layer:nth-child(1),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-layer:nth-child(1) {
   transform: translateX(-5%);
-  animation: petProjectsGlitchLayer1 0.45s linear forwards;
+  animation: petProjectsGlitchLayer1V0 0.45s linear forwards;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-layer:nth-child(2) {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-layer:nth-child(1),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-layer:nth-child(1) {
+  transform: translateX(-8%) translateY(2%);
+  animation: petProjectsGlitchLayer1V1 0.45s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-layer:nth-child(1),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-layer:nth-child(1) {
+  transform: translateX(6%) translateY(-3%);
+  animation: petProjectsGlitchLayer1V2 0.45s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-layer:nth-child(2),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-layer:nth-child(2) {
   transform: translateX(3%) translateY(3%);
-  animation: petProjectsGlitchLayer2 0.45s -0.15s linear forwards;
+  animation: petProjectsGlitchLayer2V0 0.45s -0.15s linear forwards;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-layer:nth-child(3) {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-layer:nth-child(2),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-layer:nth-child(2) {
+  transform: translateX(-4%) translateY(5%);
+  animation: petProjectsGlitchLayer2V1 0.45s -0.1s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-layer:nth-child(2),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-layer:nth-child(2) {
+  transform: translateX(5%) translateY(-4%);
+  animation: petProjectsGlitchLayer2V2 0.45s -0.2s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-layer:nth-child(3),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-layer:nth-child(3) {
   transform: translateX(5%);
-  animation: petProjectsGlitchFlash 0.45s linear forwards;
+  animation: petProjectsGlitchFlashV0 0.45s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-layer:nth-child(3),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-layer:nth-child(3) {
+  transform: translateX(-6%);
+  animation: petProjectsGlitchFlashV1 0.45s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-layer:nth-child(3),
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-layer:nth-child(3) {
+  transform: translateX(4%) translateY(2%);
+  animation: petProjectsGlitchFlashV2 0.45s linear forwards;
 }
 
-@keyframes petProjectsGlitchLayer1 {
+@keyframes petProjectsGlitchLayer1V0 {
   0% { clip-path: polygon(0 0%, 100% 0%, 100% 5%, 0 5%); opacity: 1; }
   22% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); }
   44% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); }
   66% { clip-path: polygon(0 35%, 100% 35%, 100% 35%, 0 35%); }
   100% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); opacity: 0; }
 }
-@keyframes petProjectsGlitchLayer2 {
+@keyframes petProjectsGlitchLayer1V1 {
+  0% { clip-path: polygon(0 5%, 100% 0%, 100% 12%, 0 8%); opacity: 1; }
+  25% { clip-path: polygon(0 25%, 100% 20%, 100% 28%, 0 28%); }
+  50% { clip-path: polygon(0 12%, 100% 18%, 100% 25%, 0 22%); }
+  75% { clip-path: polygon(0 45%, 100% 42%, 100% 48%, 0 48%); }
+  100% { clip-path: polygon(0 55%, 100% 65%, 100% 75%, 0 68%); opacity: 0; }
+}
+@keyframes petProjectsGlitchLayer1V2 {
+  0% { clip-path: polygon(0 8%, 100% 5%, 100% 10%, 0 12%); opacity: 1; }
+  20% { clip-path: polygon(0 22%, 100% 18%, 100% 25%, 0 25%); }
+  55% { clip-path: polygon(0 38%, 100% 42%, 100% 45%, 0 42%); }
+  85% { clip-path: polygon(0 52%, 100% 58%, 100% 68%, 0 62%); }
+  100% { clip-path: polygon(0 68%, 100% 72%, 100% 82%, 0 78%); opacity: 0; }
+}
+@keyframes petProjectsGlitchLayer2V0 {
   0% { clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%); opacity: 1; }
   25% { clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%); }
   50% { clip-path: polygon(0 50%, 100% 50%, 100% 57%, 0 57%); }
   75% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); }
   100% { clip-path: polygon(0 11%, 100% 11%, 100% 15%, 0 15%); opacity: 0; }
 }
-@keyframes petProjectsGlitchFlash {
+@keyframes petProjectsGlitchLayer2V1 {
+  0% { clip-path: polygon(0 20%, 100% 18%, 100% 35%, 0 32%); opacity: 1; }
+  30% { clip-path: polygon(0 5%, 100% 8%, 100% 10%, 0 8%); }
+  55% { clip-path: polygon(0 48%, 100% 52%, 100% 60%, 0 58%); }
+  80% { clip-path: polygon(0 72%, 100% 75%, 100% 78%, 0 75%); }
+  100% { clip-path: polygon(0 18%, 100% 14%, 100% 22%, 0 20%); opacity: 0; }
+}
+@keyframes petProjectsGlitchLayer2V2 {
+  0% { clip-path: polygon(0 10%, 100% 22%, 100% 38%, 0 28%); opacity: 1; }
+  22% { clip-path: polygon(0 2%, 100% 2%, 100% 6%, 0 6%); }
+  60% { clip-path: polygon(0 55%, 100% 55%, 100% 62%, 0 62%); }
+  88% { clip-path: polygon(0 78%, 100% 82%, 100% 85%, 0 82%); }
+  100% { clip-path: polygon(0 8%, 100% 12%, 100% 18%, 0 14%); opacity: 0; }
+}
+@keyframes petProjectsGlitchFlashV0 {
   0% { opacity: 0.25; }
   30%, 100% { opacity: 0; }
 }
+@keyframes petProjectsGlitchFlashV1 {
+  0% { opacity: 0.35; }
+  25%, 100% { opacity: 0; }
+}
+@keyframes petProjectsGlitchFlashV2 {
+  0% { opacity: 0.2; }
+  40%, 100% { opacity: 0; }
+}
 
-/* SirExotic-style glitch: 4 bands with top/left shift on hover */
+/* SirExotic-style glitch: 4 bands with top/left shift */
 .pet-projects__glitch-sir {
   position: absolute;
   z-index: 1;
@@ -374,28 +481,80 @@ onUnmounted(() => {
   background-size: cover;
   opacity: 0;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-sir-layer--1 {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--1,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--1 {
   clip-path: polygon(0 40%, 100% 40%, 100% 80%, 0 80%);
   opacity: 1;
-  animation: petProjectsGlitchSir1 0.5s linear forwards, petProjectsGlitchSir1Flip 0.5s linear forwards;
+  animation: petProjectsGlitchSir1V0 0.5s linear forwards, petProjectsGlitchSir1FlipV0 0.5s linear forwards;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-sir-layer--2 {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--1,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--1 {
+  clip-path: polygon(0 35%, 100% 35%, 100% 78%, 0 75%);
+  opacity: 1;
+  animation: petProjectsGlitchSir1V1 0.5s linear forwards, petProjectsGlitchSir1FlipV1 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--1,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--1 {
+  clip-path: polygon(0 45%, 100% 45%, 100% 85%, 0 82%);
+  opacity: 1;
+  animation: petProjectsGlitchSir1V2 0.5s linear forwards, petProjectsGlitchSir1FlipV2 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--2,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--2 {
   clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
   opacity: 1;
-  animation: petProjectsGlitchSir2 0.5s linear forwards;
+  animation: petProjectsGlitchSir2V0 0.5s linear forwards;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-sir-layer--3 {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--2,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--2 {
+  clip-path: polygon(0 65%, 100% 68%, 100% 72%, 0 70%);
+  opacity: 1;
+  animation: petProjectsGlitchSir2V1 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--2,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--2 {
+  clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+  opacity: 1;
+  animation: petProjectsGlitchSir2V2 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--3,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--3 {
   clip-path: polygon(0 80%, 100% 80%, 100% 90%, 0 90%);
   opacity: 1;
-  animation: petProjectsGlitchSir3 0.5s linear forwards;
+  animation: petProjectsGlitchSir3V0 0.5s linear forwards;
 }
-.pet-projects__image-wrapper:hover .pet-projects__glitch-sir-layer--4 {
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--3,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--3 {
+  clip-path: polygon(0 78%, 100% 82%, 100% 92%, 0 88%);
+  opacity: 1;
+  animation: petProjectsGlitchSir3V1 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--3,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--3 {
+  clip-path: polygon(0 82%, 100% 78%, 100% 88%, 0 92%);
+  opacity: 1;
+  animation: petProjectsGlitchSir3V2 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--4,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-0 .pet-projects__glitch-sir-layer--4 {
   clip-path: polygon(0 20%, 100% 20%, 100% 25%, 0 25%);
   opacity: 1;
-  animation: petProjectsGlitchSir4 0.5s linear forwards;
+  animation: petProjectsGlitchSir4V0 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--4,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-1 .pet-projects__glitch-sir-layer--4 {
+  clip-path: polygon(0 18%, 100% 22%, 100% 28%, 0 24%);
+  opacity: 1;
+  animation: petProjectsGlitchSir4V1 0.5s linear forwards;
+}
+.pet-projects__image-wrapper:hover.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--4,
+.pet-projects__image-wrapper.pet-projects__image-wrapper--glitch-trigger.pet-projects__image-wrapper--glitch-variant-2 .pet-projects__glitch-sir-layer--4 {
+  clip-path: polygon(0 22%, 100% 18%, 100% 26%, 0 22%);
+  opacity: 1;
+  animation: petProjectsGlitchSir4V2 0.5s linear forwards;
 }
 
-@keyframes petProjectsGlitchSir1 {
+@keyframes petProjectsGlitchSir1V0 {
   0% { top: 0; left: 0; opacity: 1; }
   15% { top: 8px; left: 0; }
   30% { top: 12px; left: -20px; }
@@ -403,30 +562,97 @@ onUnmounted(() => {
   60% { top: 0; left: 10px; }
   100% { top: 0; left: 0; opacity: 0; }
 }
-@keyframes petProjectsGlitchSir1Flip {
+@keyframes petProjectsGlitchSir1V1 {
+  0% { top: 0; left: 0; opacity: 1; }
+  12% { top: 10px; left: 0; }
+  28% { top: 14px; left: -15px; }
+  42% { top: 10px; left: 5px; }
+  58% { top: 0; left: 12px; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir1V2 {
+  0% { top: 0; left: 0; opacity: 1; }
+  18% { top: 6px; left: -10px; }
+  35% { top: 15px; left: -18px; }
+  52% { top: 8px; left: 8px; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir1FlipV0 {
   0%, 20% { transform: scaleX(-1); }
   25%, 100% { transform: scaleX(1); }
 }
-@keyframes petProjectsGlitchSir2 {
+@keyframes petProjectsGlitchSir1FlipV1 {
+  0%, 15% { transform: scaleX(-1); }
+  22%, 100% { transform: scaleX(1); }
+}
+@keyframes petProjectsGlitchSir1FlipV2 {
+  0%, 25% { transform: scaleX(1); }
+  30%, 100% { transform: scaleX(-1); }
+}
+@keyframes petProjectsGlitchSir2V0 {
   0%, 50% { top: 0; left: 0; opacity: 1; }
   60% { top: -4px; left: -5px; }
   70% { top: -6px; left: 8px; }
   80% { top: -15px; left: 0; }
   100% { top: 0; left: 0; opacity: 0; }
 }
-@keyframes petProjectsGlitchSir3 {
+@keyframes petProjectsGlitchSir2V1 {
+  0%, 48% { top: 0; left: 0; opacity: 1; }
+  58% { top: -6px; left: -8px; }
+  72% { top: -8px; left: 10px; }
+  85% { top: -12px; left: 0; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir2V2 {
+  0%, 52% { top: 0; left: 0; opacity: 1; }
+  62% { top: -2px; left: -10px; }
+  75% { top: -10px; left: 6px; }
+  88% { top: -18px; left: 0; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir3V0 {
   0%, 75% { top: 0; left: 0; opacity: 1; }
   80% { top: 0; left: -5px; }
   85% { top: 10px; left: 0; }
   90% { top: -12px; left: 0; }
   100% { top: 0; left: 0; opacity: 0; }
 }
-@keyframes petProjectsGlitchSir4 {
+@keyframes petProjectsGlitchSir3V1 {
+  0%, 72% { top: 0; left: 0; opacity: 1; }
+  78% { top: 0; left: -8px; }
+  84% { top: 12px; left: 0; }
+  92% { top: -10px; left: 0; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir3V2 {
+  0%, 78% { top: 0; left: 0; opacity: 1; }
+  82% { top: 5px; left: -6px; }
+  88% { top: -14px; left: 0; }
+  95% { top: 8px; left: 0; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir4V0 {
   0% { top: 0; left: 0; opacity: 1; }
   10% { top: 6px; left: 0; }
   20% { top: 0; left: 10px; }
   30% { top: -8px; left: -3px; }
   40% { top: -15px; left: 0; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir4V1 {
+  0% { top: 0; left: 0; opacity: 1; }
+  12% { top: 8px; left: 0; }
+  22% { top: 0; left: 12px; }
+  35% { top: -10px; left: -5px; }
+  45% { top: -12px; left: 0; }
+  100% { top: 0; left: 0; opacity: 0; }
+}
+@keyframes petProjectsGlitchSir4V2 {
+  0% { top: 0; left: 0; opacity: 1; }
+  8% { top: 4px; left: 0; }
+  18% { top: 0; left: 8px; }
+  28% { top: -12px; left: -4px; }
+  38% { top: -18px; left: 0; }
   100% { top: 0; left: 0; opacity: 0; }
 }
 
