@@ -103,7 +103,7 @@ function onCardMouseLeave(_e: MouseEvent, el: HTMLElement) {
       <div
         v-for="(s, i) in softSkillsData"
         :key="s.title"
-        class="soft-skills__card"
+        class="soft-skills__card hover-trigger"
         :class="{ 'is-flipped': isFlipped(i), 'is-tilting': tiltingCardIndex === i, 'is-entering': enteringCardIndex === i }"
         role="button"
         tabindex="0"
@@ -229,7 +229,7 @@ function onCardMouseLeave(_e: MouseEvent, el: HTMLElement) {
   transition-duration: 0.24s;
 }
 .soft-skills__card.is-flipped .soft-skills__card-inner {
-  transform: rotateY(calc(180deg + var(--tilt-y, 0deg))) rotateX(var(--tilt-x, 0deg));
+  transform: rotateY(calc(180deg + var(--tilt-y, 0deg))) rotateX(calc(-1 * var(--tilt-x, 0deg)));
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

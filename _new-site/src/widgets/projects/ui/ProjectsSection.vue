@@ -76,7 +76,7 @@ function toggle(i: number) {
       >
         <button
           type="button"
-          class="projects__trigger"
+          class="projects__trigger hover-trigger"
           :aria-expanded="openSet.has(i)"
           @click="toggle(i)"
         >

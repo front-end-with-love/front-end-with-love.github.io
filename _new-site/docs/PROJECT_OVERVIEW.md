@@ -68,6 +68,7 @@ shared/
 | `.cursor-dot` / `.cursor-ring` | Custom cursor elements (App.vue) |
 | `body.cursor-hidden` | Hides default cursor on non-touch |
 | `body.hover-active` | Enlarges cursor ring on `.hover-trigger` hover |
+| `.hover-trigger` | Add to all interactive elements (buttons, links) so cursor ring expands on hover; sets `cursor: pointer` |
 
 ## Build & deploy
 

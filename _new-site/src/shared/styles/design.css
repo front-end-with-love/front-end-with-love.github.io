@@ -89,11 +89,15 @@ html::-webkit-scrollbar-thumb:hover {
   will-change: width, height, background-color;
 }
 body.hover-active .cursor-ring {
-  width: 80px;
-  height: 80px;
+  width: 68px;
+  height: 68px;
   background: rgba(255, 255, 255, 0.1);
   border-color: transparent;
   backdrop-filter: blur(2px);
+}
+
+.hover-trigger {
+  cursor: pointer;
 }
 
 .reveal-text {

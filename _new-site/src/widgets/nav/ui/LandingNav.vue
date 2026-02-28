@@ -26,7 +26,7 @@ onMounted(() => {
   <!-- :class="{ 'landing-nav--entered': entered }" — динамический класс; при entered=true нав виден и на месте -->
   <nav class="landing-nav" :class="{ 'landing-nav--entered': entered }">
     <div class="landing-nav__col landing-nav__col--left">
-      <button type="button" class="landing-nav__logo" aria-label="Scroll to top" @click="scrollToTarget('top')">
+      <button type="button" class="landing-nav__logo hover-trigger" aria-label="Scroll to top" @click="scrollToTarget('top')">
         <span class="landing-nav__logo-text">MH</span>
         <span class="landing-nav__logo-sub">PORTFOLIO 2026</span>
       </button>

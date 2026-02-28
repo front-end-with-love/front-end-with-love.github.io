@@ -253,7 +253,7 @@ const experience: Array<{
       <div class="about__rows reveal-trigger">
         <template v-for="(e, index) in experience" :key="e.company">
           <div
-            class="about__row reveal-text"
+            class="about__row reveal-text hover-trigger"
             :class="{ 'about__row--selected': selectedCompany === e.company }"
             role="button"
             tabindex="0"
@@ -307,7 +307,7 @@ const experience: Array<{
             <button
               v-if="index < experience.length - 1"
               type="button"
-              class="about__next-btn"
+              class="about__next-btn hover-trigger"
               :aria-label="`Next experience: ${experience[index + 1].company}`"
               @click="selectedCompany = experience[index + 1].company"
             >

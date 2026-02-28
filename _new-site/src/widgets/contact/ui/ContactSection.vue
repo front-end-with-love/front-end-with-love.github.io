@@ -29,14 +29,14 @@ import photo from '../assets/portrait.webp'
 </ul>
       </div>
       <div class="contact__links reveal-text delay-200">
-        <a href="mailto:frontend.dev.ru@gmail.com" class="contact__link" aria-label="Send email to frontend.dev.ru@gmail.com">frontend.dev.ru@gmail.com</a>
-        <a href="https://t.me/michailkhlebnikov" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Open in new tab: Telegram profile">
+        <a href="mailto:frontend.dev.ru@gmail.com" class="contact__link hover-trigger" aria-label="Send email to frontend.dev.ru@gmail.com">frontend.dev.ru@gmail.com</a>
+        <a href="https://t.me/michailkhlebnikov" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger" aria-label="Open in new tab: Telegram profile">
           t.me/michailkhlebnikov
         </a>
-        <a href="https://github.com/front-end-with-love" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Open in new tab: GitHub">
+        <a href="https://github.com/front-end-with-love" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger" aria-label="Open in new tab: GitHub">
           GitHub
         </a>
-        <a href="https://career.habr.com/frontend-dev-ru" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Open in new tab: Habr Career">
+        <a href="https://career.habr.com/frontend-dev-ru" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger" aria-label="Open in new tab: Habr Career">
           Habr Career
         </a>
       </div>

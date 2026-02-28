@@ -48,10 +48,10 @@ const modules = [Navigation]
             <p class="workflow__slide-desc">{{ step.description }}</p>
           </div>
         </SwiperSlide>
-        <button type="button" class="workflow__arrow workflow__arrow--prev" aria-label="Previous slide">
+        <button type="button" class="workflow__arrow workflow__arrow--prev hover-trigger" aria-label="Previous slide">
           <span aria-hidden="true">&larr;</span>
         </button>
-        <button type="button" class="workflow__arrow workflow__arrow--next" aria-label="Next slide">
+        <button type="button" class="workflow__arrow workflow__arrow--next hover-trigger" aria-label="Next slide">
           <span aria-hidden="true">&rarr;</span>
         </button>
       </Swiper>
