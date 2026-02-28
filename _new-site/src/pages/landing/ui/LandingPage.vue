@@ -120,5 +120,9 @@ useReveal('.reveal-trigger, section')
 .landing-page__main {
   position: relative;
   z-index: 10;
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
