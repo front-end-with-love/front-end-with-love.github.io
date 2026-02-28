@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// Бегущая строка: список слов и разделителей; в шаблоне items рендерятся дважды для бесшовного цикла (translateX(-50%)).
+
 const items = [
   'JavaScript',
   '•',
@@ -14,13 +16,16 @@ const items = [
 </script>
 
 <template>
-  <div class="marquee-outer">
+  <!-- aria-hidden — декоративная полоса, скринридерам не озвучивать -->
+  <div class="marquee-outer" aria-hidden="true">
     <div class="marquee-wrap">
       <div class="marquee-inner">
+        <!-- Первый проход по items -->
         <template v-for="(item, i) in items" :key="i">
           <span v-if="item === '•'" class="marquee-inner__dot">{{ item }}</span>
           <span v-else class="marquee-inner__text">{{ item }}</span>
         </template>
+        <!-- Дубликат того же списка — при translateX(-50%) конец первого блока стыкуется с началом второго, цикл без рывка -->
         <template v-for="(item, i) in items" :key="`dup-${i}`">
           <span v-if="item === '•'" class="marquee-inner__dot">{{ item }}</span>
           <span v-else class="marquee-inner__text">{{ item }}</span>
@@ -53,6 +58,7 @@ const items = [
   animation: marquee 20s linear infinite;
   will-change: transform;
 }
+/* За один цикл сдвиг на -50% — ровно половина контента (два блока items), визуально бесконечная лента */
 @keyframes marquee {
   0% {
     transform: translateX(0);

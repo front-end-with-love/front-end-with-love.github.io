@@ -1,7 +1,8 @@
-/** Hover trigger: add/remove body.hover-active for elements with .hover-trigger. */
+// Hover-trigger: при наведении на любой элемент с классом .hover-trigger на body добавляется класс hover-active, при уходе — снимается. Используется для стилей кастомного курсора (например увеличение кольца).
 import { onMounted, onUnmounted } from 'vue'
 
 export function useHoverTrigger() {
+  // Храним ссылки на элементы и колбэки, чтобы в onUnmounted снять слушатели
   const listeners: Array<{ el: Element; onEnter: () => void; onLeave: () => void }> = []
 
   onMounted(() => {

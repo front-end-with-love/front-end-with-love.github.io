@@ -1,13 +1,17 @@
 <script setup lang="ts">
-/** Full-screen loader with progress; hides when loaded. */
+// Полноэкранный лоадер: прогресс 0–100%, по достижении 100% — класс loaded, экран уезжает вверх (scaleY(0)).
+
+// Composable возвращает реактивные progress и loaded; внутри setInterval увеличивает progress, затем ставит loaded
 import { useLoader } from '@/features/loader'
 const { progress, loaded } = useLoader()
 </script>
 
 <template>
+  <!-- :class="{ loaded }" — при loaded=true добавляется класс loaded, срабатывает transition в стилях -->
   <div class="loader-screen" :class="{ loaded }" data-testid="loader">
     <div class="loader-screen__bar">
       <p class="loader-screen__title" role="status" aria-live="polite">LOADING</p>
+      <!-- Интерполяция progress — реактивное отображение процента -->
       <div class="loader-screen__counter">{{ progress }}%</div>
     </div>
   </div>
@@ -24,6 +28,7 @@ const { progress, loaded } = useLoader()
   padding: 2rem;
   transform-origin: top;
   transition: transform 1s cubic-bezier(0.87, 0, 0.13, 1);
+  /* Браузер заранее создаёт слой для transform — плавнее анимация */
   will-change: transform;
 }
 .loader-screen.loaded {

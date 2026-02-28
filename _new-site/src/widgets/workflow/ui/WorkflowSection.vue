@@ -1,19 +1,23 @@
 <script setup lang="ts">
-/** Workflow methodology: Swiper slider (BRIEF→DEPLOY). */
+// Секция методологии workflow: слайдер Swiper (Discovery → Delivery), навигация стрелками.
+
+// Компоненты Swiper для Vue 3
 import { Swiper, SwiperSlide } from 'swiper/vue'
+// Модуль навигации — стрелки prev/next
 import { Navigation } from 'swiper/modules'
 import { workflowData } from '../model/workflowData'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 
+// Массив модулей передаётся в :modules — Swiper подключает навигацию
 const modules = [Navigation]
 </script>
 
 <template>
   <section id="workflow" class="workflow">
     <div class="workflow__header reveal-trigger">
-      <span class="workflow__num reveal-text">[04]&nbsp;&mdash; WORKFLOW METHODOLOGY</span>
+      <span class="workflow__num reveal-text">[06]&nbsp;&mdash; WORKFLOW METHODOLOGY</span>
       <h2 class="workflow__title"><span class="reveal-text delay-100">Workflow Methodology</span></h2>
       <p class="workflow__meta">
         <span class="reveal-text delay-300 block">Systematic approach to&nbsp;digital product creation. From concept to&nbsp;production code.</span>
@@ -21,6 +25,7 @@ const modules = [Navigation]
     </div>
 
     <div class="workflow__slider-wrap">
+      <!-- Swiper: один слайд в view, без отступа, скорость 600 ms; кнопки привязаны по селекторам -->
       <Swiper
         :modules="modules"
         :slides-per-view="1"
@@ -58,11 +63,12 @@ const modules = [Navigation]
 
 <style scoped>
 .workflow {
+  padding: 8rem 1rem 4rem;
   background: var(--color-black);
   position: relative;
 }
 .workflow__header {
-  padding: 4rem 1rem 1.5rem;
+  padding: 0 1rem 1.5rem;
 }
 @media (min-width: 768px) {
   .workflow__header {
@@ -99,12 +105,18 @@ const modules = [Navigation]
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 4rem 0 5rem
+  padding: 4rem 0 0
+}
+@media (min-width: 767px) {
+  .workflow__slider-wrap {
+    padding: 4rem 0 5rem
+  }
 }
 .workflow__swiper {
   height: 100%;
   width: 100%;
 }
+/* :deep() — проникновение в дочерние компоненты Swiper; стили применяются к кнопкам внутри .workflow__swiper */
 .workflow__swiper :deep(.workflow__arrow) {
   position: absolute;
   top: 50%;

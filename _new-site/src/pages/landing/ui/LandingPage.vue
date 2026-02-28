@@ -1,6 +1,9 @@
 <script setup lang="ts">
-/** Landing page: composition of widgets (loader, nav, hero, marquee, about, soft-skills, projects, workflow, stack, contact). */
-import bgImg from '@/assets/img/2.jpg'
+// Лендинг: композиция виджетов (loader, nav, hero, marquee, about, soft-skills, projects, pet-projects, education, workflow, stack, contact) и фич (курсор, hover, reveal).
+
+// Фоновое изображение для верхней части страницы
+import bgImg from '@/assets/img/bg.jpg'
+// Виджеты — секции страницы, импорт через публичный API слайсов
 import { LoaderScreen } from '@/widgets/loader'
 import { LandingNav } from '@/widgets/nav'
 import { HeroSection } from '@/widgets/hero'
@@ -8,25 +11,33 @@ import { MarqueeBanner } from '@/widgets/marquee'
 import { AboutSection } from '@/widgets/about'
 import { SoftSkillsSection } from '@/widgets/soft-skills'
 import { ProjectsSection } from '@/widgets/projects'
+import { EducationSection } from '@/widgets/education'
+import { PetProjectsSection } from '@/widgets/pet-projects'
 import { WorkflowSection } from '@/widgets/workflow'
 import { StackSection } from '@/widgets/stack'
 import { ContactSection } from '@/widgets/contact'
+// Фичи: кастомный курсор (dot + ring с lerp), добавление body.hover-active на hover, reveal по IntersectionObserver
 import { useCursor } from '@/features/cursor'
 import { useHoverTrigger } from '@/features/hover-trigger'
 import { useReveal } from '@/features/reveal'
 
+// Инициализация без аргументов — курсор вешает mousemove и rAF на document
 useCursor()
+// Вешает mouseenter/mouseleave на все .hover-trigger — для стилей кастомного курсора
 useHoverTrigger()
+// Селектор контейнеров для reveal: внутри них .reveal-text получают .active при появлении в viewport
 useReveal('.reveal-trigger, section')
 </script>
 
 <template>
+  <!-- Контейнер страницы: фон через :style, затемнение через ::after в стилях -->
   <div
     class="landing-page"
      :style="{ backgroundImage: `url(${bgImg})` }"
   >
     <LoaderScreen />
     <LandingNav />
+    <!-- Боковая панель: фиксированные ссылки GH/TG; mix-blend-mode в стилях для контраста -->
     <div class="landing-page__sidebar">
       <a
         href="https://github.com/front-end-with-love"
@@ -47,6 +58,8 @@ useReveal('.reveal-trigger, section')
       <AboutSection />
       <SoftSkillsSection />
       <ProjectsSection />
+      <PetProjectsSection />
+      <EducationSection />
       <WorkflowSection />
       <StackSection />
       <ContactSection />
@@ -82,6 +95,7 @@ useReveal('.reveal-trigger, section')
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* Режим наложения: инвертирует цвет под элементом — тёмное на светлом, светлое на тёмном */
   mix-blend-mode: difference;
   color: #e1e1e1;
 }

@@ -1,12 +1,11 @@
 <script setup lang="ts">
+// Верхняя нав-полоса в потоке документа: логотип, статус «Open to work», кнопка меню — скролл к контактам. Уезжает вместе со страницей; при загрузке — анимация появления.
+
 import { ref, onMounted, nextTick } from 'vue'
+import { useScrollTo } from '@/features/scroll-to'
 
-/** Top nav in document flow: logo, status, menu button scrolls to contact. Scrolls away with page; entrance animation on load. */
+const { scrollToTarget } = useScrollTo()
 const entered = ref(false)
-
-function scrollToContact() {
-  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-}
 
 onMounted(() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -14,6 +13,7 @@ onMounted(() => {
     entered.value = true
     return
   }
+  // nextTick — ждём обновления DOM после монтирования; затем rAF — следующий кадр. Так transition гарантированно срабатывает (иначе браузер может слить начальное и конечное состояние).
   nextTick(() => {
     requestAnimationFrame(() => {
       entered.value = true
@@ -23,12 +23,13 @@ onMounted(() => {
 </script>
 
 <template>
+  <!-- :class="{ 'landing-nav--entered': entered }" — динамический класс; при entered=true нав виден и на месте -->
   <nav class="landing-nav" :class="{ 'landing-nav--entered': entered }">
     <div class="landing-nav__col landing-nav__col--left">
-      <a href="#" class="landing-nav__logo">
+      <button type="button" class="landing-nav__logo" aria-label="Scroll to top" @click="scrollToTarget('top')">
         <span class="landing-nav__logo-text">MH</span>
         <span class="landing-nav__logo-sub">PORTFOLIO 2026</span>
-      </a>
+      </button>
     </div>
     <div class="landing-nav__col landing-nav__col--center">
       <div class="landing-nav__meta">
@@ -36,12 +37,11 @@ onMounted(() => {
           <span class="landing-nav__status-dot" />
           Open to work
         </div>
-        <div class="landing-nav__location">Based in Worldwide</div>
+        <div class="landing-nav__location">Based worldwide</div>
       </div>
     </div>
     <div class="landing-nav__col landing-nav__col--right">
-      
-      <button type="button" class="landing-nav__menu hover-trigger" aria-label="Menu" @click="scrollToContact">
+      <button type="button" class="landing-nav__menu hover-trigger" aria-label="Scroll to Contact" @click="scrollToTarget('contact')">
         <span class="landing-nav__menu-line landing-nav__menu-line--first" />
         <span class="landing-nav__menu-line landing-nav__menu-line--second" />
       </button>
@@ -96,13 +96,21 @@ onMounted(() => {
   gap: 0.25rem;
 }
 .landing-nav__logo {
-  color:#ccff00;
+  color: #ccff00;
   text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .landing-nav__meta {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 0.25rem;
 }
 @media (max-width: 767px) {

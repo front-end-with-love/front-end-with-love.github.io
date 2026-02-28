@@ -1,4 +1,6 @@
-/** Soft-skills list for section content. */
+// Данные для секции «Мягкие навыки»: список карточек (flip-card) — заголовок, краткий summary, полное описание на обороте.
+
+// Интерфейс одной карточки: заголовок, краткие теги (summary), текст на обороте (description)
 export interface SoftSkill {
   title: string
   summary: string

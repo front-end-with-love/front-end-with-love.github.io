@@ -30,20 +30,24 @@ widgets/
   nav/                      # fixed top nav
   hero/                     # name, tagline, CTA; GSAP parallax
   marquee/                  # infinite CSS marquee
-  about/                    # stats + experience table
+  about/                    # stats + experience with achievements (bullets) (achievements per role)
   projects/                 # accordion, data in model/projectsData.ts
+  education/                # vertical timeline, college + courses
+  pet-projects/             # pet projects cards with 3D tilt hover (laugon-style)
   workflow/                 # workflow methodology slider (GSAP), BRIEF→DEPLOY
-  stack/                    # skills/tools editorial layout
+  stack/                    # skills/tools editorial layout; Framework Ecosystem copy = first-person (author as FE dev)
   contact/                  # links + footer
 
 features/
   loader/                   # progress ref 0–100, loaded flag
+  scroll-to/                # scrollToTarget(id | 'top') with cubic-bezier curve, 1.6s default
   reveal/                   # IntersectionObserver → .active on .reveal-text
   cursor/                   # dot + ring follow mouse (rAF lerp)
   hover-trigger/            # .hover-active on body for .hover-trigger elements
 
 entities/                   # empty (placeholder)
 shared/
+  lib/cubicBezier.ts        # cubicBezierLoader(t) — easing for scroll-to animation
   styles/design.css         # CSS variables, global classes (reveal-text, cursor, noise)
 ```
 
@@ -83,3 +87,12 @@ Deploy: manually copy `dist/` contents to the target branch/location on GitHub P
 - **public/sitemap.xml:** single entry for the homepage. Add more `<url>` entries when new routes exist.
 - **OG image:** meta points to `https://front-end-with-love.github.io/og-image.jpg`. Add a 1200×630 image to `public/og-image.jpg` for stable social previews.
 - **Semantics:** one visible h1 (Hero name); loader uses `<p role="status">`. Contact photo has explicit `width`/`height` to reduce CLS.
+
+## Accessibility
+
+- **Skip link:** not implemented (by choice); main content is reachable by tab.
+- **Focus & keyboard:** Nav logo is a button «Scroll to top» with `aria-label`; menu button «Scroll to Contact»; About experience rows and Soft-skills cards are focusable with Enter/Space; Projects accordion has `aria-expanded` and `aria-hidden` on closed panels; Workflow slider arrows have `aria-label`; external links use `rel="noopener noreferrer"` and descriptive `aria-label` (e.g. «Open in new tab: …»).
+- **Motion:** `prefers-reduced-motion` respected in Nav (no entrance animation), Hero (no parallax), Loader (instant hide when loaded), scroll-to (instant jump); Contact gradient animation left as-is.
+- **Semantics & ARIA:** One h1 (Hero); section headings in order; decorative elements (cursor, glitch layers, marquee) have `aria-hidden="true"`; Loader has `role="status"` and `aria-live="polite"`; About «Next» button has dynamic `aria-label`; Profile section heading: number in `aria-hidden` span, «Profile» in h2.
+- **Cursor:** Custom cursor only when `!isTouch`; on touch devices system cursor remains visible.
+- Full audit and checklist: see plan «SEO и доступность аудит» (`.cursor/plans/` or project docs).

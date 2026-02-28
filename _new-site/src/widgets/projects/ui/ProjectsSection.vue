@@ -1,29 +1,76 @@
 <script setup lang="ts">
-/** Projects accordion: multiple items can be open. */
+// Секция фриланс-проектов: аккордеон (несколько пунктов могут быть открыты). При открытии — сначала плавный скролл к пункту, затем раскрытие.
+
 import { ref } from 'vue'
 import { projectsData } from '../model/projectsData'
 
+const SCROLL_DURATION_MS = 460
+const EXPAND_DELAY_MS = 100
+const TOP_OFFSET_REM = 3
+
+// Множество индексов открытых карточек
 const openSet = ref<Set<number>>(new Set())
 
+/** easeInOutCubic: плавное начало и конец, разгон в середине */
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2
+}
+
+// Плавно проскроллить к элементу. Первый кадр — сразу в обработчике клика (без rAF), далее — rAF.
+function scrollToElementThen(el: HTMLElement, onEnd: () => void) {
+  const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
+  const offsetPx = TOP_OFFSET_REM * remPx
+  const startY = window.scrollY
+  const targetY = el.getBoundingClientRect().top + window.scrollY - offsetPx
+  const distance = targetY - startY
+  const startTime = performance.now() - 1000
+
+  function step(now: number) {
+    const elapsed = now - startTime
+    const t = Math.min(elapsed / SCROLL_DURATION_MS, 1)
+    const progress = easeInOutCubic(t)
+    window.scrollTo(0, startY + distance * progress)
+    if (t < 1) requestAnimationFrame(step)
+    else onEnd()
+  }
+  step(performance.now())
+}
+
+// Открыть/закрыть пункт i: при открытии сначала скролл к .projects__item[data-project-index], затем openSet обновляется и контент раскрывается
 function toggle(i: number) {
   const next = new Set(openSet.value)
-  if (next.has(i)) next.delete(i)
-  else next.add(i)
-  openSet.value = next
+  if (next.has(i)) {
+    next.delete(i)
+    openSet.value = next
+    return
+  }
+  next.add(i)
+  const el = document.querySelector<HTMLElement>(`.projects__item[data-project-index="${i}"]`)
+  if (el) {
+    scrollToElementThen(el, () => {
+      setTimeout(() => {
+        openSet.value = next
+      }, EXPAND_DELAY_MS)
+    })
+  } else {
+    openSet.value = next
+  }
 }
 </script>
 
 <template>
   <section id="projects" class="projects">
     <div class="projects__header reveal-trigger">
-      <span class="projects__num reveal-text">[03]&nbsp;&mdash; SELECTED WORKS</span>
-      <h2 class="projects__title"><span class="reveal-text delay-100">Projects</span></h2>
+      <span class="projects__num reveal-text">[03]&nbsp;&mdash; SELECTED FREELANCE WORK</span>
+      <h2 class="projects__title"><span class="reveal-text delay-100">Freelance Projects</span></h2>
       <p class="projects__meta"><span class="reveal-text delay-300 block">Layout &middot; JS &middot; Scripts &middot; Interaction scenarios<br />SPA &middot; Landing &middot; E-com &middot; AI &middot; Russia &rarr; Worldwide</span></p>
     </div>
     <div class="projects__accordion">
+      <!-- data-project-index для scrollToElementThen; is-open управляет maxHeight и стилями -->
       <div
         v-for="(p, i) in projectsData"
         :key="p.id"
+        :data-project-index="i"
         class="projects__item"
         :class="{ 'is-open': openSet.has(i) }"
       >
@@ -43,10 +90,16 @@ function toggle(i: number) {
           <span class="projects__stack">{{ p.stack }}</span>
           <span class="projects__icon" aria-hidden="true">+</span>
         </button>
-        <div class="projects__body" :style="{ maxHeight: openSet.has(i) ? '1200px' : '0' }">
+        <div class="projects__body" :aria-hidden="!openSet.has(i)" :style="{ maxHeight: openSet.has(i) ? '1200px' : '0' }">
           <div class="projects__body-inner">
             <div class="projects__body-left">
+              <span class="projects__section-label">Task</span>
               <p class="projects__desc">{{ p.description }}</p>
+              <p v-if="p.feature" class="projects__feature">
+                <span class="projects__feature-label">Feature</span>
+                <span class="projects__feature-text">{{ p.feature }}</span>
+              </p>
+              <span class="projects__section-label">Achievements</span>
               <ul class="projects__bullets">
                 <li v-for="(b, bi) in p.bullets" :key="bi" class="projects__bullet">
                   <span class="projects__bullet-arrow">&rarr;</span>
@@ -94,7 +147,7 @@ function toggle(i: number) {
         Portfolio Archive
         <span class="projects__arrow">→</span>
       </a>
-      <span class="projects__count">20+ projects since 2011</span>
+      <span class="projects__count">20+ freelance projects since 2011</span>
     </div> -->
   </section>
 </template>
@@ -139,6 +192,7 @@ function toggle(i: number) {
 }
 .projects__item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  scroll-margin-top: 3rem;
 }
 .projects__trigger {
   width: 100%;
@@ -153,6 +207,7 @@ function toggle(i: number) {
   color: inherit;
   cursor: pointer;
   transition: background 0.3s;
+  /* Подсказка браузеру для анимации фона */
   will-change: background-color;
 }
 .projects__trigger > div {
@@ -233,7 +288,7 @@ function toggle(i: number) {
 }
 .projects__body {
   overflow: hidden;
-  transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 1.1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: max-height;
 }
 .projects__body-inner {
@@ -284,6 +339,32 @@ function toggle(i: number) {
   color: #888;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+}
+.projects__section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.projects__feature {
+  margin: 0 0 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.projects__feature-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+}
+.projects__feature-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #888;
 }
 .projects__bullets {
   list-style: none;

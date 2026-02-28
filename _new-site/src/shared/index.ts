@@ -1,1 +1,2 @@
-/** Shared public API. Export shared lib/ui here as needed. */
+// Публичный API слоя shared: сюда экспортировать общие UI/утилиты по мере надобности
+export { cubicBezierLoader } from './lib/cubicBezier'

@@ -1,19 +1,22 @@
 <script setup lang="ts">
+// Секция «Обо мне»: статистика, блок опыта — выбор компании раскрывает описание (about, location, achievements, stack).
+
 import { ref, computed } from 'vue'
 
-/** About / profile: stats, experience highlights. */
+// Выбранная компания: при клике на карточку сюда записывается company, показывается блок about__description-wrap
 const selectedCompany = ref<string | null>(null)
 
 function toggleCompany(company: string) {
   selectedCompany.value = selectedCompany.value === company ? null : company
 }
 
+// computed — производное значение: запись experience с company === selectedCompany (для v-if и вывода полей)
 const selectedExperience = computed(() =>
   experience.find((e) => e.company === selectedCompany.value)
 )
 const stats = [
   { value: '14', label: 'Years Exp' },
-  { value: '120+', label: 'Projects' },
+  { value: '120+', label: 'Freelance projects' },
   { value: '07', label: 'Companies' },
   { value: 'J++', label: 'Skill Level' }
 ]
@@ -22,10 +25,9 @@ type ExperienceDesc = {
   location: string
   position: string
   period: string
-  responsibilities: string
+  achievements: string[]
   technologies: string[]
 }
-
 const experience: Array<{
   company: string
   role: string
@@ -43,8 +45,12 @@ const experience: Array<{
       location: 'Tyumen, 100-1000 employees.',
       position: 'Frontend developer (middle) • UI/UX layout developer.',
       period: 'May 2022 — September 2022 (5 months).',
-      responsibilities:
-        'Worked in the experimental projects team of Xsolla, global leader in in-game acquiring, developing cutting-edge frontend for innovative prototypes; participated in the creation of proof-of-concept projects supporting advanced research initiatives in the gaming industry.',
+      achievements: [
+        'Delivered proof-of-concept frontends for innovative in-game acquiring prototypes',
+        'Built cutting-edge UI for experimental research initiatives in gaming',
+        'Collaborated with design team on rapid prototype iterations',
+        'Participated in creation of PoC projects supporting advanced R&D'
+      ],
       technologies: [
         'HTML',
         'JavaScript',
@@ -69,8 +75,12 @@ const experience: Array<{
       location: 'Saint Petersburg, 10-100 employees.',
       position: 'Frontend developer (intern) • front-end developer.',
       period: 'March 2017 — July 2017 (5 months).',
-      responsibilities:
-        'Developed websites on Angular, BEM, Stylus with exceptional attention to detail, including pixel-perfect precision.',
+      achievements: [
+        'Built pixel-perfect layouts for award-winning agency projects',
+        'Implemented responsive sites with Angular and BEM methodology',
+        'Developed websites with Stylus and exceptional attention to detail',
+        'Contributed to Awwwards-targeted quality deliverables'
+      ],
       technologies: ['JavaScript', 'HTML', 'landing page layout', 'Angular']
     }
   },
@@ -85,8 +95,12 @@ const experience: Array<{
       location: 'Buenos Aires, 100-1000 employees.',
       position: 'Frontend developer (junior) • front-end developer.',
       period: 'February 2016 — September 2016 (8 months).',
-      responsibilities:
-        'Contributed to the development and support of the frontend for icons8.com platform used by designers worldwide; collaborated with an international team on interface improvements and user experience optimization.',
+      achievements: [
+        'Maintained and enhanced icons8.com frontend used by designers worldwide',
+        'Implemented interface improvements for the stock and icon platform',
+        'Collaborated with international team on UX optimization',
+        'Contributed to frontend support and consistent cross-browser behavior'
+      ],
       technologies: ['JavaScript', 'Vue.js', 'SCSS', 'HTML', 'valid markup']
     }
   },
@@ -101,8 +115,12 @@ const experience: Array<{
       location: 'Tver, 10-100 employees.',
       position: 'Frontend developer (middle).',
       period: 'April 2015 — July 2015 (4 months).',
-      responsibilities:
-        'Developed frontend for presentation websites in a renowned design studio, implementing complex animations and interactive features; participated in projects for major brands and startups, solving creative challenges to achieve advanced design solutions.',
+      achievements: [
+        'Implemented complex animations and interactive features for brand presentation sites',
+        'Delivered frontend for major brand and startup projects',
+        'Solved creative challenges with advanced design solutions',
+        'Built presentation websites from design specs with BEM and jQuery'
+      ],
       technologies: ['JavaScript', 'HTML', 'CSS', 'jQuery', 'BEM', 'valid markup']
     }
   },
@@ -116,8 +134,12 @@ const experience: Array<{
       location: 'Tver, 10-100 employees.',
       position: 'Frontend developer (middle) • front-end developer.',
       period: 'September 2014 — April 2015 (8 months).',
-      responsibilities:
-        'Developed landing pages, catalog websites and online stores; participated in the design and development of the studio\'s corporate website.',
+      achievements: [
+        'Built landing pages, catalog sites and online stores from design specs',
+        'Participated in design and development of the studio corporate website',
+        'Delivered cross-browser and adaptive layouts with valid markup',
+        'Maintained consistent BEM structure across multiple projects'
+      ],
       technologies: [
         'JavaScript',
         'CSS',
@@ -140,8 +162,12 @@ const experience: Array<{
       location: 'Tver.',
       position: 'Frontend developer (junior) • front-end developer.',
       period: 'June 2012 — August 2012 (3 months).',
-      responsibilities:
-        'Specialized in the creation of interactive and animated web elements for brand projects and presentation websites using advanced JavaScript libraries and CSS animations; contributed to Awwwards-awarded projects demonstrating high-level web design and development.',
+      achievements: [
+        'Created interactive and animated web elements for Awwwards-level brand projects',
+        'Contributed to presentation websites with advanced JS libraries and CSS animations',
+        'Delivered high-quality implementations for brand bureau clients',
+        'Demonstrated pixel-perfect execution in award-targeted deliverables'
+      ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'animation creation']
     }
   },
@@ -156,8 +182,12 @@ const experience: Array<{
       location: 'Tver.',
       position: 'Web developer (middle) • web technologist and layout specialist.',
       period: 'December 2011 — May 2012 (6 months).',
-      responsibilities:
-        'Developed and maintained frontend for online stores and corporate websites, ensuring cross-browser compatibility and responsive design; participated in a government project for a public procurement accounting system, contributing to frontend and user interface implementation.',
+      achievements: [
+        'Developed and maintained frontend for online stores and corporate websites',
+        'Ensured cross-browser compatibility and responsive design across projects',
+        'Contributed to government project for public procurement accounting system',
+        'Implemented user interface and frontend logic for commercial and state clients'
+      ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'adaptive markup']
     }
   }
@@ -168,8 +198,9 @@ const experience: Array<{
   <section id="about" class="about">
     <div class="about__left">
       <div class="about__num-wrap reveal-trigger">
-        <h2 class="about__num"><span class="reveal-text">[01] — PROFILE</span></h2>
+        <h2 class="about__num"><span class="reveal-text" aria-hidden="true">[01] — </span><span class="reveal-text">Profile</span></h2>
       </div>
+      <!-- Блок описания компании показывается только при выборе и наличии description -->
       <div v-if="selectedCompany && selectedExperience?.description" class="about__description-wrap">
         <dl class="about__desc">
           <template v-if="selectedExperience.description.about">
@@ -181,12 +212,19 @@ const experience: Array<{
           <dt class="about__desc-label">Position</dt>
           <dd class="about__desc-value">{{ selectedExperience.description.position }}</dd>
           <dt class="about__desc-label">Period</dt>
-          <dd class="about__desc-value about__desc-value--period">
-            {{ selectedExperience.description.period }}
-          </dd>
-          <dt class="about__desc-label">Work</dt>
-          <dd class="about__desc-value about__desc-value--body">
-            {{ selectedExperience.description.responsibilities }}
+          <dd class="about__desc-value">{{ selectedExperience.description.period }}</dd>
+          <dt class="about__desc-label">Achievements</dt>
+          <dd class="about__desc-value about__desc-achievements">
+            <ul class="about__bullets">
+              <li
+                v-for="(a, ai) in selectedExperience.description.achievements"
+                :key="ai"
+                class="about__bullet"
+              >
+                <span class="about__bullet-arrow">&rarr;</span>
+                {{ a }}
+              </li>
+            </ul>
           </dd>
           <dt class="about__desc-label">Stack</dt>
           <dd class="about__desc-value about__desc-tags">
@@ -245,12 +283,15 @@ const experience: Array<{
               <dt class="about__desc-label">Position</dt>
               <dd class="about__desc-value">{{ e.description.position }}</dd>
               <dt class="about__desc-label">Period</dt>
-              <dd class="about__desc-value about__desc-value--period">
-                {{ e.description.period }}
-              </dd>
-              <dt class="about__desc-label">Work</dt>
-              <dd class="about__desc-value about__desc-value--body">
-                {{ e.description.responsibilities }}
+              <dd class="about__desc-value">{{ e.description.period }}</dd>
+              <dt class="about__desc-label">Achievements</dt>
+              <dd class="about__desc-value about__desc-achievements">
+                <ul class="about__bullets">
+                  <li v-for="(a, ai) in e.description.achievements" :key="ai" class="about__bullet">
+                    <span class="about__bullet-arrow">&rarr;</span>
+                    {{ a }}
+                  </li>
+                </ul>
               </dd>
               <dt class="about__desc-label">Stack</dt>
               <dd class="about__desc-value about__desc-tags">
@@ -267,6 +308,7 @@ const experience: Array<{
               v-if="index < experience.length - 1"
               type="button"
               class="about__next-btn"
+              :aria-label="`Next experience: ${experience[index + 1].company}`"
               @click="selectedCompany = experience[index + 1].company"
             >
               Next: {{ experience[index + 1].company }}
@@ -283,15 +325,14 @@ const experience: Array<{
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  padding: 8rem 1rem;
+  padding: 8rem 1rem 6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 @media (min-width: 768px) {
   .about {
     grid-template-columns: repeat(12, 1fr);
     gap: 3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 8rem 3rem;
   }
 }
 @media (min-width: 768px) {
@@ -313,8 +354,24 @@ const experience: Array<{
   top: 24px;
 }
 .about__description-wrap {
-  max-height: min(60vh, 400px);
+  min-height: 55vh;
+  max-height: 80vh;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 var(--color-black);
+}
+.about__description-wrap::-webkit-scrollbar {
+  width: 6px;
+}
+.about__description-wrap::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+.about__description-wrap::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+.about__description-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
 }
 .about__description-wrap--mobile {
   position: relative;
@@ -322,6 +379,24 @@ const experience: Array<{
   padding: 1rem 1rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
+  min-height: 55vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 var(--color-black);
+}
+.about__description-wrap--mobile::-webkit-scrollbar {
+  width: 6px;
+}
+.about__description-wrap--mobile::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+.about__description-wrap--mobile::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+.about__description-wrap--mobile::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
 }
 @media (min-width: 768px) {
   .about__description-wrap--mobile {
@@ -382,12 +457,35 @@ const experience: Array<{
   color: #888;
   margin: 0;
 }
-.about__desc-value--accent,
-.about__desc-value--period {
+.about__desc-value--accent {
   color: #ccff00;
 }
-.about__desc-value--body {
-  color: #555;
+.about__desc-achievements {
+  grid-column: 1 / -1;
+  margin: 0.2rem 0 0.2rem 0;
+}
+.about__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.about__bullet {
+  font-family: var(--font-mono);
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--color-offwhite);
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.about__bullet-arrow {
+  color: #888;
+  opacity: 0.6;
+  flex-shrink: 0;
 }
 .about__desc-tags {
   display: flex;
@@ -465,7 +563,7 @@ const experience: Array<{
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem 1rem;
-  margin: 0 -1rem;
+  margin: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: background 0.3s;
   will-change: background-color;

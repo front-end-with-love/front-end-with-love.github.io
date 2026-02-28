@@ -1,28 +1,50 @@
 <script setup lang="ts">
-/** Stack / Arsenal: Core, Frameworks, Motion, Build, AI, Philosophy — editorial layout from design. */
+// Секция «Стек / Арсенал»: редакционный лейаут — Core (HTML/CSS/JS), Frameworks, Motion, Build, Quality, AI, Philosophy. Только данные, без логики.
+
 const coreSkills = [
   {
     title: 'HTML5',
     desc: 'Strict semantic structure, clean DOM architecture, scalability by design. Building markup as a system — not a collection of tags.',
-    tags: ['Semantic', 'A11Y', 'SEO']
+    tags: ['Semantic', 'A11Y', 'SEO', 'Valid', 'WAI-ARIA', 'Clean DOM'],
+    accentTags: ['Semantic', 'Valid', 'SEO']
   },
   {
     title: 'CSS3 / SCSS',
     desc: 'Component isolation, predictable cascade control, maintainable styling systems. Scalable CSS structures built for long-term support.',
-    tags: ['BEM', 'SCSS Modules', 'Pixel-Perfect']
+    tags: ['BEM', 'SCSS Modules', 'Styled-Components', 'All Methodologies', 'Pixel-Perfect', 'Variables', 'Mixins', 'Responsive'],
+    accentTags: ['All Methodologies']
   },
   {
     title: 'JavaScript ES6+',
     desc: 'Structured logic, modular code organization, state handling. TypeScript for type safety, contract-based interfaces, predictable API integration.',
-    tags: ['ES6+', 'TypeScript', 'Modular']
+    tags: ['ES6+', 'TypeScript', 'Modular', 'Composition', 'Interfaces', 'Async', 'Testing', 'Strict Mode'],
+    accentTags: ['TypeScript', 'ES6+', 'Modular']
   }
 ]
+// Фреймворки: название, краткое описание, уровень PRIMARY/PROFICIENT
 const frameworks = [
-  { name: 'React.js', sub: 'Component-driven architecture, scalable UI systems', level: 'PRIMARY' },
-  { name: 'Vue 3 / Nuxt 3', sub: 'Component isolation, production environments', level: 'PRIMARY' },
-  { name: 'Next.js', sub: 'SSR / CSR, production-grade architecture', level: 'PROFICIENT' },
-  { name: 'Tailwind / Styled', sub: 'Style encapsulation, predictable UI behavior', level: 'PROFICIENT' }
+  {
+    name: 'React.js',
+    sub: 'I build scalable UIs with component-driven architecture and clear data flow. Hooks and composition for modular features; Redux or Zustand when state grows. Production experience with React Query, React Router, dashboards, and design systems.',
+    level: 'PRIMARY'
+  },
+  {
+    name: 'Vue 3 / Nuxt 3',
+    sub: 'I use Composition API and reactivity for clear component boundaries and maintainable code. With Nuxt 3 I ship SSR, static sites, and file-based routing — my go-to for landings, SPAs, and front-end–first products.',
+    level: 'PRIMARY'
+  },
+  {
+    name: 'Next.js',
+    sub: 'I use App Router and server components for SSR, CSR, and hybrid rendering. Production use: SEO-focused and performance-critical React apps, API routes, and straightforward deployment.',
+    level: 'PROFICIENT'
+  },
+  {
+    name: 'Tailwind / Styled',
+    sub: 'I combine utility-first (Tailwind) and CSS-in-JS (Styled Components) for consistent, predictable UI. I apply both in design systems and component libraries depending on project needs.',
+    level: 'PROFICIENT'
+  }
 ]
+// Анимация: имя библиотеки/API, dots — количество заливленных точек (макс 5)
 const motionItems = [
   { name: 'GSAP', dots: 5 },
   { name: 'Anime.js', dots: 4 },
@@ -30,6 +52,49 @@ const motionItems = [
   { name: 'Canvas API', dots: 3 }
 ]
 const toolchain = ['Vite', 'Gulp', 'Webpack', 'Git', 'ESLint', 'Prettier', 'Figma']
+// Качество и наблюдаемость: тестирование, логи, Web Vitals
+const qualityItems = [
+  {
+    title: 'Testing',
+    desc: 'Vitest, Playwright, Cypress. Unit, component, and end-to-end confidence before release.'
+  },
+  {
+    title: 'Observability',
+    desc: 'Sentry, logs, and session replay for fast incident detection and clear debugging context.'
+  },
+  {
+    title: 'Web Vitals',
+    desc: 'INP, LCP, CLS tracked in production with RUM to keep UX performance measurable.'
+  }
+]
+// AI-блок: инструменты, оркестрация LLM, серверлесс, MCP, архитектура, голос
+const aiItems = [
+  {
+    title: 'Agentic Tooling',
+    desc: 'Daily AI-assisted workflows in Cursor IDE with rule-based context, precise prompts, and diff-driven delivery.'
+  },
+  {
+    title: 'LLM Orchestration',
+    desc: 'Provider failover chains across OpenAI-compatible APIs (A4F, z.ai, VoidAI, Groq, Mistral, OpenRouter, g4f) for resilient responses.'
+  },
+  {
+    title: 'Serverless AI Systems',
+    desc: 'Cloudflare Workers backends with D1 context storage, encrypted memory handling, cron cleanup jobs, and stable edge deployment.'
+  },
+  {
+    title: 'MCP & Figma Automation',
+    desc: 'TypeScript MCP servers and Figma plugin bridges over WebSocket for structured design-to-code and annotation workflows.'
+  },
+  {
+    title: 'Architecture for AI Products',
+    desc: 'Hexagonal and clean architecture in Python parsers and automation services, with clear ports/adapters and replaceable integrations.'
+  },
+  {
+    title: 'Voice & Multi-Agent Flows',
+    desc: 'Speech-to-text, LLM reasoning, and text-to-speech pipelines for voice assistants, plus ensemble decision paths for higher answer quality.'
+  }
+]
+// Принципы инжиниринга — вывод в нижней сетке
 const principles = [
   'Architecture over chaotic speed.',
   'Scalability over short-term solutions.',
@@ -39,10 +104,10 @@ const principles = [
 </script>
 
 <template>
-  <section class="stack">
+  <section id="stack" class="stack">
     <div class="stack__glow" aria-hidden="true" />
     <div class="stack__header reveal-trigger">
-      <span class="stack__num reveal-text">[05]&nbsp;&mdash; ARSENAL</span>
+      <span class="stack__num reveal-text">[07]&nbsp;&mdash; ARSENAL</span>
       <div class="stack__header-cols">
         <div class="stack__header-col stack__header-col--left">
           <h2 class="stack__title"><span class="reveal-text delay-100">Stack</span></h2>
@@ -54,12 +119,12 @@ const principles = [
       <div class="stack__header-line" />
     </div>
 
-    <!-- Core row -->
+    <!-- Блок 01: Core — левая подпись + сетка coreSkills (HTML, CSS, JS) -->
     <div class="stack__core reveal-trigger">
       <div class="stack__core-label">
         <span class="stack__core-num reveal-text">01 &middot; CORE</span>
         <h3 class="stack__core-title"><span class="reveal-text delay-100 block">Core<br />Engineering</span></h3>
-        <p class="stack__core-desc reveal-text delay-300">The foundation every project starts from. Structural, semantic, scalable.</p>
+        <p class="stack__core-desc reveal-text delay-300">Core engineering foundation for project launches: structural integrity supports complex builds, semantic precision enhances accessibility and SEO, scalable architecture adapts to&nbsp;growth. Transforms elements into cohesive, future-proof system with clean code in&nbsp;HTML5, CSS3, JavaScript ES6+ for performance.</p>
       </div>
       <div class="stack__core-skills">
         <div
@@ -76,14 +141,14 @@ const principles = [
               v-for="t in s.tags"
               :key="t"
               class="stack__skill-tag"
-              :class="{ 'stack__skill-tag--accent': t === 'Pixel-Perfect' }"
+              :class="{ 'stack__skill-tag--accent': s.accentTags?.includes(t) }"
             >{{ t }}</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Row 2: Frameworks + Motion + Build + AI -->
+    <!-- Блоки 02–06: Frameworks, Motion, Build, Quality, AI в многоколоночной сетке -->
     <div class="stack__row2">
       <div class="stack__frameworks reveal-trigger">
         <div class="stack__frameworks-head">
@@ -130,26 +195,28 @@ const principles = [
               v-for="t in toolchain"
               :key="t"
               class="stack__build-tag"
-              :class="{ 'stack__build-tag--muted': !['Vite', 'Gulp'].includes(t) }"
+              :class="{ 'stack__build-tag--muted': !['Vite', 'Git', 'Figma'].includes(t) }"
             >{{ t }}</span>
+          </div>
+        </div>
+        <div class="stack__quality reveal-trigger">
+          <span class="stack__block-num reveal-text">05 &middot; QUALITY</span>
+          <h3 class="stack__block-title"><span class="reveal-text delay-100 block">Quality &amp;<br />Observability</span></h3>
+          <div class="stack__quality-items">
+            <div v-for="q in qualityItems" :key="q.title" class="stack__quality-item">
+              <div class="stack__quality-item-title">{{ q.title }}</div>
+              <div class="stack__quality-item-desc">{{ q.desc }}</div>
+            </div>
           </div>
         </div>
       </div>
       <div class="stack__ai reveal-trigger">
-        <span class="stack__ai-num reveal-text">05 &middot; AI</span>
+        <span class="stack__ai-num reveal-text">06 &middot; AI</span>
         <h3 class="stack__ai-title"><span class="reveal-text delay-100 block">AI-Driven<br />Engineering</span></h3>
         <div class="stack__ai-items">
-          <div class="stack__ai-item">
-            <div class="stack__ai-item-title">Cursor IDE</div>
-            <div class="stack__ai-item-desc">LLM-integrated development. Structured rules, context engineering, diff-based workflows.</div>
-          </div>
-          <div class="stack__ai-item">
-            <div class="stack__ai-item-title">Prompt Engineering</div>
-            <div class="stack__ai-item-desc">Minimal context for precise model interaction. Writing rules that actually work.</div>
-          </div>
-          <div class="stack__ai-item">
-            <div class="stack__ai-item-title">AI Refactoring</div>
-            <div class="stack__ai-item-desc">Controlled automation. 3&ndash;4&times; faster while maintaining quality.</div>
+          <div v-for="a in aiItems" :key="a.title" class="stack__ai-item">
+            <div class="stack__ai-item-title">{{ a.title }}</div>
+            <div class="stack__ai-item-desc">{{ a.desc }}</div>
           </div>
         </div>
         <div class="stack__ai-footer">
@@ -158,7 +225,7 @@ const principles = [
       </div>
     </div>
 
-    <!-- Philosophy -->
+    <!-- Блок Philosophy: принципы (principles) в сетке 2 колонки -->
     <div class="stack__philosophy reveal-trigger">
       <div class="stack__philosophy-head">
         <span class="stack__philosophy-label reveal-text">ENGINEERING PHILOSOPHY</span>
@@ -186,11 +253,18 @@ const principles = [
 
 <style scoped>
 .stack {
-  padding: 8rem 1rem;
+  padding: 8rem 1rem 7rem;
+  /* padding: calc(var(--section-gap) / 2) 1rem; */
   background: #050505;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 767px) {
+  .stack {
+    padding-top: 2.3rem;
+    padding-bottom: calc(var(--section-gap-mobile) / 2);
+  }
 }
 @media (min-width: 768px) {
   .stack {
@@ -266,6 +340,8 @@ const principles = [
 @media (min-width: 768px) {
   .stack__core {
     grid-template-columns: 1fr 2.25fr;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 .stack__core-label {
@@ -311,6 +387,7 @@ const principles = [
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* Карточка скилла: hover меняет background; will-change подсказывает браузеру про анимацию */
 .stack__skill {
   background: #0f0f0f;
   padding: 2rem;
@@ -407,7 +484,17 @@ const principles = [
   background: #0f0f0f;
   /* border: 1px solid rgba(255, 255, 255, 0.05); */
   border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .stack__frameworks {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+  }
 }
 .stack__frameworks-head {
   padding: 2rem;
@@ -418,11 +505,13 @@ const principles = [
 }
 .stack__framework-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.3s;
+  border-left: 2px solid transparent;
+  transition: background 0.3s, border-left-color 0.3s;
   will-change: background-color;
 }
 .stack__framework-item:last-child {
@@ -430,6 +519,10 @@ const principles = [
 }
 .stack__framework-item:hover {
   background: rgba(255, 255, 255, 0.03);
+  border-left-color: rgba(204, 255, 0, 0.25);
+}
+.stack__framework-item > div {
+  min-width: 0;
 }
 .stack__framework-name {
   font-family: var(--font-display);
@@ -442,15 +535,18 @@ const principles = [
 }
 .stack__framework-sub {
   font-size: 0.75rem;
-  color: #444;
+  color: #555;
   font-family: var(--font-mono);
+  line-height: 1.55;
   display: block;
-  margin-top: 0.125rem;
+  margin-top: 0.375rem;
 }
 .stack__framework-level {
   font-family: var(--font-mono);
   font-size: 10px;
   color: #ccff00;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
 }
 .stack__framework-level--muted {
   color: #555;
@@ -460,13 +556,26 @@ const principles = [
   display: flex;
   flex-direction: column;
   gap: 1px;
+  height: 100%;
 }
 .stack__motion,
-.stack__build {
+.stack__build,
+.stack__quality {
   background: #0f0f0f;
   padding: 2rem;
   /* border: 1px solid rgba(255, 255, 255, 0.05); */
   border-radius: 1rem;
+}
+@media (min-width: 768px) {
+  .stack__motion {
+    border-radius: 0;
+  }
+  .stack__build {
+    border-radius: 0;
+  }
+  .stack__quality {
+    border-radius: 0;
+  }
 }
 .stack__motion-list {
   list-style: none;
@@ -519,15 +628,56 @@ const principles = [
 .stack__build-tag--muted {
   color: #888;
 }
+.stack__quality {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.stack__quality-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex: 1;
+}
+.stack__quality-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.stack__quality-item:last-child {
+  border-bottom: none;
+}
+.stack__quality-item-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #fff;
+}
+.stack__quality-item-desc {
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: #555;
+}
 
 .stack__ai {
   background: linear-gradient(135deg, rgba(204, 255, 0, 0.04) 0%, #0f0f0f 60%);
   /* border: 1px solid rgba(204, 255, 0, 0.15); */
   border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+@media (min-width: 768px) {
+  .stack__ai {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 .stack__ai-num {
   font-family: var(--font-mono);
@@ -617,6 +767,7 @@ const principles = [
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Карточка принципа: hover — background и цвет номера; will-change для плавности */
 .stack__principle {
   background: #0f0f0f;
   padding: 2.5rem;

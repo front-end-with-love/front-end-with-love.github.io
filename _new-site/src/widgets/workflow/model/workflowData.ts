@@ -1,4 +1,6 @@
-/** Workflow methodology steps for slider section. */
+// Данные для секции «Методология workflow»: шаги слайдера (Discovery → Delivery).
+
+// Интерфейс одного шага: заголовок, краткие теги (summary), полное описание
 export interface WorkflowStep {
   title: string
   summary: string
@@ -28,7 +30,7 @@ export const workflowData: WorkflowStep[] = [
     title: 'Quality Control',
     summary: 'Cross-browser · Responsive · Performance · A11y',
     description:
-      'Cross-browser validation (Chrome, Firefox, Safari, Edge). Responsive behaviour verification across breakpoints. Layout stress-testing with dynamic content. Accessibility checks (semantic structure, keyboard navigation, contrast). Performance verification without unnecessary abstractions.'
+      'Cross-browser validation (Chrome, Firefox, Safari, Edge). Responsive behavior verification across breakpoints. Layout stress-testing with dynamic content. Accessibility checks (semantic structure, keyboard navigation, contrast). Performance verification without unnecessary abstractions.'
   },
   {
     title: 'Delivery',

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-/** Contact: intro, links, footer. */
-import photo from '@/assets/img/1.jpeg'
+// Секция контактов: интро, фото, ссылки (email, TG, GitHub, Habr), футер. Фон — анимированный градиент.
+
+import photo from '../assets/portrait.webp'
 </script>
 
 <template>
@@ -28,14 +29,14 @@ import photo from '@/assets/img/1.jpeg'
 </ul>
       </div>
       <div class="contact__links reveal-text delay-200">
-        <a href="mailto:frontend.dev.ru@gmail.com" class="contact__link hover-trigger">frontend.dev.ru@gmail.com</a>
-        <a href="https://t.me/michailkhlebnikov" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger">
+        <a href="mailto:frontend.dev.ru@gmail.com" class="contact__link" aria-label="Send email to frontend.dev.ru@gmail.com">frontend.dev.ru@gmail.com</a>
+        <a href="https://t.me/michailkhlebnikov" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Open in new tab: Telegram profile">
           t.me/michailkhlebnikov
         </a>
-        <a href="https://github.com/front-end-with-love" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger">
-          Github Account
+        <a href="https://github.com/front-end-with-love" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Open in new tab: GitHub">
+          GitHub
         </a>
-        <a href="https://career.habr.com/frontend-dev-ru" target="_blank" rel="noopener noreferrer" class="contact__link hover-trigger">
+        <a href="https://career.habr.com/frontend-dev-ru" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Open in new tab: Habr Career">
           Habr Career
         </a>
       </div>
@@ -53,6 +54,7 @@ import photo from '@/assets/img/1.jpeg'
 
 <style scoped>
 .contact {
+  padding: 8rem 1rem 4rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,6 +66,7 @@ import photo from '@/assets/img/1.jpeg'
   animation: contact-gradient 15s ease infinite;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* Плавное смещение градиента — создаёт живой фон */
 @keyframes contact-gradient {
   0% {
     background-position: 0% 50%;
@@ -162,9 +165,6 @@ import photo from '@/assets/img/1.jpeg'
   text-transform: uppercase;
   color: #737373;
   margin-right: 0.5rem;
-}
-.contact__availability-accent {
-  color: #ccff00;
 }
 .contact__link {
   font-family: var(--font-display);

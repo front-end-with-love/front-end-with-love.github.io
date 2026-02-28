@@ -1,22 +1,32 @@
 <script setup lang="ts">
-/** Hero: name, tagline, CTA buttons; parallax on title via GSAP. */
+// Hero: имя, слоган, CTA-кнопки; параллакс заголовка при скролле через GSAP ScrollTrigger.
+
 import { ref, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useScrollTo } from '@/features/scroll-to'
 
+const { scrollToTarget } = useScrollTo()
+
+// ref — реактивная ссылка на DOM-элемент; после монтирования .value указывает на section и h1
 const heroRef = ref<HTMLElement | null>(null)
 const titleRef = ref<HTMLElement | null>(null)
+// Экземпляр ScrollTrigger — нужен для kill() при размонтировании
 let trigger: ScrollTrigger | null = null
 
 onMounted(() => {
   if (!heroRef.value || !titleRef.value) return
+  // Уважаем настройку «уменьшить движение» — параллакс не вешаем
   if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  // trigger — секция hero; start/end — когда верх hero на верху viewport и когда низ hero на верху (секция уехала вверх)
+  // scrub: true — анимация привязана к позиции скролла, а не запускается однократно
   trigger = ScrollTrigger.create({
     trigger: heroRef.value,
     start: 'top top',
     end: 'bottom top',
     scrub: true,
     onUpdate: (self) => {
+      // progress 0..1; сдвиг заголовка вверх до -60px при полном проскролле секции
       gsap.set(titleRef.value, { y: self.progress * -60 })
     }
   })
@@ -28,9 +38,10 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <!-- ref="heroRef" — привязка к переменной heroRef для ScrollTrigger -->
   <section ref="heroRef" class="hero">
     <div class="hero__top reveal-trigger">
-      <span class="hero__label reveal-text">FRONTEND&nbsp;/ UI/UX DEV</span>
+      <span class="hero__label reveal-text">FRONT-END&nbsp;/ UI/UX DEV</span>
       <span class="hero__label reveal-text delay-100">SCROLL&nbsp;TO EXPLORE</span>
     </div>
     <h1 ref="titleRef" class="hero__title">
@@ -44,11 +55,11 @@ onUnmounted(() => {
             <span class="reveal-text block delay-300">Engineering fluid digital experiences with a&nbsp;focus on&nbsp;motion, pixel-perfection, and high-performance code.</span>
           </p>
           <div class="hero__cta">
-            <a href="#projects" class="hero__btn hero__btn--accent reveal-text delay-500 hover-trigger">
-              <span class="hero__btn-inner">View Projects</span>
+            <a href="#projects" class="hero__btn hero__btn--accent reveal-text delay-500 hover-trigger" @click.prevent="scrollToTarget('projects')">
+              <span class="hero__btn-inner">View Freelance Projects</span>
               <span class="hero__btn-layer" aria-hidden="true" />
             </a>
-            <a href="#contact" class="hero__btn reveal-text delay-500 hover-trigger">Contact&nbsp;Me</a>
+            <a href="#contact" class="hero__btn reveal-text delay-500 hover-trigger" @click.prevent="scrollToTarget('contact')">Contact&nbsp;Me</a>
           </div>
         </div>
       </div>
@@ -72,7 +83,8 @@ onUnmounted(() => {
 }
 @media (max-width: 479px) {
   .hero {
-    padding-top: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 0;
   }
 }
 @media (min-width: 768px) {
@@ -109,6 +121,7 @@ onUnmounted(() => {
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #e1e1e1;
+  /* Режим наложения: инвертирует цвет под текстом — контраст на фоне */
   mix-blend-mode: exclusion;
 }
 @media (min-width: 768px) {
