@@ -261,16 +261,10 @@ onUnmounted(() => {
   grid-column-gap: 1.5rem;
   grid-row-gap: 5.5rem;
   place-items: start stretch;
-  padding: 0;
+  padding: 0 1rem;
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-}
-@media (min-width: 768px) {
-  .pet-projects__grid.grid-2-items {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 .pet-projects__grid.grid-2-items.full-width {
   width: 100%;

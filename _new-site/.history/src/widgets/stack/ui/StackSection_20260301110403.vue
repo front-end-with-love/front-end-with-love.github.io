@@ -572,14 +572,18 @@ const principles = [
 .stack__build,
 .stack__quality {
   background: #0f0f0f;
-  padding: 2rem 1rem;
+  padding: 2rem;
+  /* border: 1px solid rgba(255, 255, 255, 0.05); */
   border-radius: 1rem;
 }
 @media (min-width: 768px) {
-  .stack__motion,
-  .stack__build,
+  .stack__motion {
+    border-radius: 0;
+  }
+  .stack__build {
+    border-radius: 0;
+  }
   .stack__quality {
-    padding: 2rem;
     border-radius: 0;
   }
 }
@@ -669,17 +673,17 @@ const principles = [
 
 .stack__ai {
   background: linear-gradient(135deg, rgba(204, 255, 0, 0.04) 0%, #0f0f0f 60%);
+  /* border: 1px solid rgba(204, 255, 0, 0.15); */
   border-radius: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  padding: 2rem 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 @media (min-width: 768px) {
   .stack__ai {
-    padding: 2rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;

@@ -80,7 +80,7 @@ import { educationData } from '../model/educationData'
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  padding: 0;
+  padding: 0 1rem;
 }
 @media (min-width: 768px) {
   .education__grid {

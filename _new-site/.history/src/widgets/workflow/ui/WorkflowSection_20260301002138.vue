@@ -166,7 +166,7 @@ const modules = [Navigation]
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 0 1.25rem;
   position: relative;
   box-sizing: border-box;
 }
