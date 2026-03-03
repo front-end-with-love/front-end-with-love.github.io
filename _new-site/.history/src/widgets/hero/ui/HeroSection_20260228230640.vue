@@ -56,7 +56,7 @@ onUnmounted(() => {
           </p>
           <div class="hero__cta">
             <a href="#projects" class="hero__btn hero__btn--accent reveal-text delay-500 hover-trigger" @click.prevent="scrollToTarget('projects')">
-              <span class="hero__btn-inner">View Projects</span>
+              <span class="hero__btn-inner">View Freelance Projects</span>
               <span class="hero__btn-layer" aria-hidden="true" />
             </a>
             <a href="#contact" class="hero__btn reveal-text delay-500 hover-trigger" @click.prevent="scrollToTarget('contact')">Contact&nbsp;Me</a>
