@@ -24,3 +24,5 @@ _new-site/.vite/
 *.ntvs*
 *.njsproj
 *.sln
+.cursor/
+.history/
