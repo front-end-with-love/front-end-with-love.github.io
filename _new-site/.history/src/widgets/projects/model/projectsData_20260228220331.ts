@@ -20,7 +20,7 @@ export const projectsData: ProjectItem[] = [
   {
     id: 1,
     title: 'Segrex Development',
-    tags: ['Dubai · 2025', '3 mo.'],
+    tags: ['Dubai · 2023', '3 mo.'],
     stack: 'Gulp · HTML · SASS · JS',
     description:
       'Layout for a 1C-Bitrix CMS project: internal developer portal (closed access).',

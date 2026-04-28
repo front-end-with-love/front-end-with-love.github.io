@@ -119,7 +119,7 @@ onUnmounted(() => {
 <template>
   <section id="pet-projects" class="pet-projects">
     <div class="pet-projects__header reveal-trigger">
-      <span class="pet-projects__num reveal-text">[05]&nbsp;&mdash; PET PROJECTS</span>
+      <span class="pet-projects__num reveal-text">[04]&nbsp;&mdash; PET PROJECTS</span>
       <h2 class="pet-projects__title"><span class="reveal-text delay-100">Pet Projects</span></h2>
       <p class="pet-projects__meta">
         <span class="reveal-text delay-300 block"

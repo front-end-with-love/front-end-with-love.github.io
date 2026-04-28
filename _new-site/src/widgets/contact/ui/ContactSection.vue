@@ -38,7 +38,7 @@ onUnmounted(() => {
   <section id="contact" class="contact">
     <div class="contact__top reveal-trigger">
       <div class="contact__text-wrapper">
-        <span class="contact__num reveal-text">[06]&nbsp;&mdash; CONTACT</span>
+        <span class="contact__num reveal-text">[08]&nbsp;&mdash; CONTACT</span>
         <h2 class="contact__title">
           <span class="reveal-text delay-100 block">Let's<br /></span>
           <span class="contact__title-outline reveal-text delay-300">Talk</span>
