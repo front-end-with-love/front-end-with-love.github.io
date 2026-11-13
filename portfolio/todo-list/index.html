@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Список задач</title>
+    <link rel="icon" href="data:," />
+
+    <!-- Шрифт Inter лежит в репозитории (fonts/), внешних запросов нет.
+         Preload — только для кириллических сабсетов: интерфейс русский,
+         латинский сабсет браузер догрузит сам, если появится латиница. -->
+    <link
+      rel="preload"
+      href="fonts/inter-400-cyrillic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/inter-500-cyrillic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/inter-600-cyrillic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- ITCSS: Settings → Generic → Elements → Objects → Components -->
+    <link rel="stylesheet" href="css/settings/fonts.css" />
+    <link rel="stylesheet" href="css/settings/tokens.css" />
+    <link rel="stylesheet" href="css/generic/reset.css" />
+    <link rel="stylesheet" href="css/elements/base.css" />
+    <link rel="stylesheet" href="css/objects/app-layout.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    <link rel="stylesheet" href="css/components/form-controls.css" />
+    <link rel="stylesheet" href="css/components/task-form.css" />
+    <link rel="stylesheet" href="css/components/task-list.css" />
+    <link rel="stylesheet" href="css/components/task-item.css" />
+
+    <script type="module" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <main class="app-layout">
+      <div class="app-layout__inner">
+        <header class="app-layout__header">
+          <h1>Список задач</h1>
+          <p class="app-layout__lead">
+            Добавьте задачу и отметьте её, когда выполните.
+          </p>
+        </header>
+
+        <form class="task-form" id="task-form" novalidate>
+          <div class="task-form__field">
+            <label class="task-form__label" for="task-input">Новая задача</label>
+            <input
+              class="text-field"
+              id="task-input"
+              name="task"
+              type="text"
+              placeholder="Например, купить хлеб"
+              autocomplete="off"
+            />
+          </div>
+
+          <button class="button button--primary task-form__submit" type="submit">
+            Добавить
+          </button>
+
+          <p
+            class="task-form__status"
+            id="app-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+        </form>
+
+        <!-- Контейнер списка. Сам <ul id="task-list"> создаётся скриптом
+             только тогда, когда есть задачи: пока задач нет, списка в DOM
+             нет вообще, а пустое состояние занимает его место. -->
+        <div class="task-list" id="task-list-container">
+          <p class="task-list__empty" id="task-list-empty">
+            Пока нет задач. Добавьте первую.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <template id="task-item-template">
+      <li class="task-item" data-task-id="">
+        <label class="task-item__toggle">
+          <input class="checkbox task-item__checkbox" type="checkbox" />
+          <span class="task-item__text"></span>
+        </label>
+
+        <button
+          class="button button--icon task-item__delete"
+          type="button"
+          aria-label="Удалить задачу"
+        >
+          <svg
+            class="button__icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 7h16M10 7V4.5h4V7M6.5 7l.9 12.5h9.2L18.5 7M10 11v5M14 11v5" />
+          </svg>
+        </button>
+      </li>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+/* Components: строка задачи — статус, текст и удаление. */
+
+.task-item {
+  display: flex;
+  align-items: center;
+  /* --space-3 = 8 px: зазор между зоной чекбокса и кнопкой удаления
+     по контракту дизайн-системы (≥ 8 px). */
+  gap: var(--space-3);
+  min-width: 0;
+  padding-block: var(--space-1);
+}
+
+.task-item + .task-item {
+  border-top: var(--border-default);
+}
+
+/* Зона нажатия чекбокса: весь label, не меньше 44×44 CSS px. */
+.task-item__toggle {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  min-height: var(--control-size);
+  padding-block: var(--space-1);
+  cursor: pointer;
+}
+
+.task-item__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.task-item--completed .task-item__text {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.task-item__delete {
+  flex: none;
+}

@@ -1,0 +1,82 @@
+/* Settings: подключение шрифта.
+   Inter 4.1 (официальная сборка rsms/inter, лицензия SIL OFL 1.1 — fonts/OFL.txt).
+   Шрифт хранится в репозитории: внешних запросов и CDN нет.
+   Нарезан на два сабсета — кириллица (с русской типографикой) и латиница. */
+
+/* Кириллица объявлена первой: в её диапазон входят « » — … №,
+   поэтому эти знаки берутся из кириллического файла, а не из латинского. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../fonts/inter-400-cyrillic.woff2") format("woff2");
+  unicode-range: U+0020-003F, U+00A0, U+00AB, U+00BB, U+0301, U+0400-045F, U+0490-0491,
+    U+04B0-04B1, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2022, U+2026, U+2116;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../fonts/inter-400-latin.woff2") format("woff2");
+  unicode-range: U+0041-005A, U+0061-007A, U+00A1-00AA, U+00AC, U+00AE-00B4, U+00B6-00B7, U+00BC-00BE,
+    U+00C0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../fonts/inter-500-cyrillic.woff2") format("woff2");
+  unicode-range: U+0020-003F, U+00A0, U+00AB, U+00BB, U+0301, U+0400-045F, U+0490-0491,
+    U+04B0-04B1, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2022, U+2026, U+2116;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../fonts/inter-500-latin.woff2") format("woff2");
+  unicode-range: U+0041-005A, U+0061-007A, U+00A1-00AA, U+00AC, U+00AE-00B4, U+00B6-00B7, U+00BC-00BE,
+    U+00C0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../fonts/inter-600-cyrillic.woff2") format("woff2");
+  unicode-range: U+0020-003F, U+00A0, U+00AB, U+00BB, U+0301, U+0400-045F, U+0490-0491,
+    U+04B0-04B1, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2022, U+2026, U+2116;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../fonts/inter-600-latin.woff2") format("woff2");
+  unicode-range: U+0041-005A, U+0061-007A, U+00A1-00AA, U+00AC, U+00AE-00B4, U+00B6-00B7, U+00BC-00BE,
+    U+00C0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC;
+}
+
+/* Метрически согласованный системный fallback.
+   size-adjust и overrides подобраны по метрикам Inter (upm 2048, ascent 1984,
+   descent 494, x-height 1118) и пары Arial / Liberation Sans (upm 2048,
+   ascent 1854, descent 434, x-height 1062): при подмене шрифта не меняются
+   x-height и высота строки, то есть нет скачка вёрстки.
+   Arial и Liberation Sans метрически совместимы; Helvetica Neue и Roboto
+   подставляются как приближение. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica Neue"), local("Roboto");
+  size-adjust: 105.273%;
+  ascent-override: 101.652%;
+  descent-override: 108.123%;
+  line-gap-override: 0%;
+}

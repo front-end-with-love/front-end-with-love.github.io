@@ -1,0 +1,71 @@
+/* Components: поля ввода и чекбоксы. */
+
+.text-field {
+  width: 100%;
+  min-width: 0;
+  min-height: var(--control-size);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: var(--border-control);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-duration) ease;
+}
+
+.text-field::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.text-field:hover {
+  border-color: var(--color-text-muted);
+}
+
+.text-field:focus-visible {
+  border-color: var(--color-accent);
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: 0;
+}
+
+/* Чекбокс: визуальный размер 20px, зону нажатия обеспечивает label в task-item. */
+.checkbox {
+  flex: none;
+  display: grid;
+  place-content: center;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  margin: 0;
+  background-color: var(--color-surface);
+  border: var(--border-control);
+  border-radius: var(--radius-sm);
+  appearance: none;
+  cursor: pointer;
+  transition: background-color var(--transition-duration) ease,
+    border-color var(--transition-duration) ease;
+}
+
+.checkbox::after {
+  content: "";
+  width: 10px;
+  height: 5px;
+  margin-block-start: -2px;
+  border-bottom: 2px solid var(--color-on-accent);
+  border-left: 2px solid var(--color-on-accent);
+  transform: rotate(-45deg) scale(0);
+  transition: transform var(--transition-duration) ease;
+}
+
+.checkbox:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.checkbox:checked::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+.checkbox:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}

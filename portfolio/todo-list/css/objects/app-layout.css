@@ -1,0 +1,44 @@
+/* Objects: композиция страницы, контейнер и вертикальный ритм. */
+
+.app-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-4) var(--space-3);
+}
+
+.app-layout__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  width: 100%;
+  max-width: var(--layout-width);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-surface);
+}
+
+.app-layout__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.app-layout__lead {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 40em) {
+  .app-layout {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .app-layout__inner {
+    gap: var(--space-9);
+    padding: var(--space-7) var(--space-8);
+  }
+}

@@ -1,0 +1,82 @@
+/* Settings: дизайн-токены. Палитра — адаптация светлой палитры референса. */
+
+:root {
+  /* Цвета: поверхности */
+  --color-surface: #fefefe;
+  --color-surface-muted: #f6f7f9;
+
+  /* Цвета: текст (контраст к --color-surface проверен: 20.50:1 и 5.90:1) */
+  --color-text: #010114;
+  --color-text-muted: #5d6472;
+
+  /* Цвета: акцент (8.37:1 к поверхности, 7.88:1 к фону страницы) */
+  --color-accent: #1f2ae2;
+  --color-accent-hover: #1721b8;
+  --color-on-accent: #fefefe;
+
+  /* Цвета: удаление (6.52:1 к поверхности) */
+  --color-danger: #b42318;
+  --color-danger-surface: #fdf0ee;
+
+  /* Цвета: границы. Контрольная граница даёт 3.05:1 — порог для UI-элементов */
+  --color-border: #e8e9ee;
+  --color-border-control: #8c93a3;
+  --color-focus: #1f2ae2;
+
+  /* Типографика: один шрифт — Inter (self-host, см. css/settings/fonts.css).
+     "Inter Fallback" — системный аналог с согласованными метриками. */
+  --font-family-base: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-2xl: 1.75rem;
+  --line-height-base: 1.5;
+  --line-height-heading: 1.15;
+  --line-height-tight: 1.2;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  /* Трекинг применяется только к крупному заголовку. */
+  --letter-spacing-heading: -0.02em;
+
+  /* Spacing: базовый ритм 8px */
+  --space-0: 2px;
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 24px;
+  --space-9: 32px;
+  --space-10: 64px;
+
+  /* Ширина рабочей области */
+  --layout-width: 640px;
+
+  /* Радиусы */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Границы */
+  --border-width: 1px;
+  --border-default: var(--border-width) solid var(--color-border);
+  --border-control: var(--border-width) solid var(--color-border-control);
+
+  /* Тени */
+  --shadow-surface: 0 1px 2px rgb(1 1 20 / 4%), 0 12px 32px rgb(1 1 20 / 6%);
+
+  /* Размеры контролов: 44px — проектная цель зоны нажатия */
+  --control-size: 44px;
+  --checkbox-size: 20px;
+
+  /* Focus */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+
+  /* Движение */
+  --transition-duration: 150ms;
+}

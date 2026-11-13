@@ -1,0 +1,52 @@
+/* Components: кнопки — базовый вариант, основное действие и иконочная кнопка. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--control-size);
+  padding-inline: var(--space-3);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+  background-color: transparent;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-duration) ease,
+    border-color var(--transition-duration) ease;
+}
+
+.button:hover {
+  background-color: var(--color-surface-muted);
+}
+
+.button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.button--primary {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+}
+
+.button--primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.button--icon {
+  min-width: var(--control-size);
+  padding-inline: var(--space-2);
+  color: var(--color-danger);
+}
+
+.button--icon:hover {
+  background-color: var(--color-danger-surface);
+}
+
+.button__icon {
+  width: 20px;
+  height: 20px;
+}
