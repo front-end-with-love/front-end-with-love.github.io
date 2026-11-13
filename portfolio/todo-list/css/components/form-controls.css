@@ -30,6 +30,8 @@
 
 /* Чекбокс: визуальный размер 20px, зону нажатия обеспечивает label в task-item. */
 .checkbox {
+  position: relative;
+  top: var(--space-0);
   flex: none;
   display: grid;
   place-content: center;
